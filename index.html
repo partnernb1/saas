@@ -2,40 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Task Tools Showcase</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Task Managers</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="max-w-5xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6">Task Management Tools</h1>
-    <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+<body class="bg-gray-100 text-gray-900">
+  <div class="container mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold mb-6">Task Managers for Beginners</h1>
+    <div id="cards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </div>
 
   <script>
-    const sheetUrl = 'https://opensheet.elk.sh/YOUR_SHEET_ID/Sheet1';
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
 
-    fetch(sheetUrl)
-      .then(res => res.json())
-      .then(data => {
-        const cards = document.getElementById('cards');
-        data.forEach(t => {
-          const div = document.createElement('div');
-          div.className = 'rounded-2xl border p-4 shadow-sm hover:shadow-md transition bg-white';
-          div.innerHTML = `
-            <h2 class="text-xl font-semibold mb-1">${t.Name}</h2>
-            <p><strong>Сложность:</strong> ${t.Complexity}</p>
-            <p><strong>Для:</strong> ${t.BestFor}</p>
-            <p><strong>Плюсы:</strong> ${t.Pros}</p>
-            <p><strong>Минусы:</strong> ${t.Cons}</p>
-            <p><strong>Масштаб:</strong> ${t.Scalability}</p>
-            <p><strong>Обучение:</strong> ${t.Training}</p>
-            <p><strong>Affiliate:</strong> ${t.Affiliate}</p>
-            <a href="${t.Link}" target="_blank" class="inline-block mt-3 px-4 py-2 rounded-xl bg-blue-600 text-white text-sm hover:bg-blue-700">Перейти</a>
-          `;
-          cards.appendChild(div);
-        });
+    async function fetchData() {
+      const res = await axios.get(sheetURL);
+      const data = Papa.parse(res.data, { header: true }).data;
+      renderCards(data);
+    }
+
+    function renderCards(data) {
+      const container = document.getElementById('cards');
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl shadow p-4 hover:shadow-lg transition";
+        card.innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">${item.Name}</h2>
+          <p class="text-sm text-gray-600 mb-1"><strong>Best for:</strong> ${item['Best For']}</p>
+          <p class="text-sm text-gray-600 mb-1"><strong>Complexity:</strong> ${item.Complexity}</p>
+          <p class="text-sm text-green-700 mb-1"><strong>Pros:</strong> ${item.Pros}</p>
+          <p class="text-sm text-red-600 mb-1"><strong>Cons:</strong> ${item.Cons}</p>
+          <p class="text-sm text-gray-700 mb-1"><strong>Scalability:</strong> ${item.Scalability}</p>
+          <p class="text-sm text-gray-700 mb-2"><strong>Training:</strong> ${item.Training}</p>
+          <a href="${item.Link}" target="_blank" class="inline-block bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Visit</a>
+        `;
+        container.appendChild(card);
       });
+    }
+
+    fetchData();
   </script>
 </body>
 </html>
