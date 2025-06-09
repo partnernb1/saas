@@ -45,15 +45,12 @@
 
   <!-- SCRIPT -->
   <script>
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
+    const sheetUrl = 'https://opensheet.elk.sh/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/Sheet1';
 
     fetch(sheetUrl)
-  .then(response => response.text())
-  .then(csv => {
-    const parsed = Papa.parse(csv, { header: true });
-    const data = parsed.data;
-    renderCards(data);
-  });
+      .then(res => res.json())
+      .then(data => renderCards(data));
+
 
 
     function renderCards(data) {
@@ -86,29 +83,20 @@
     }
 
     document.getElementById('filter').addEventListener('change', (e) => {
-      const category = e.target.value;
-      fetch(sheetUrl)
-        .then(response => response.text())
-        .then(csv => {
-          const rows = csv.split("\n").slice(1);
-          const filtered = rows
-            .map(row => row.split(','))
-            fetch(sheetUrl)
-  .then(response => response.text())
-  .then(csv => {
-    const parsed = Papa.parse(csv, { header: true });
-    const allData = parsed.data;
-    const filtered = allData.filter(row => {
-      if (category === 'all') return true;
-      const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
-      return categories && categories.includes(category);
-    });
-    renderCards(filtered);
-  });
+  const category = e.target.value;
 
-          renderCards(filtered);
-        });
+  fetch(sheetUrl)
+    .then(res => res.json())
+    .then(data => {
+      const filtered = data.filter(row => {
+        if (category === 'all') return true;
+        const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+        return categories && categories.includes(category);
+      });
+      renderCards(filtered);
     });
+});
+
   </script>
 </body>
 </html>
