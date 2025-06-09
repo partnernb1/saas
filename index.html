@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple SaaS List</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- HEADER -->
@@ -47,15 +48,13 @@
     const sheetUrl = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
 
     fetch(sheetUrl)
-      .then(response => response.text())
-      .then(csv => {
-        const rows = csv.split("\n").slice(1);
-        const data = rows.map(row => {
-          const [Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating] = row.split(',');
-          return { Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating };
-        });
-        renderCards(data);
-      });
+  .then(response => response.text())
+  .then(csv => {
+    const parsed = Papa.parse(csv, { header: true });
+    const data = parsed.data;
+    renderCards(data);
+  });
+
 
     function renderCards(data) {
       const container = document.getElementById('cards');
@@ -94,10 +93,19 @@
           const rows = csv.split("\n").slice(1);
           const filtered = rows
             .map(row => row.split(','))
-            .filter(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating, Category]) => {
-              return category === 'all' || (Category && Category.toLowerCase().split(',').map(c => c.trim()).includes(category));
-            })
-            .map(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating]) => ({ Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating }));
+            fetch(sheetUrl)
+  .then(response => response.text())
+  .then(csv => {
+    const parsed = Papa.parse(csv, { header: true });
+    const allData = parsed.data;
+    const filtered = allData.filter(row => {
+      if (category === 'all') return true;
+      const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+      return categories && categories.includes(category);
+    });
+    renderCards(filtered);
+  });
+
           renderCards(filtered);
         });
     });
