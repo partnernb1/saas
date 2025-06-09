@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple SaaS List</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- HEADER -->
@@ -35,7 +34,24 @@
 
   <!-- MAIN GRID -->
   <main class="max-w-6xl mx-auto grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-3" id="cards">
-    <!-- Cards will be inserted here -->
+    <!-- Skeleton cards -->
+    <template id="skeleton">
+      <div class="animate-pulse bg-white rounded-2xl shadow-md p-6 flex flex-col space-y-4 border border-gray-200">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gray-200 rounded-lg"></div>
+          <div class="flex-1 space-y-2">
+            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+            <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
+        <div class="h-8 bg-gray-200 rounded mt-4"></div>
+      </div>
+    </template>
   </main>
 
   <!-- FOOTER -->
@@ -45,16 +61,24 @@
 
   <!-- SCRIPT -->
   <script>
-    const sheetUrl = 'https://opensheet.elk.sh/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/Sheet1';
+    const sheetUrl = './data.json';
 
     document.addEventListener("DOMContentLoaded", () => {
+      renderSkeletons();
       fetch(sheetUrl)
         .then(res => res.json())
         .then(data => renderCards(data));
     });
 
-
-
+    function renderSkeletons() {
+      const container = document.getElementById('cards');
+      const template = document.getElementById('skeleton');
+      container.innerHTML = '';
+      for (let i = 0; i < 6; i++) {
+        const clone = template.content.cloneNode(true);
+        container.appendChild(clone);
+      }
+    }
 
     function renderCards(data) {
       const container = document.getElementById('cards');
@@ -86,20 +110,20 @@
     }
 
     document.getElementById('filter').addEventListener('change', (e) => {
-  const category = e.target.value;
+      const category = e.target.value;
+      renderSkeletons();
 
-  fetch(sheetUrl)
-    .then(res => res.json())
-    .then(data => {
-      const filtered = data.filter(row => {
-        if (category === 'all') return true;
-        const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
-        return categories && categories.includes(category);
-      });
-      renderCards(filtered);
+      fetch(sheetUrl)
+        .then(res => res.json())
+        .then(data => {
+          const filtered = data.filter(row => {
+            if (category === 'all') return true;
+            const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+            return categories && categories.includes(category);
+          });
+          renderCards(filtered);
+        });
     });
-});
-
   </script>
 </body>
 </html>
