@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple SaaS List</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- HEADER -->
@@ -47,9 +47,12 @@
   <script>
     const sheetUrl = 'https://opensheet.elk.sh/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/Sheet1';
 
-    fetch(sheetUrl)
-      .then(res => res.json())
-      .then(data => renderCards(data));
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch(sheetUrl)
+        .then(res => res.json())
+        .then(data => renderCards(data));
+    });
+
 
 
 
