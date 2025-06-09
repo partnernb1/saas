@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple SaaS List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- HEADER -->
+  <header class="bg-white shadow p-6 flex justify-between items-center">
+    <h1 class="text-3xl font-bold tracking-tight">🧰 Simple SaaS Picks</h1>
+    <nav class="space-x-6 text-lg">
+      <a href="#" class="text-gray-600 hover:text-black">Home</a>
+      <a href="#" class="text-gray-600 hover:text-black">About</a>
+      <a href="#" class="text-gray-600 hover:text-black">Contact</a>
+    </nav>
+  </header>
+
+  <!-- INTRO TEXT -->
+  <section class="max-w-6xl mx-auto mt-8 text-center">
+    <p class="text-xl text-gray-700">Carefully selected SaaS tools for beginners and growing teams. Easy to start, powerful to scale. Each card includes pros, cons, and a real rating.</p>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="max-w-6xl mx-auto mt-6 text-right px-4">
+    <select id="filter" class="p-3 border rounded-lg text-base">
+      <option value="all">All categories</option>
+      <option value="task">Task Management</option>
+      <option value="project">Project Management</option>
+      <option value="notes">Note Taking</option>
+    </select>
+  </section>
+
+  <!-- MAIN GRID -->
+  <main class="max-w-6xl mx-auto grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-3" id="cards">
+    <!-- Cards will be inserted here -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white shadow p-6 text-center text-sm text-gray-500">
+    &copy; 2025 Simple SaaS Picks. Made with ❤️ and Google Sheets.
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
+
+    fetch(sheetUrl)
+      .then(response => response.text())
+      .then(csv => {
+        const rows = csv.split("\n").slice(1);
+        const data = rows.map(row => {
+          const [Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating] = row.split(',');
+          return { Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating };
+        });
+        renderCards(data);
+      });
+
+    function renderCards(data) {
+      const container = document.getElementById('cards');
+      container.innerHTML = '';
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
+        card.innerHTML = `
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="${item.Logo}" alt="${item.Name} logo" class="w-12 h-12 rounded-lg object-cover bg-gray-100" onerror="this.style.display='none'">
+            <div>
+              <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
+              <p class="text-sm text-gray-500">Rating: ${item.Rating || 'N/A'}</p>
+            </div>
+          </div>
+          <div class="space-y-2 text-base">
+            <p><strong>Best for:</strong> ${item.BestFor}</p>
+            <p><strong>Complexity:</strong> <span class="inline-block px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">${item.Complexity}</span></p>
+            <p><strong>Pros:</strong> ${item.Pros}</p>
+            <p><strong>Cons:</strong> ${item.Cons}</p>
+            <p><strong>Scalability:</strong> ${item.Scalability}</p>
+            <p><strong>Training:</strong> ${item.Training}</p>
+            <p><strong>Affiliate:</strong> ${item.Affiliate}</p>
+          </div>
+          <a href="${item.Link}" target="_blank" class="mt-4 inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Visit Website</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById('filter').addEventListener('change', (e) => {
+      const category = e.target.value;
+      fetch(sheetUrl)
+        .then(response => response.text())
+        .then(csv => {
+          const rows = csv.split("\n").slice(1);
+          const filtered = rows
+            .map(row => row.split(','))
+            .filter(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating, Category]) => {
+              return category === 'all' || (Category && Category.trim().toLowerCase() === category);
+            })
+            .map(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating]) => ({ Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating }));
+          renderCards(filtered);
+        });
+    });
+  </script>
+</body>
+</html>
