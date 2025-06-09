@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple SaaS List</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- HEADER -->
@@ -33,6 +32,11 @@
     </select>
   </section>
 
+<div id="loader" class="flex justify-center py-12">
+  <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+</div>
+
+  
   <!-- MAIN GRID -->
   <main class="max-w-6xl mx-auto grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-3" id="cards">
     <!-- Cards will be inserted here -->
@@ -45,15 +49,18 @@
 
   <!-- SCRIPT -->
   <script>
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
+    const sheetUrl = 'https://opensheet.elk.sh/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/Sheet1';
 
-    fetch(sheetUrl)
-  .then(response => response.text())
-  .then(csv => {
-    const parsed = Papa.parse(csv, { header: true });
-    const data = parsed.data;
+document.getElementById('loader').style.display = 'flex';
+document.getElementById('cards').innerHTML = '';
+
+fetch(sheetUrl)
+  .then(res => res.json())
+  .then(data => {
     renderCards(data);
+    document.getElementById('loader').style.display = 'none';
   });
+
 
 
     function renderCards(data) {
@@ -87,28 +94,25 @@
 
     document.getElementById('filter').addEventListener('change', (e) => {
       const category = e.target.value;
-      fetch(sheetUrl)
-        .then(response => response.text())
-        .then(csv => {
-          const rows = csv.split("\n").slice(1);
-          const filtered = rows
-            .map(row => row.split(','))
-            fetch(sheetUrl)
-  .then(response => response.text())
-  .then(csv => {
-    const parsed = Papa.parse(csv, { header: true });
-    const allData = parsed.data;
-    const filtered = allData.filter(row => {
-      if (category === 'all') return true;
-      const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
-      return categories && categories.includes(category);
-    });
-    renderCards(filtered);
-  });
 
-          renderCards(filtered);
-        });
+      document.getElementById('filter').addEventListener('change', (e) => {
+  const category = e.target.value;
+  document.getElementById('loader').style.display = 'flex';
+  document.getElementById('cards').innerHTML = '';
+
+  fetch(sheetUrl)
+    .then(res => res.json())
+    .then(data => {
+      const filtered = data.filter(row => {
+        if (category === 'all') return true;
+        const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+        return categories && categories.includes(category);
+      });
+      renderCards(filtered);
+      document.getElementById('loader').style.display = 'none';
     });
+});
+
   </script>
 </body>
 </html>
