@@ -95,7 +95,7 @@
           const filtered = rows
             .map(row => row.split(','))
             .filter(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating, Category]) => {
-              return category === 'all' || (Category && Category.trim().toLowerCase() === category);
+              return category === 'all' || (Category && Category.toLowerCase().split(',').map(c => c.trim()).includes(category));
             })
             .map(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating]) => ({ Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating }));
           renderCards(filtered);
