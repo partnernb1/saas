@@ -32,9 +32,6 @@
     </select>
   </section>
 
-
-
-  
   <!-- MAIN GRID -->
   <main class="max-w-6xl mx-auto grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-3" id="cards">
     <!-- Cards will be inserted here -->
@@ -47,19 +44,18 @@
 
   <!-- SCRIPT -->
   <script>
-    const sheetUrl = 'https://opensheet.elk.sh/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/Sheet1';
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/1mUZl-e5S-rNzQDuaTPJSmP2BC3-26kwGXX3v3QdBB1A/export?format=csv';
 
-//document.getElementById('loader').style.display = 'flex';
-//document.getElementById('cards').innerHTML = '';
-
-fetch(sheetUrl)
-  .then(res => res.json())
-  .then(data => {
-    renderCards(data);
-    //document.getElementById('loader').style.display = 'none';
-  });
-
-
+    fetch(sheetUrl)
+      .then(response => response.text())
+      .then(csv => {
+        const rows = csv.split("\n").slice(1);
+        const data = rows.map(row => {
+          const [Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating] = row.split(',');
+          return { Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating };
+        });
+        renderCards(data);
+      });
 
     function renderCards(data) {
       const container = document.getElementById('cards');
@@ -92,25 +88,19 @@ fetch(sheetUrl)
 
     document.getElementById('filter').addEventListener('change', (e) => {
       const category = e.target.value;
-
-      document.getElementById('filter').addEventListener('change', (e) => {
-  const category = e.target.value;
-  document.getElementById('loader').style.display = 'flex';
-  document.getElementById('cards').innerHTML = '';
-
-  fetch(sheetUrl)
-    .then(res => res.json())
-    .then(data => {
-      const filtered = data.filter(row => {
-        if (category === 'all') return true;
-        const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
-        return categories && categories.includes(category);
-      });
-      renderCards(filtered);
-     // document.getElementById('loader').style.display = 'none';
+      fetch(sheetUrl)
+        .then(response => response.text())
+        .then(csv => {
+          const rows = csv.split("\n").slice(1);
+          const filtered = rows
+            .map(row => row.split(','))
+            .filter(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating, Category]) => {
+              return category === 'all' || (Category && Category.toLowerCase().split(',').map(c => c.trim()).includes(category));
+            })
+            .map(([Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating]) => ({ Name, BestFor, Complexity, Pros, Cons, Scalability, Training, Affiliate, Link, Logo, Rating }));
+          renderCards(filtered);
+        });
     });
-});
-
   </script>
 </body>
 </html>
