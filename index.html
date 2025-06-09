@@ -88,7 +88,7 @@
         card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
         card.innerHTML = `
           <div class="flex items-center space-x-4 mb-4">
-            <img src="${item.Logo}" alt="${item.Name} logo" class="w-12 h-12 rounded-lg object-cover bg-gray-100" onerror="this.style.display='none'">
+            <img loading="lazy" src="${item.Logo}" alt="${item.Name} logo" class="w-12 h-12 rounded-lg object-cover bg-gray-100" onerror="this.style.display='none'">
             <div>
               <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
               <p class="text-sm text-gray-500">Rating: ${item.Rating || 'N/A'}</p>
@@ -118,7 +118,11 @@
         .then(data => {
           const filtered = data.filter(row => {
             if (category === 'all') return true;
-            const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+            //const categories = row.Category?.toLowerCase().split(',').map(c => c.trim());
+            const raw = row.Category || row.category || '';
+            const categories = raw.toLowerCase().split(',').map(c => c.trim());
+
+            
             return categories && categories.includes(category);
           });
           renderCards(filtered);
