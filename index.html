@@ -60,11 +60,11 @@
   </footer>
 
   <!-- SCRIPT -->
-<script>
+  <script>
   const sheetUrl = './data.json';
   let allData = [];
 
-  document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
     renderSkeletons();
     fetch(sheetUrl)
       .then(res => res.json())
@@ -75,22 +75,17 @@
   });
 
   document.getElementById('filter').addEventListener('change', (e) => {
-  const category = e.target.value;
-  renderSkeletons();
+    const category = e.target.value;
+    renderSkeletons();
 
-  const filtered = allData.filter(item => {
-    if (category === 'all') return true;
-    if (!item.Category) return false;
-    return item.Category.toLowerCase().split(',').map(s => s.trim()).includes(category);
+    const filtered = allData.filter(item => {
+      if (category === 'all') return true;
+      if (!item.Category) return false;
+      return item.Category.toLowerCase().split(',').map(s => s.trim()).includes(category);
+    });
+
+    renderCards(filtered);
   });
-
-console.log("filtering", category);
-console.log("allData", allData);
-
-    
-  renderCards(filtered);
-});
-
 
   function renderSkeletons() {
     const container = document.getElementById('cards');
@@ -131,10 +126,9 @@ console.log("allData", allData);
       container.appendChild(card);
     });
   }
-
-
-
 </script>
+
+
 
 </body>
 </html>
