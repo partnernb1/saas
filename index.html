@@ -60,31 +60,32 @@
   </footer>
 
   <!-- SCRIPT -->
-  <script>
+ <script>
   const sheetUrl = './data.json';
   let allData = [];
 
   window.addEventListener("load", () => {
     renderSkeletons();
+
     fetch(sheetUrl)
       .then(res => res.json())
       .then(data => {
         allData = data;
         renderCards(allData);
       });
-  });
 
-  document.getElementById('filter').addEventListener('change', (e) => {
-    const category = e.target.value;
-    renderSkeletons();
+    document.getElementById('filter').addEventListener('change', (e) => {
+      const category = e.target.value;
+      renderSkeletons();
 
-    const filtered = allData.filter(item => {
-      if (category === 'all') return true;
-      if (!item.Category) return false;
-      return item.Category.toLowerCase().split(',').map(s => s.trim()).includes(category);
+      const filtered = allData.filter(item => {
+        if (category === 'all') return true;
+        if (!item.Category) return false;
+        return item.Category.toLowerCase().split(',').map(s => s.trim()).includes(category);
+      });
+
+      renderCards(filtered);
     });
-
-    renderCards(filtered);
   });
 
   function renderSkeletons() {
@@ -92,8 +93,8 @@
     const template = document.getElementById('skeleton');
     container.innerHTML = '';
     for (let i = 0; i < 6; i++) {
-      const clone = template.content.cloneNode(true);
-      container.appendChild(clone);
+      const clone = template?.content?.cloneNode(true);
+      if (clone) container.appendChild(clone);
     }
   }
 
@@ -127,7 +128,6 @@
     });
   }
 </script>
-
 
 
 </body>
