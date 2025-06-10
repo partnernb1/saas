@@ -74,6 +74,24 @@
       });
   });
 
+  document.getElementById('filter').addEventListener('change', (e) => {
+  const category = e.target.value;
+  renderSkeletons();
+
+  const filtered = allData.filter(item => {
+    if (category === 'all') return true;
+    if (!item.Category) return false;
+    return item.Category.toLowerCase().split(',').map(s => s.trim()).includes(category);
+  });
+
+console.log("filtering", category);
+console.log("allData", allData);
+
+    
+  renderCards(filtered);
+});
+
+
   function renderSkeletons() {
     const container = document.getElementById('cards');
     const template = document.getElementById('skeleton');
@@ -114,19 +132,7 @@
     });
   }
 
-  document.getElementById('filter').addEventListener('change', (e) => {
-  const category = e.target.value;
-  renderSkeletons();
 
-  const filtered = allData.filter(row => {
-    if (category === 'all') return true;
-    if (!row.Category) return false;
-    const categories = row.Category.toLowerCase().split(',').map(c => c.trim());
-    return categories.includes(category);
-  });
-
-  renderCards(filtered);
-});
 
 </script>
 
