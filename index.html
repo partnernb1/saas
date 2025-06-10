@@ -115,18 +115,19 @@
   }
 
   document.getElementById('filter').addEventListener('change', (e) => {
-    const category = e.target.value;
-    renderSkeletons();
+  const category = e.target.value;
+  renderSkeletons();
 
-    const filtered = allData.filter(row => {
-      if (category === 'all') return true;
-      const raw = row.Category || '';
-      const categories = raw.toLowerCase().split(',').map(c => c.trim());
-      return categories.includes(category);
-    });
-
-    renderCards(filtered);
+  const filtered = allData.filter(row => {
+    if (category === 'all') return true;
+    if (!row.Category) return false;
+    const categories = row.Category.toLowerCase().split(',').map(c => c.trim());
+    return categories.includes(category);
   });
+
+  renderCards(filtered);
+});
+
 </script>
 
 </body>
