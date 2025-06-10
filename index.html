@@ -60,72 +60,74 @@
   </footer>
 
   <!-- SCRIPT -->
-  <script>
-    const sheetUrl = './data.json';
+<script>
+  const sheetUrl = './data.json';
+  let allData = [];
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderSkeletons();
-      fetch(sheetUrl)
-        .then(res => res.json())
-        .then(data => renderCards(data));
-    });
-
-    function renderSkeletons() {
-      const container = document.getElementById('cards');
-      const template = document.getElementById('skeleton');
-      container.innerHTML = '';
-      for (let i = 0; i < 6; i++) {
-        const clone = template.content.cloneNode(true);
-        container.appendChild(clone);
-      }
-    }
-
-    function renderCards(data) {
-      const container = document.getElementById('cards');
-      container.innerHTML = '';
-      data.forEach(item => {
-        const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
-        const card = document.createElement('div');
-        card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
-        card.innerHTML = `
-          <div class="flex items-center space-x-4 mb-4">
-            <img loading="lazy" src="${logoSrc}" alt="${item.Name} logo" width="48" height="48" class="w-12 h-12 rounded-lg object-cover bg-gray-100 shrink-0" onerror="this.style.display='none'">
-            <div>
-              <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
-              <p class="text-sm text-gray-500">Rating: ${item.Rating || 'N/A'}</p>
-            </div>
-          </div>
-          <div class="space-y-2 text-base">
-            <p><strong>Best for:</strong> ${item.BestFor}</p>
-            <p><strong>Complexity:</strong> <span class="inline-block px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">${item.Complexity}</span></p>
-            <p><strong>Pros:</strong> ${item.Pros}</p>
-            <p><strong>Cons:</strong> ${item.Cons}</p>
-            <p><strong>Scalability:</strong> ${item.Scalability}</p>
-            <p><strong>Training:</strong> ${item.Training}</p>
-            <p><strong>Affiliate:</strong> ${item.Affiliate}</p>
-          </div>
-          <a href="${item.Link}" target="_blank" class="mt-4 inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Visit Website</a>
-        `;
-        container.appendChild(card);
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSkeletons();
+    fetch(sheetUrl)
+      .then(res => res.json())
+      .then(data => {
+        allData = data;
+        renderCards(allData);
       });
+  });
+
+  function renderSkeletons() {
+    const container = document.getElementById('cards');
+    const template = document.getElementById('skeleton');
+    container.innerHTML = '';
+    for (let i = 0; i < 6; i++) {
+      const clone = template.content.cloneNode(true);
+      container.appendChild(clone);
     }
+  }
 
-    document.getElementById('filter').addEventListener('change', (e) => {
-      const category = e.target.value;
-      renderSkeletons();
-
-      fetch(sheetUrl)
-        .then(res => res.json())
-        .then(data => {
-          const filtered = data.filter(row => {
-            if (category === 'all') return true;
-            const raw = row.Category || '';
-            const categories = raw.toLowerCase().split(',').map(c => c.trim());
-            return categories.includes(category);
-          });
-          renderCards(filtered);
-        });
+  function renderCards(data) {
+    const container = document.getElementById('cards');
+    container.innerHTML = '';
+    data.forEach(item => {
+      const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
+      const card = document.createElement('div');
+      card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
+      card.innerHTML = `
+        <div class="flex items-center space-x-4 mb-4">
+          <img loading="lazy" src="${logoSrc}" alt="${item.Name} logo" width="48" height="48" class="w-12 h-12 rounded-lg object-cover bg-gray-100 shrink-0" onerror="this.style.display='none'">
+          <div>
+            <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
+            <p class="text-sm text-gray-500">Rating: ${item.Rating || 'N/A'}</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-base">
+          <p><strong>Best for:</strong> ${item.BestFor}</p>
+          <p><strong>Complexity:</strong> <span class="inline-block px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">${item.Complexity}</span></p>
+          <p><strong>Pros:</strong> ${item.Pros}</p>
+          <p><strong>Cons:</strong> ${item.Cons}</p>
+          <p><strong>Scalability:</strong> ${item.Scalability}</p>
+          <p><strong>Training:</strong> ${item.Training}</p>
+          <p><strong>Affiliate:</strong> ${item.Affiliate}</p>
+        </div>
+        <a href="${item.Link}" target="_blank" class="mt-4 inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Visit Website</a>
+      `;
+      container.appendChild(card);
     });
-  </script>
+  }
+
+  document.getElementById('filter').addEventListener('change', (e) => {
+    const category = e.target.value;
+    renderSkeletons();
+
+    const filtered = allData.filter(row => {
+      if (category === 'all') return true;
+      const raw = row.Category || '';
+      const categories = raw.toLowerCase().split(',').map(c => c.trim());
+      return categories.includes(category);
+    });
+
+    renderCards(filtered);
+  });
+</script>
+
 </body>
 </html>
