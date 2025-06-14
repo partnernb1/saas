@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple SaaS List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- HEADER -->
+  <header class="bg-white shadow p-6 flex justify-between items-center">
+    <h1 class="text-3xl font-bold tracking-tight">🧰 Simple SaaS Picks</h1>
+    <nav class="space-x-6 text-lg">
+      <a href="#" class="text-gray-600 hover:text-black">Home</a>
+      <a href="#" class="text-gray-600 hover:text-black">About</a>
+      <a href="#" class="text-gray-600 hover:text-black">Contact</a>
+    </nav>
+  </header>
+
+  <!-- INTRO TEXT -->
+  <section class="max-w-6xl mx-auto mt-8 text-center">
+    <p class="text-xl text-gray-700">Carefully selected SaaS tools for beginners and growing teams. Easy to start, powerful to scale. Each card includes pros, cons, and a real rating.</p>
+  </section>
+
+  <!-- FILTER TOGGLE + PANEL -->
+  <section class="max-w-6xl mx-auto mt-6 px-4 text-right">
+    <button id="toggleFilters" class="bg-gray-200 px-4 py-2 rounded text-sm hover:bg-gray-300">🔍 Filters</button>
+  </section>
+
+  <section id="filterPanel" class="max-w-6xl mx-auto mt-4 px-4 grid gap-6 grid-cols-2 sm:grid-cols-3 text-sm hidden bg-white p-4 border border-gray-200 rounded-lg shadow">
+    <div>
+      <p class="font-semibold mb-1">Features:</p>
+      <div id="featuresFilter"></div>
+    </div>
+    <div>
+      <p class="font-semibold mb-1">Integrations:</p>
+      <div id="integrationsFilter"></div>
+    </div>
+    <div class="col-span-full text-right">
+      <button id="applyFilters" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Filters</button>
+    </div>
+  </section>
+
+  <!-- MAIN GRID -->
+  <main class="max-w-6xl mx-auto grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-3" id="cards">
+    <template id="skeleton">
+      <div class="animate-pulse bg-white rounded-2xl shadow-md p-6 flex flex-col space-y-4 border border-gray-200">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gray-200 rounded-lg"></div>
+          <div class="flex-1 space-y-2">
+            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+            <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
+        <div class="h-8 bg-gray-200 rounded mt-4"></div>
+      </div>
+    </template>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white shadow p-6 text-center text-sm text-gray-500">
+    &copy; 2025 Simple SaaS Picks. Made with ❤️ and Google Sheets.
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const sheetUrl = './data.json';
+    let allData = [];
+
+    window.addEventListener("load", () => {
+      renderSkeletons();
+
+      fetch(sheetUrl)
+        .then(res => res.json())
+        .then(data => {
+          allData = data;
+          populateFilterOptions(data);
+          renderCards(allData);
+        });
+    });
+
+    document.getElementById('toggleFilters').addEventListener('click', () => {
+      document.getElementById('filterPanel').classList.toggle('hidden');
+    });
+
+    document.getElementById('applyFilters').addEventListener('click', () => {
+      applyFilters();
+      document.getElementById('filterPanel').classList.add('hidden');
+    });
+
+    function populateFilterOptions(data) {
+      const featuresSet = new Set();
+      const integrationsSet = new Set();
+      data.forEach(item => {
+        (item.Features || '').toLowerCase().split(',').forEach(f => featuresSet.add(f.trim()));
+        (item.Integrations || '').toLowerCase().split(',').forEach(i => integrationsSet.add(i.trim()));
+      });
+
+      document.getElementById('featuresFilter').innerHTML = [...featuresSet].map(f =>
+        `<label><input type="checkbox" class="filter-feature" value="${f}"> ${f}</label><br>`).join('');
+      document.getElementById('integrationsFilter').innerHTML = [...integrationsSet].map(i =>
+        `<label><input type="checkbox" class="filter-integration" value="${i}"> ${i}</label><br>`).join('');
+    }
+
+    function renderSkeletons() {
+      const container = document.getElementById('cards');
+      const template = document.getElementById('skeleton');
+      container.innerHTML = '';
+      for (let i = 0; i < 6; i++) {
+        const clone = template?.content?.cloneNode(true);
+        if (clone) container.appendChild(clone);
+      }
+    }
+
+    function renderCards(data) {
+      const container = document.getElementById('cards');
+      container.innerHTML = '';
+      data.forEach(item => {
+        const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
+        const card = document.createElement('div');
+
+        let complexityColor = 'bg-yellow-100 text-yellow-800';
+        if (item.Complexity === 'Easy') complexityColor = 'bg-green-100 text-green-800';
+        if (item.Complexity === 'Moderate') complexityColor = 'bg-yellow-100 text-yellow-800';
+        if (item.Complexity === 'Hard') complexityColor = 'bg-red-100 text-red-800';
+
+        card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
+        card.innerHTML = `
+          <div class="flex items-center space-x-4 mb-2">
+            <img loading="lazy" src="${logoSrc}" alt="${item.Name} logo" width="48" height="48"
+                 class="w-12 h-12 rounded-lg object-cover bg-gray-100 shrink-0" onerror="this.style.display='none'">
+            <div>
+              <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
+              <p class="text-sm text-gray-600">Our Score: ${item.Rating || 'N/A'}</p>
+            </div>
+          </div>
+          ${item.Quote ? `<div class="text-sm italic text-gray-500 bg-gray-100 rounded-lg px-3 py-2 mb-3">“${item.Quote}”</div>` : ''}
+          <div class="space-y-2 text-base">
+            <p><strong>Best for:</strong> ${item.BestFor}</p>
+            <p><strong>Complexity:</strong> <span class="inline-block px-2 py-0.5 rounded ${complexityColor}">${item.Complexity}</span></p>
+            <p><strong>What’s free:</strong> ${item.FreePlan}</p>
+            <p><strong>Paid plan:</strong> ${item.PaidPlan}</p>
+            <p><strong>Integrations:</strong> ${item.Integrations}</p>
+          </div>
+          <div class="flex items-center justify-between mt-4">
+            <a href="${item.Link}" target="_blank"
+               class="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Visit Website</a>
+            <a href="#" class="text-blue-600 text-sm hover:underline">More info</a>
+          </div>`;
+
+        container.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      let filtered = [...allData];
+
+      const selectedFeatures = Array.from(document.querySelectorAll('.filter-feature:checked')).map(cb => cb.value);
+      const selectedIntegrations = Array.from(document.querySelectorAll('.filter-integration:checked')).map(cb => cb.value);
+
+      if (selectedFeatures.length) {
+        filtered = filtered.filter(item => {
+          const features = (item.Features || '').toLowerCase();
+          return selectedFeatures.every(f => features.includes(f));
+        });
+      }
+
+      if (selectedIntegrations.length) {
+        filtered = filtered.filter(item => {
+          const integrations = (item.Integrations || '').toLowerCase();
+          return selectedIntegrations.every(i => integrations.includes(i));
+        });
+      }
+
+      renderCards(filtered);
+    }
+  </script>
+</body>
+</html>
