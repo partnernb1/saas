@@ -23,11 +23,21 @@
   </section>
 
   <!-- FILTER TOGGLE + PANEL -->
-  <section class="max-w-6xl mx-auto mt-6 px-4 text-right">
-    <button id="toggleFilters" class="bg-gray-200 px-4 py-2 rounded text-sm hover:bg-gray-300">🔍 Filters</button>
-  </section>
+  <section class="max-w-6xl mx-auto mt-6 px-4 flex justify-between items-center">
+  <button id="toggleFilters" class="bg-gray-200 px-4 py-2 rounded text-sm hover:bg-gray-300">🔍 Filters</button>
+  <div>
+    <label class="text-sm mr-2 font-medium">Sort by:</label>
+    <select id="sort-select" class="border rounded px-2 py-1 text-sm">
+      <option value="rating-desc">Rating high → low</option>
+      <option value="price-asc">Lowest price</option>
+      <option value="price-desc">Highest price</option>
+    </select>
+  </div>
+</section>
 
-  <section id="filterPanel" class="max-w-6xl mx-auto mt-4 px-4 grid gap-6 grid-cols-2 sm:grid-cols-3 text-sm hidden bg-white p-4 border border-gray-200 rounded-lg shadow">
+
+<section id="filterPanel" class="relative max-w-6xl mx-auto mt-4 px-4 grid gap-6 grid-cols-2 sm:grid-cols-3 text-sm hidden bg-white p-4 border border-gray-200 rounded-lg shadow">
+  <button id="closeFilters" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</button>
     <div>
       <p class="font-semibold mb-1">Features:</p>
       <div id="featuresFilter"></div>
@@ -36,9 +46,11 @@
       <p class="font-semibold mb-1">Integrations:</p>
       <div id="integrationsFilter"></div>
     </div>
-    <div class="col-span-full text-right">
-      <button id="applyFilters" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Filters</button>
-    </div>
+<div class="col-span-full flex justify-between items-center">
+  <button id="resetFilters" class="text-sm text-gray-600 underline hover:text-black">Reset Filters</button>
+  <button id="applyFilters" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Filters</button>
+</div>
+
   </section>
 
   <!-- MAIN GRID -->
@@ -177,8 +189,40 @@
         });
       }
 
-      renderCards(filtered);
+      const sort = document.getElementById('sort-select').value;
+if (sort === 'rating-desc') {
+  filtered.sort((a, b) => (parseFloat(b.Rating) || 0) - (parseFloat(a.Rating) || 0));
+} else if (sort === 'price-asc') {
+  filtered.sort((a, b) => extractPrice(a.PaidPlan) - extractPrice(b.PaidPlan));
+} else if (sort === 'price-desc') {
+  filtered.sort((a, b) => extractPrice(b.PaidPlan) - extractPrice(a.PaidPlan));
+}
+
+renderCards(filtered);
+
     }
+	
+	
+	
+	function extractPrice(plan) {
+  if (!plan) return Infinity;
+  const match = plan.match(/\$?([\d\.]+)/);
+  return match ? parseFloat(match[1]) : Infinity;
+}
+
+document.getElementById('sort-select').addEventListener('change', applyFilters);
+
+document.getElementById('resetFilters').addEventListener('click', () => {
+  document.querySelectorAll('.filter-feature, .filter-integration').forEach(cb => cb.checked = false);
+  document.getElementById('sort-select').value = 'rating-desc';
+  applyFilters();
+});
+
+document.getElementById('closeFilters').addEventListener('click', () => {
+  document.getElementById('filterPanel').classList.add('hidden');
+});
+
+	
   </script>
 </body>
 </html>
