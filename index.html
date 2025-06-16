@@ -23,17 +23,15 @@
   </section>
 
   <!-- FILTER TOGGLE + PANEL -->
-  <section class="max-w-6xl mx-auto mt-6 px-4 flex justify-between items-center">
-  <button id="toggleFilters" class="bg-gray-200 px-4 py-2 rounded text-sm hover:bg-gray-300">🔍 Filters</button>
-  <div>
-    <label class="text-sm mr-2 font-medium">Sort by:</label>
-    <select id="sort-select" class="border rounded px-2 py-1 text-sm">
-      <option value="rating-desc">Rating high → low</option>
-      <option value="price-asc">Lowest price</option>
-      <option value="price-desc">Highest price</option>
-    </select>
-  </div>
+  <section class="max-w-6xl mx-auto mt-6 px-4 flex justify-end gap-3">
+  <button id="toggleFilters" class="border border-gray-300 bg-white px-4 py-2 rounded text-sm hover:bg-gray-100">🔍 Filters</button>
+  <select id="sort-select" class="border border-gray-300 bg-white px-4 py-2 rounded text-sm hover:bg-gray-100">
+    <option value="rating-desc">Sort by: Rating ↓</option>
+    <option value="price-asc">Price: Low → High</option>
+    <option value="price-desc">Price: High → Low</option>
+  </select>
 </section>
+
 
 
 <section id="filterPanel" class="relative max-w-6xl mx-auto mt-4 px-4 grid gap-6 grid-cols-2 sm:grid-cols-3 text-sm hidden bg-white p-4 border border-gray-200 rounded-lg shadow">
