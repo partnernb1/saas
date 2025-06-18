@@ -167,7 +167,7 @@
 </DIV>
 	
 <!-- DETAILS SECTION -->
-<section id="details" class="max-w-6xl mx-auto mt-12 p-6 space-y-6">
+<section id="details">
   <!-- Detailed cards will be injected here -->
 </section>	
 
@@ -347,58 +347,52 @@ document.getElementById('burgerClose').addEventListener('click', () => {
 function renderDetailsSections(data) {
   const section = document.getElementById('details');
   section.innerHTML = '';
-data = data.filter(item => item.Show === "1");
 
   data.forEach(item => {
+    if (item.Show !== '1') return; // пропускаем скрытые
+
     const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
-    const div = document.createElement('div');
-    div.className = 'bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition';
+    const div = document.createElement('article');
+    div.id = `details-${item.Name.toLowerCase().replace(/\s+/g, '-')}`;
+    div.className = 'max-w-3xl mx-auto py-12 px-4 space-y-6 text-gray-800 text-lg leading-relaxed';
 
-
-	div.id = `details-${item.Name.toLowerCase().replace(/\s+/g, '-')}`;
-
-	  
     div.innerHTML = `
-      <div class="flex items-center space-x-4">
-        <img src="${logoSrc}" alt="${item.Name} logo" class="w-12 h-12 rounded-lg object-cover bg-gray-100" onerror="this.style.display='none'">
-        <div>
-          <h2 class="text-2xl font-bold text-blue-800">${item.Name}</h2>
-          <p class="text-sm text-gray-500">Rating: ${item.Rating || 'N/A'}</p>
-        </div>
-      </div>
+      <h2 class="text-3xl font-bold text-blue-800">${item.Name}</h2>
+      <p><strong>Our Score:</strong> ${item.Rating || 'N/A'}</p>
+      <p><strong>Best for:</strong> ${item.BestFor}</p>
+      <p><strong>Complexity:</strong> ${item.Complexity}</p>
 
-      ${item.FullDescription ? `<p class="text-base text-gray-700">${item.FullDescription}</p>` : ''}
+      ${item.FullDescription ? `<p>${item.FullDescription}</p>` : ''}
 
-      <p><strong>Free plan includes:</strong> ${item.FreePlan}</p>
+      <p><strong>Free plan includes:</strong></p>
+      <ul class="list-disc pl-6">
+        ${item.FreePlan.split(',').map(f => `<li>${f.trim()}</li>`).join('')}
+      </ul>
+
       <p><strong>Paid plan:</strong> ${item.PaidPlan}</p>
       <p><strong>Trial:</strong> ${item.TrialInfo || '—'}</p>
-      <p><strong>Storage:</strong> ${item.StorageLimit || '—'}</p>
 
-      <p><strong>Key features:</strong> ${item.Features}</p>
+      <p><strong>Key features:</strong></p>
+      <ul class="list-disc pl-6">
+        ${item.Features.split(',').map(f => `<li>${f.trim()}</li>`).join('')}
+      </ul>
+
       <p><strong>Integrations:</strong> ${item.Integrations}</p>
 
-      ${item.UseCases ? `<p><strong>Use cases:</strong> ${item.UseCases}</p>` : ''}
-      ${item.Limitations ? `<p><strong>Limitations:</strong> ${item.Limitations}</p>` : ''}
-      ${item.SocialProof ? `<blockquote class="text-sm italic text-gray-600 border-l-4 border-blue-300 pl-4">"${item.SocialProof}"</blockquote>` : ''}
-
-
-      <div class="flex gap-4 mt-4">
-  <a href="${item.Link}" target="_blank"
-     class="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
-    Visit ${item.Name}
-  </a>
-
-  <a href="${item.PricingPage || item.Link}" target="_blank"
-     class="inline-block px-4 py-2 rounded-lg border border-gray-300 bg-white text-sm text-gray-700 hover:bg-gray-100">
-    View Plans
-  </a>
-</div>
-
+      <div class="flex gap-4 pt-4">
+        <a href="${item.Link}" target="_blank" class="inline-block px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-base">
+          Visit ${item.Name}
+        </a>
+        ${item.PricingPage ? `<a href="${item.PricingPage}" target="_blank" class="inline-block px-5 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-100 text-base">
+          View Plans
+        </a>` : ''}
+      </div>
     `;
 
     section.appendChild(div);
   });
 }
+
 
 	  
   </script>
