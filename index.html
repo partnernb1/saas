@@ -307,7 +307,7 @@ function renderDetailsSections(data) {
   const section = document.getElementById('details');
   section.innerHTML = '';
 
-  data.forEach(item => {
+  data.forEach((item, index) => {
     if (item.Show !== '1') return; // пропускаем скрытые
 
     const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
