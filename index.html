@@ -257,7 +257,13 @@
           </div>
           <div class="flex items-center justify-between mt-4">
             <a href="${item.Link}" target="_blank"
-               class="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Visit Website</a>
+   class="track-click inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
+   data-id="${item.ID || item.Name.toLowerCase().replace(/\s+/g, '-')}"
+   data-name="${item.Name}"
+   data-type="card-visit">
+   Visit Website
+</a>
+
             <a href="#details-${item.Name.toLowerCase().replace(/\s+/g, '-')}" class="text-blue-600 text-sm hover:underline">More info</a>
 
           </div>`;
@@ -370,12 +376,22 @@ function renderDetailsSections(data) {
       <p><strong>Integrations:</strong> ${item.Integrations}</p>
 
       <div class="flex gap-4 pt-4">
-        <a href="${item.Link}" target="_blank" class="inline-block px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-base">
-          Visit ${item.Name}
-        </a>
-        ${item.PricingPage ? `<a href="${item.PricingPage}" target="_blank" class="inline-block px-5 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-100 text-base">
-          View Plans
-        </a>` : ''}
+        <a href="${item.Link}" target="_blank"
+   class="track-click inline-block px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-base"
+   data-id="${item.ID || item.Name.toLowerCase().replace(/\s+/g, '-')}"
+   data-name="${item.Name}"
+   data-type="details-visit">
+   Visit ${item.Name}
+</a>
+
+        ${item.PricingPage ? `<a href="${item.PricingPage}" target="_blank"
+   class="track-click inline-block px-5 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-100 text-base"
+   data-id="${item.ID || item.Name.toLowerCase().replace(/\s+/g, '-')}"
+   data-name="${item.Name}"
+   data-type="details-plans">
+   View Plans
+</a>
+` : ''}
       </div>
     `;
 
@@ -393,6 +409,33 @@ if (index < data.length - 1) {
 }
 
 
+document.querySelectorAll('.track-click').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const data = {
+      timestamp: new Date().toISOString(),
+      page_url: window.location.href,
+      software_id: btn.dataset.id,
+      software_name: btn.dataset.name,
+      button_type: btn.dataset.type,
+
+      creative_id: getParam('creative_id'),
+      keyword: getParam('keyword'),
+      country: getParam('country'),
+      utm_source: getParam('utm_source'),
+      utm_campaign: getParam('utm_campaign')
+    };
+
+    fetch('https://script.google.com/macros/s/YOUR_WEBHOOK_ID_HERE/exec', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }).catch(err => console.warn('Track error:', err));
+  });
+});
+
+function getParam(key) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(key) || '';
+}
 	  
   </script>
 </body>
