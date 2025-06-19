@@ -409,28 +409,30 @@ if (index < data.length - 1) {
 }
 
 
-document.querySelectorAll('.track-click').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const data = {
-      timestamp: new Date().toISOString(),
-      page_url: window.location.href,
-      software_id: btn.dataset.id,
-      software_name: btn.dataset.name,
-      button_type: btn.dataset.type,
+document.body.addEventListener('click', (e) => {
+  const btn = e.target.closest('.track-click');
+  if (!btn) return;
 
-      creative_id: getParam('creative_id'),
-      keyword: getParam('keyword'),
-      country: getParam('country'),
-      utm_source: getParam('utm_source'),
-      utm_campaign: getParam('utm_campaign')
-    };
+  const data = {
+    timestamp: new Date().toISOString(),
+    page_url: window.location.href,
+    software_id: btn.dataset.id,
+    software_name: btn.dataset.name,
+    button_type: btn.dataset.type,
 
-    fetch('https://script.google.com/macros/s/YOUR_WEBHOOK_ID_HERE/exec', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }).catch(err => console.warn('Track error:', err));
-  });
+    creative_id: getParam('creative_id'),
+    keyword: getParam('keyword'),
+    country: getParam('country'),
+    utm_source: getParam('utm_source'),
+    utm_campaign: getParam('utm_campaign')
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbyDS4MQxJ3HwItMpY9-fOfAzB3ne9GYXVye7ektNMBzEO2rnhtawFaopdEupvcI8fXC/exec', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).catch(err => console.warn('Track error:', err));
 });
+
 
 function getParam(key) {
   const url = new URL(window.location.href);
