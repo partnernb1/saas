@@ -186,7 +186,7 @@
         .then(data => {
           allData = data;
           populateFilterOptions(data);
-          renderCards(allData);
+          applyFilters(); 
 		renderDetailsSections(allData);
         });
 
