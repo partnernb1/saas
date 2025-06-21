@@ -234,7 +234,7 @@
 	    data = data.filter(item => item.Show === "1");
 
       data.forEach(item => {
-        const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./${item.Logo}`;
+        const logoSrc = item.Logo?.startsWith('http') ? item.Logo : `./img/${item.Logo}`;
         const card = document.createElement('div');
 
         let complexityColor = 'bg-yellow-100 text-yellow-800';
@@ -245,7 +245,7 @@
         card.className = "bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-200 hover:shadow-xl transition";
         card.innerHTML = `
           <div class="flex items-center space-x-4 mb-2">
-            <img loading="lazy" src="./img/${logoSrc}" alt="${item.Name} logo" width="48" height="48"
+            <img loading="lazy" src="${logoSrc}" alt="${item.Name} logo" width="48" height="48"
                  class="w-12 h-12 rounded-lg object-cover bg-gray-100 shrink-0" onerror="this.style.display='none'">
             <div>
               <h2 class="text-xl font-bold text-blue-800 leading-tight">${item.Name}</h2>
