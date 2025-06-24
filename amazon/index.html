@@ -23,26 +23,38 @@
   </footer>
 
   <!-- Fullscreen Popup -->
-  <div id="popup" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
-    <div class="max-w-2xl w-full bg-white rounded-2xl overflow-hidden relative">
-      <button id="closePopup" class="absolute top-3 right-3 text-gray-700 hover:text-black text-xl">&times;</button>
-      <img id="popupImage" src="" alt="Product" class="w-full h-80 object-contain bg-gray-100">
-      <div class="p-4">
-        <h2 id="popupTitle" class="text-lg font-semibold text-gray-800"></h2>
-        <div class="mt-2 flex items-center space-x-2">
-          <span id="popupPrice" class="text-xl font-bold text-green-600"></span>
-          <span id="popupOldPrice" class="text-sm line-through text-gray-400"></span>
-          <span id="popupDiscount" class="text-sm bg-red-500 text-white px-2 py-1 rounded ml-2"></span>
-        </div>
-        <div id="popupRating" class="mt-1 text-yellow-500 text-sm"></div>
-        <a id="popupLink" href="#" target="_blank" class="mt-4 inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl overflow-hidden relative w-full max-w-md mx-auto flex flex-col items-center">
+    <button id="closePopup" class="absolute top-3 right-3 text-gray-700 hover:text-black text-2xl">&times;</button>
+    
+    <img id="popupImage" src="" alt="Product" class="w-full max-h-[70vh] object-contain bg-gray-100">
+
+    <div class="p-4 w-full text-center">
+      <span id="popupDiscount" class="text-lg font-bold bg-red-500 text-white px-3 py-1 rounded inline-block mb-2"></span>
+      <h2 id="popupTitle" class="text-sm text-gray-800 mb-2"></h2>
+      
+      <div class="flex justify-center items-center space-x-2 mb-2">
+        <span id="popupPrice" class="text-xl font-bold text-green-600"></span>
+        <span id="popupOldPrice" class="text-sm line-through text-gray-400"></span>
       </div>
-      <div class="flex justify-between p-4 border-t">
-        <button id="prevDeal" class="text-sm text-blue-500 hover:underline">&#8592; Previous</button>
-        <button id="nextDeal" class="text-sm text-blue-500 hover:underline">Next &#8594;</button>
+
+      <div id="popupRating" class="text-yellow-500 text-sm mb-4"></div>
+
+      <div class="flex items-center justify-center space-x-4">
+        <button id="prevDeal" class="border border-gray-400 rounded-lg px-3 py-1 text-sm flex items-center space-x-1">
+          <span class="border-l-4 border-gray-400 h-3 mr-1"></span> Prev
+        </button>
+
+        <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm py-2 px-4 rounded-xl">View on Amazon</a>
+
+        <button id="nextDeal" class="border border-gray-400 rounded-lg px-3 py-1 text-sm flex items-center space-x-1">
+          Next <span class="border-r-4 border-gray-400 h-3 ml-1"></span>
+        </button>
       </div>
     </div>
   </div>
+</div>
+
 
   <script>
     let products = [];
@@ -93,18 +105,19 @@
     const popupRating = document.getElementById('popupRating');
     const popupLink = document.getElementById('popupLink');
 
-    function openPopup(index) {
-      const product = products[index];
-      currentIndex = index;
-      popupImage.src = product.image;
-      popupTitle.textContent = product.title;
-      popupPrice.textContent = `$${product.price}`;
-      popupOldPrice.textContent = `$${product.oldPrice}`;
-      popupDiscount.textContent = `-${product.discount}% OFF`;
-      popupRating.textContent = `⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)`;
-      popupLink.href = product.link;
-      popup.classList.remove('hidden');
-    }
+function openPopup(index) {
+  const product = products[index];
+  currentIndex = index;
+  popupImage.src = product.image;
+  popupTitle.textContent = product.title;
+  popupPrice.textContent = `$${product.price}`;
+  popupOldPrice.textContent = `$${product.oldPrice}`;
+  popupDiscount.textContent = `-${product.discount}% OFF`;
+  popupRating.textContent = `⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)`;
+  popupLink.href = product.link;
+  popup.classList.remove('hidden');
+}
+
 
     document.getElementById('closePopup').addEventListener('click', () => popup.classList.add('hidden'));
     document.getElementById('prevDeal').addEventListener('click', () => openPopup((currentIndex - 1 + products.length) % products.length));
