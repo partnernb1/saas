@@ -49,7 +49,7 @@
     let currentIndex = 0;
 
     window.addEventListener("load", () => {
-      fetch('products.json')
+      fetch('./products.json')
         .then(response => response.json())
         .then(data => {
           products = data;
