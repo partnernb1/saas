@@ -49,7 +49,7 @@
     let currentIndex = 0;
 
     window.addEventListener("load", () => {
-      fetch('/amazon/products.json')
+      fetch('https://vocal-torrone-dae230.netlify.app/amazon/products.json')
         .then(response => response.json())
         .then(data => {
           products = data;
