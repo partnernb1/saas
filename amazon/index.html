@@ -98,8 +98,8 @@
       currentIndex = index;
       popupImage.src = product.image;
       popupTitle.textContent = product.title;
-      popupPrice.textContent = `$${product.price.toFixed(2)}`;
-      popupOldPrice.textContent = `$${product.oldPrice.toFixed(2)}`;
+      popupPrice.textContent = `$${product.price}`;
+      popupOldPrice.textContent = `$${product.oldPrice}`;
       popupDiscount.textContent = `-${product.discount}% OFF`;
       popupRating.textContent = `⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)`;
       popupLink.href = product.link;
