@@ -24,29 +24,32 @@
 <div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col z-50 hidden">
 
   <!-- Top Bar -->
-  <div class="fixed top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-    <div id="popupTitle" class="text-base font-semibold truncate max-w-[75%]"></div>
-    <div id="popupDiscount" class="bg-red-600 text-white text-sm px-3 py-1 rounded font-bold ml-2 flex-shrink-0"></div>
+  <div class="flex items-center px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
+    <!-- Title -->
+    <div id="popupTitle" class="text-base font-semibold truncate max-w-[60%]"></div>
+
+    <!-- Discount -->
+    <div id="popupDiscount" class="bg-red-600 text-white text-sm px-3 py-1 rounded font-bold mx-3 flex-shrink-0 whitespace-nowrap"></div>
+
+    <!-- Close Button Container -->
+    <div id="closePopup" class="flex-shrink-0 ml-auto w-12 h-12 flex items-center justify-center bg-gray-800 border-l border-gray-700 rounded-l-lg cursor-pointer hover:bg-gray-700 transition" role="button" tabindex="0" aria-label="Close popup">
+      <span class="text-white text-3xl select-none">✖</span>
+    </div>
   </div>
 
-  <!-- Close Button -->
-  <button id="closePopup" class="absolute top-1 right-4 text-white text-3xl z-40 bg-gray-900 rounded-full w-9 h-9 flex items-center justify-center hover:bg-gray-700 transition">
-    ✖
-  </button>
-
-  <!-- Image Area -->
-  <div class="flex-grow flex items-center justify-center pt-[56px] pb-[56px] px-4">
-    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-[calc(100vh-112px)] object-contain">
+  <!-- Image Container -->
+  <div class="flex-grow flex items-center justify-center p-4">
+    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
   </div>
 
-  <!-- Bottom Bar -->
-  <div class="fixed bottom-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-    <button id="prevDeal" class="font-semibold">Prev</button>
-    <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-    <button id="nextDeal" class="font-semibold">Next</button>
+  <!-- Bottom Controls -->
+  <div class="flex items-center justify-center space-x-6 bg-gray-900 text-white px-4 py-3">
+    <button id="prevDeal" class="bg-gray-800 hover:bg-gray-700 rounded-lg px-6 py-2 text-lg font-semibold">Prev</button>
+    <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-xl text-base font-semibold">View on Amazon</a>
+    <button id="nextDeal" class="bg-gray-800 hover:bg-gray-700 rounded-lg px-6 py-2 text-lg font-semibold">Next</button>
   </div>
-
 </div>
+
 
 
 
