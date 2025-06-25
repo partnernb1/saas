@@ -21,24 +21,31 @@
 </footer>
 
 <!-- Fullscreen Popup -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50 hidden">
-  
-  <!-- Discount Badge -->
-  <div id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded z-20"></div>
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50 hidden p-4">
   
   <!-- Image -->
-  <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
-
-  <!-- Bottom Controls -->
-  <div class="absolute bottom-8 flex items-center space-x-4">
-    <button id="prevDeal" class="text-white text-4xl">⭠</button>
-    <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-    <button id="nextDeal" class="text-white text-4xl">⭢</button>
+  <div class="flex flex-col items-center max-w-full max-h-full w-full">
+    
+    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-[80vh] object-contain mb-4">
+    
+    <!-- Title -->
+    <h2 id="popupTitle" class="text-white text-center text-lg font-semibold mb-2"></h2>
+    
+    <!-- Discount Badge -->
+    <div id="popupDiscount" class="text-red-500 text-lg font-bold mb-2"></div>
+    
+    <!-- Bottom Controls -->
+    <div class="flex items-center space-x-4">
+      <button id="prevDeal" class="text-white text-4xl">⭠</button>
+      <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
+      <button id="nextDeal" class="text-white text-4xl">⭢</button>
+    </div>
   </div>
 
   <!-- Close Button -->
   <button id="closePopup" class="absolute top-4 right-4 text-white text-4xl">✖</button>
 </div>
+
 
 <script>
 let products = [];
@@ -114,6 +121,7 @@ function renderProducts(products) {
 
 const popup = document.getElementById('popup');
 const popupImage = document.getElementById('popupImage');
+const popupTitle = document.getElementById('popupTitle');
 const popupDiscount = document.getElementById('popupDiscount');
 const popupLink = document.getElementById('popupLink');
 
@@ -121,10 +129,12 @@ function openPopup(index) {
   const product = products[index];
   currentIndex = index;
   popupImage.src = `https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=1000`;
+  popupTitle.textContent = product.title;
   popupDiscount.textContent = `-${product.discount}% OFF`;
   popupLink.href = product.link;
   popup.classList.remove('hidden');
 }
+
 
 document.getElementById('closePopup').addEventListener('click', () => popup.classList.add('hidden'));
 document.getElementById('prevDeal').addEventListener('click', () => openPopup((currentIndex - 1 + products.length) % products.length));
