@@ -62,45 +62,43 @@ window.addEventListener("load", () => {
 function renderProducts(products) {
   const grid = document.getElementById('productsGrid');
 
-  products.forEach((product, index) => {
-    const card = document.createElement('div');
-    card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group";
+products.forEach((product, index) => {
+  const card = document.createElement('div');
+  card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group";
 
-    card.innerHTML = `
-      <div class="relative">
-        <div class="w-full h-48 bg-gray-200 animate-pulse"></div>
-        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded text-sm">-${product.discount}% OFF</span>
+  card.innerHTML = `
+    <div class="relative">
+      <div class="w-full h-48 bg-gray-200 animate-pulse"></div>
+      <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded text-sm">-${product.discount}% OFF</span>
+    </div>
+    <div class="p-4">
+      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800">${product.title}</h2>
+      <div class="mt-2 flex items-center space-x-2">
+        <span class="text-lg font-bold text-green-600">$${product.price}</span>
+        <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
       </div>
-      <div class="p-4">
-        <h2 class="text-sm font-semibold line-clamp-2 text-gray-800">${product.title}</h2>
-        <div class="mt-2 flex items-center space-x-2">
-          <span class="text-lg font-bold text-green-600">$${product.price}</span>
-          <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
-        </div>
-        <div class="mt-1 text-yellow-500 text-sm">⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)</div>
-        <a href="${product.link}" target="_blank" class="mt-3 inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-      </div>
-    `;
+      <div class="mt-1 text-yellow-500 text-sm">⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)</div>
+      <a href="${product.link}" target="_blank" class="mt-3 inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
+    </div>
+  `;
 
-    grid.appendChild(card);
+  grid.appendChild(card);
 
-    // Формируем базовый URL картинки
-    const baseImageUrl = `https://cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}`;
+  // Просто добавляем картинку без замены скелетона
+  const img = new Image();
+  img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=400`;
+  img.alt = "Product";
+  img.className = "w-full h-48 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105";
+  img.loading = "lazy";
 
-    const img = new Image();
-    img.src = `https://images.weserv.nl/?url=${encodeURIComponent(baseImageUrl)}&w=400`;
-    img.alt = "Product";
-    img.className = "w-full h-48 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105 opacity-0";
-    img.loading = "lazy";
+  // Вставим картинку **в начало** блока .relative (где скелетон)
+  const container = card.querySelector('.relative');
+  container.insertBefore(img, container.firstChild);
 
-    img.addEventListener('load', () => {
-      const skeleton = card.querySelector('.relative > div');
-      skeleton.replaceWith(img);
-      setTimeout(() => img.classList.remove('opacity-0'), 50);
-    });
+  // Добавим событие клика
+  img.addEventListener('click', () => openPopup(index));
+});
 
-    img.addEventListener('click', () => openPopup(index));
-  });
 }
 
 const popup = document.getElementById('popup');
