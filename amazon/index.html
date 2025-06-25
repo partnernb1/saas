@@ -21,29 +21,31 @@
 </footer>
 
 <!-- Fullscreen Popup -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-between z-50 hidden">
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col z-50 hidden">
 
   <!-- Top Bar -->
-  <div class="flex items-center justify-between px-4 py-3 bg-gray-900 text-white">
+  <div class="fixed top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30">
     <div id="popupTitle" class="text-base font-semibold truncate max-w-[70%]"></div>
     <div id="popupDiscount" class="bg-red-500 text-white text-sm px-3 py-1 rounded font-bold ml-2"></div>
   </div>
 
+  <!-- Close Button -->
+  <button id="closePopup" class="fixed top-2 right-4 text-white text-3xl z-40">✖</button>
+
   <!-- Image Area -->
-  <div class="flex-1 flex items-center justify-center bg-black">
+  <div class="flex-grow flex items-center justify-center pt-12 pb-16">
     <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
   </div>
 
   <!-- Bottom Bar -->
-  <div class="flex items-center justify-between px-4 py-3 bg-gray-900 text-white">
+  <div class="fixed bottom-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30">
     <button id="prevDeal" class="font-semibold">Prev</button>
     <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
     <button id="nextDeal" class="font-semibold">Next</button>
   </div>
 
-  <!-- Close Button -->
-  <button id="closePopup" class="absolute top-3 right-4 text-white text-3xl">✖</button>
 </div>
+
 
 
 
