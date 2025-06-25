@@ -85,7 +85,7 @@ function renderProducts(products) {
     grid.appendChild(card);
 
     const img = new Image();
-    img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/ТВОЙ_ЮЗЕР/ТВОЙ_РЕПО/amazon/images/${product.image}&w=400`;
+    img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=400`;
     img.alt = "Product";
     img.className = "w-full h-48 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105 opacity-0";
     img.loading = "lazy";
@@ -112,7 +112,7 @@ const popupLink = document.getElementById('popupLink');
 function openPopup(index) {
   const product = products[index];
   currentIndex = index;
-  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/ТВОЙ_ЮЗЕР/ТВОЙ_РЕПО/amazon/images/${product.image}&w=1000`;
+  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=1000`;
   popupTitle.textContent = product.title;
   popupPrice.textContent = `$${product.price}`;
   popupOldPrice.textContent = `$${product.oldPrice}`;
