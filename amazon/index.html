@@ -57,42 +57,63 @@ window.addEventListener("load", () => {
 
 function renderProducts(products) {
   const grid = document.getElementById('productsGrid');
+  grid.innerHTML = '';
 
   products.forEach((product, index) => {
     const card = document.createElement('div');
-    card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group";
+    card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col";
 
-    card.innerHTML = `
-      <div class="relative aspect-square">
-        <div class="absolute inset-0 bg-gray-200 animate-pulse skeleton"></div>
-        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-${product.discount}% OFF</span>
-      </div>
-      <div class="p-3">
-        <h2 class="text-sm font-semibold line-clamp-2 text-gray-800">${product.title}</h2>
-        <div class="mt-2 flex items-center space-x-2">
-          <span class="text-lg font-bold text-green-600">$${product.price}</span>
-          <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
-        </div>
-      </div>
-    `;
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = "relative w-full aspect-square bg-gray-200 flex items-center justify-center";
 
-    grid.appendChild(card);
+    const skeleton = document.createElement('div');
+    skeleton.className = "w-16 h-16 bg-gray-300 animate-pulse rounded";
+
+    imageWrapper.appendChild(skeleton);
 
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=400`;
     img.alt = "Product";
-    img.className = "absolute inset-0 w-full h-full object-contain cursor-pointer opacity-0 transition-opacity duration-300";
+    img.className = "absolute inset-0 w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105";
     img.loading = "lazy";
 
     img.addEventListener('load', () => {
-      const skeleton = card.querySelector('.skeleton');
-      skeleton.replaceWith(img);
-      setTimeout(() => img.classList.remove('opacity-0'), 50);
+      imageWrapper.innerHTML = '';
+      imageWrapper.appendChild(img);
+
+      const discountBadge = document.createElement('span');
+      discountBadge.className = "absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded";
+      discountBadge.textContent = `-${product.discount}% OFF`;
+      imageWrapper.appendChild(discountBadge);
     });
 
     img.addEventListener('click', () => openPopup(index));
+
+    const content = document.createElement('div');
+    content.className = "p-4 flex flex-col flex-grow";
+
+    content.innerHTML = `
+      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2">${product.title}</h2>
+      <div class="flex items-center space-x-2 mb-1">
+        <span class="text-lg font-bold text-green-600">$${product.price}</span>
+        <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
+      </div>
+      <div class="text-yellow-500 text-sm mb-3">⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)</div>
+    `;
+
+    const link = document.createElement('a');
+    link.href = product.link;
+    link.target = "_blank";
+    link.className = "mt-auto w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold";
+    link.textContent = "View on Amazon";
+
+    content.appendChild(link);
+    card.appendChild(imageWrapper);
+    card.appendChild(content);
+    grid.appendChild(card);
   });
 }
+
 
 const popup = document.getElementById('popup');
 const popupImage = document.getElementById('popupImage');
