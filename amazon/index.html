@@ -24,22 +24,38 @@
 </footer>
 
 <!-- Popup Overlay -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50 hidden p-4">
-  <button id="closePopup" class="absolute top-4 right-4 text-white text-3xl">✖</button>
-  <div class="relative w-full h-full flex justify-center items-center">
-    <button id="prevDeal" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl">‹</button>
-    <img id="popupImage" src="" alt="Product" class="max-w-[90vw] max-h-[90vh] object-contain">
-    <button id="nextDeal" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl">›</button>
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50 hidden">
+  
+  <div class="relative w-full h-full flex flex-col justify-center items-center p-4">
+    
+    <!-- Discount badge -->
+    <span id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-base px-3 py-1 rounded z-10"></span>
+    
+    <!-- Close button -->
+    <button id="closePopup" class="absolute top-4 right-4 text-white text-3xl z-10">✖</button>
+    
+    <!-- Image -->
+    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
+    
+    <!-- Bottom controls -->
+    <div class="mt-4 flex items-center justify-center space-x-4">
+      <button id="prevDeal" class="border border-white text-white text-lg px-4 py-2 rounded-full">◀</button>
+      <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
+      <button id="nextDeal" class="border border-white text-white text-lg px-4 py-2 rounded-full">▶</button>
+    </div>
+
+    <!-- Title, price, rating -->
+    <div class="text-white text-center mt-4">
+      <h2 id="popupTitle" class="text-base font-semibold mb-2"></h2>
+      <div id="popupPrice" class="text-xl font-bold text-green-400"></div>
+      <div id="popupOldPrice" class="text-sm line-through text-gray-300"></div>
+      <div id="popupRating" class="text-yellow-400 text-sm mt-2"></div>
+    </div>
+
   </div>
-  <div class="text-white text-center mt-4">
-    <div id="popupDiscount" class="text-2xl bg-red-500 px-4 py-1 rounded mb-2 inline-block"></div>
-    <h2 id="popupTitle" class="text-base font-medium mb-2"></h2>
-    <div class="text-xl font-bold text-green-400" id="popupPrice"></div>
-    <div class="text-sm line-through text-gray-300" id="popupOldPrice"></div>
-    <div id="popupRating" class="text-yellow-400 text-sm mt-2"></div>
-    <a id="popupLink" href="#" target="_blank" class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-  </div>
+
 </div>
+
 
 <script>
 let products = [];
@@ -61,9 +77,12 @@ function renderProducts(products) {
     const card = document.createElement('div');
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group";
 
-    const skeleton = document.createElement('div');
-    skeleton.className = "relative aspect-square bg-gray-200 animate-pulse";
-    card.appendChild(skeleton);
+const skeleton = card.querySelector('.skeleton');
+if (skeleton) {
+  skeleton.parentNode.replaceChild(img, skeleton);
+}
+setTimeout(() => img.classList.remove('opacity-0'), 50);
+
 
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=400`;
