@@ -23,23 +23,34 @@
 <!-- Fullscreen Popup -->
 <div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col z-50 hidden">
 
-  <!-- Top Bar -->
-  <div class="fixed top-0 left-0 right-0 flex items-center px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-    <!-- Title (примерно 65% ширины) -->
-    <div id="popupTitle" class="text-base font-semibold truncate max-w-[65%]">
-      <!-- динамически ставится название -->
-    </div>
+<!-- Top Bar -->
+<div class="fixed top-0 left-0 right-0 flex items-center px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
 
-    <!-- Discount (примерно 25% ширины, с отступом слева) -->
-    <div id="popupDiscount" class="bg-red-600 text-white text-sm px-3 py-1 rounded font-bold ml-3 flex-shrink-0 whitespace-nowrap text-right max-w-[25%]">
+  <!-- Название фиксированной ширины -->
+  <div id="popupTitle" class="text-base font-semibold truncate" style="flex: 0 0 65%;">
+    <!-- динамически ставится название -->
+  </div>
+
+  <!-- Контейнер скидки и крестика -->
+  <div class="flex items-center ml-auto space-x-1" style="flex: 0 0 auto;">
+
+    <!-- Скидка с красной рамкой -->
+    <div id="popupDiscount" class="text-sm font-bold text-red-600 px-3 py-1 rounded border border-red-600 whitespace-nowrap select-none"
+      style="line-height: 1; user-select: none;">
       <!-- динамически ставится скидка -->
     </div>
 
-    <!-- Close Button Container -->
-    <button id="closePopup" class="flex-shrink-0 w-10 h-10 ml-auto bg-gray-800 border-l border-gray-700 rounded-l-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl">
+    <!-- Кнопка закрытия -->
+    <button id="closePopup" 
+      class="w-10 h-10 bg-gray-800 border border-gray-700 rounded-l-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl"
+      style="border-left: none;">
       ✖
     </button>
+
   </div>
+
+</div>
+
 
   <!-- Image Area -->
   <div class="flex-grow flex items-center justify-center pt-[56px] pb-[56px] px-4">
