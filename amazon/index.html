@@ -3,59 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Top Deals - Save Big Today</title>
+  <title>Amazon Top Deals</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
 
 <header class="bg-white shadow p-4">
-  <h1 class="text-3xl font-bold text-center text-gray-800">🔥 Amazon Top Deals — Save Big Today</h1>
-  <p class="mt-2 text-center text-gray-600">Handpicked discounts on trending products. Shop smart, save more!</p>
+  <h1 class="text-3xl font-bold text-center text-gray-800">🔥 Amazon Top Deals</h1>
 </header>
 
 <main class="max-w-7xl mx-auto p-4">
-  <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- Product cards will be injected here -->
-  </div>
+  <div id="productsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
 </main>
 
 <footer class="mt-12 p-4 text-center text-gray-500 text-sm">
-  © 2025 Amazon Top Deals. Not affiliated with Amazon.com.
+  © 2025 Amazon Top Deals. Not affiliated with Amazon.
 </footer>
 
-<!-- Popup Overlay -->
+<!-- Fullscreen Popup -->
 <div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50 hidden">
-  
-  <div class="relative w-full h-full flex flex-col justify-center items-center p-4">
-    
-    <!-- Discount badge -->
-    <span id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-base px-3 py-1 rounded z-10"></span>
-    
-    <!-- Close button -->
-    <button id="closePopup" class="absolute top-4 right-4 text-white text-3xl z-10">✖</button>
-    
+  <div class="relative w-full h-full flex flex-col justify-center items-center">
+
+    <!-- Discount Badge -->
+    <div id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded z-20"></div>
+
     <!-- Image -->
     <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
-    
-    <!-- Bottom controls -->
-    <div class="mt-4 flex items-center justify-center space-x-4">
-      <button id="prevDeal" class="border border-white text-white text-lg px-4 py-2 rounded-full">◀</button>
+
+    <!-- Bottom Controls -->
+    <div class="absolute bottom-8 flex items-center space-x-4">
+      <button id="prevDeal" class="text-white text-3xl">⭠</button>
       <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-      <button id="nextDeal" class="border border-white text-white text-lg px-4 py-2 rounded-full">▶</button>
+      <button id="nextDeal" class="text-white text-3xl">⭢</button>
     </div>
 
-    <!-- Title, price, rating -->
-    <div class="text-white text-center mt-4">
-      <h2 id="popupTitle" class="text-base font-semibold mb-2"></h2>
-      <div id="popupPrice" class="text-xl font-bold text-green-400"></div>
-      <div id="popupOldPrice" class="text-sm line-through text-gray-300"></div>
-      <div id="popupRating" class="text-yellow-400 text-sm mt-2"></div>
-    </div>
-
+    <!-- Close Button -->
+    <button id="closePopup" class="absolute top-4 right-4 text-white text-4xl">✖</button>
   </div>
-
 </div>
-
 
 <script>
 let products = [];
@@ -77,62 +62,48 @@ function renderProducts(products) {
     const card = document.createElement('div');
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group";
 
-const skeleton = card.querySelector('.skeleton');
-if (skeleton) {
-  skeleton.parentNode.replaceChild(img, skeleton);
-}
-setTimeout(() => img.classList.remove('opacity-0'), 50);
+    card.innerHTML = `
+      <div class="relative aspect-square">
+        <div class="absolute inset-0 bg-gray-200 animate-pulse skeleton"></div>
+        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-${product.discount}% OFF</span>
+      </div>
+      <div class="p-3">
+        <h2 class="text-sm font-semibold line-clamp-2 text-gray-800">${product.title}</h2>
+        <div class="mt-2 flex items-center space-x-2">
+          <span class="text-lg font-bold text-green-600">$${product.price}</span>
+          <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
+        </div>
+      </div>
+    `;
 
+    grid.appendChild(card);
 
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=400`;
     img.alt = "Product";
-    img.className = "absolute inset-0 w-full h-full object-contain bg-white cursor-pointer transition-transform duration-300 group-hover:scale-105 opacity-0";
+    img.className = "absolute inset-0 w-full h-full object-contain cursor-pointer opacity-0 transition-opacity duration-300";
     img.loading = "lazy";
 
     img.addEventListener('load', () => {
-      skeleton.appendChild(img);
+      const skeleton = card.querySelector('.skeleton');
+      skeleton.replaceWith(img);
       setTimeout(() => img.classList.remove('opacity-0'), 50);
     });
 
     img.addEventListener('click', () => openPopup(index));
-
-    const infoBlock = document.createElement('div');
-    infoBlock.className = "p-4";
-    infoBlock.innerHTML = `
-      <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-${product.discount}% OFF</span>
-      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mt-2">${product.title}</h2>
-      <div class="mt-2 flex items-center space-x-2">
-        <span class="text-lg font-bold text-green-600">$${product.price}</span>
-        <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
-      </div>
-      <div class="mt-1 text-yellow-500 text-sm">⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)</div>
-      <a href="${product.link}" target="_blank" class="mt-3 inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-    `;
-
-    card.appendChild(infoBlock);
-    grid.appendChild(card);
   });
 }
 
 const popup = document.getElementById('popup');
 const popupImage = document.getElementById('popupImage');
-const popupTitle = document.getElementById('popupTitle');
-const popupPrice = document.getElementById('popupPrice');
-const popupOldPrice = document.getElementById('popupOldPrice');
 const popupDiscount = document.getElementById('popupDiscount');
-const popupRating = document.getElementById('popupRating');
 const popupLink = document.getElementById('popupLink');
 
 function openPopup(index) {
   const product = products[index];
   currentIndex = index;
   popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=1000`;
-  popupTitle.textContent = product.title;
-  popupPrice.textContent = `$${product.price}`;
-  popupOldPrice.textContent = `$${product.oldPrice}`;
   popupDiscount.textContent = `-${product.discount}% OFF`;
-  popupRating.textContent = `⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)`;
   popupLink.href = product.link;
   popup.classList.remove('hidden');
 }
