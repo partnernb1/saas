@@ -22,24 +22,22 @@
 
 <!-- Fullscreen Popup -->
 <div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50 hidden">
-  <div class="relative w-full h-full flex flex-col justify-center items-center">
+  
+  <!-- Discount Badge -->
+  <div id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded z-20"></div>
+  
+  <!-- Image -->
+  <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
 
-    <!-- Discount Badge -->
-    <div id="popupDiscount" class="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded z-20"></div>
-
-    <!-- Image -->
-    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-full object-contain">
-
-    <!-- Bottom Controls -->
-    <div class="absolute bottom-8 flex items-center space-x-4">
-      <button id="prevDeal" class="text-white text-3xl">⭠</button>
-      <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-      <button id="nextDeal" class="text-white text-3xl">⭢</button>
-    </div>
-
-    <!-- Close Button -->
-    <button id="closePopup" class="absolute top-4 right-4 text-white text-4xl">✖</button>
+  <!-- Bottom Controls -->
+  <div class="absolute bottom-8 flex items-center space-x-4">
+    <button id="prevDeal" class="text-white text-4xl">⭠</button>
+    <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
+    <button id="nextDeal" class="text-white text-4xl">⭢</button>
   </div>
+
+  <!-- Close Button -->
+  <button id="closePopup" class="absolute top-4 right-4 text-white text-4xl">✖</button>
 </div>
 
 <script>
@@ -68,7 +66,6 @@ function renderProducts(products) {
 
     const skeleton = document.createElement('div');
     skeleton.className = "w-16 h-16 bg-gray-300 animate-pulse rounded";
-
     imageWrapper.appendChild(skeleton);
 
     const img = new Image();
@@ -78,16 +75,17 @@ function renderProducts(products) {
     img.loading = "lazy";
 
     img.addEventListener('load', () => {
-      imageWrapper.innerHTML = '';
-      imageWrapper.appendChild(img);
-
-      const discountBadge = document.createElement('span');
-      discountBadge.className = "absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded";
-      discountBadge.textContent = `-${product.discount}% OFF`;
-      imageWrapper.appendChild(discountBadge);
+      skeleton.remove();
     });
 
     img.addEventListener('click', () => openPopup(index));
+
+    imageWrapper.appendChild(img);
+
+    const discountBadge = document.createElement('span');
+    discountBadge.className = "absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded";
+    discountBadge.textContent = `-${product.discount}% OFF`;
+    imageWrapper.appendChild(discountBadge);
 
     const content = document.createElement('div');
     content.className = "p-4 flex flex-col flex-grow";
@@ -113,7 +111,6 @@ function renderProducts(products) {
     grid.appendChild(card);
   });
 }
-
 
 const popup = document.getElementById('popup');
 const popupImage = document.getElementById('popupImage');
