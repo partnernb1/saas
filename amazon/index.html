@@ -32,17 +32,17 @@
   </div>
 
   <!-- Контейнер скидки и крестика -->
-  <div class="flex items-center ml-auto space-x-1" style="flex: 0 0 auto;">
+  <div class="flex items-center ml-auto" style="flex: 0 0 auto;">
 
-    <!-- Скидка с красной рамкой -->
-    <div id="popupDiscount" class="text-sm font-bold text-red-600 px-3 py-1 rounded border border-red-600 whitespace-nowrap select-none"
-      style="line-height: 1; user-select: none;">
+    <!-- Скидка с красным фоном и белым текстом -->
+    <div id="popupDiscount" class="text-sm font-bold text-white bg-red-600 px-4 py-2 rounded-l-lg flex items-center justify-center select-none"
+      style="height: 40px; min-width: 80px; line-height: 1;">
       <!-- динамически ставится скидка -->
     </div>
 
     <!-- Кнопка закрытия -->
     <button id="closePopup" 
-      class="w-10 h-10 bg-gray-800 border border-gray-700 rounded-l-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl"
+      class="w-10 h-10 bg-gray-800 border border-gray-700 rounded-r-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl"
       style="border-left: none;">
       ✖
     </button>
@@ -50,6 +50,7 @@
   </div>
 
 </div>
+
 
 
   <!-- Image Area -->
