@@ -24,15 +24,22 @@
 <div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col z-50 hidden">
 
   <!-- Top Bar -->
-  <div class="fixed top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-    <div id="popupTitle" class="text-base font-semibold truncate max-w-[75%]"></div>
-    <div id="popupDiscount" class="bg-red-600 text-white text-sm px-3 py-1 rounded font-bold ml-2 flex-shrink-0"></div>
-  </div>
+  <div class="fixed top-0 left-0 right-0 flex items-center px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
+    <!-- Title (примерно 65% ширины) -->
+    <div id="popupTitle" class="text-base font-semibold truncate max-w-[65%]">
+      <!-- динамически ставится название -->
+    </div>
 
-  <!-- Close Button -->
-  <button id="closePopup" class="absolute top-1 right-4 text-white text-3xl z-40 bg-gray-900 rounded-full w-9 h-9 flex items-center justify-center hover:bg-gray-700 transition">
-    ✖
-  </button>
+    <!-- Discount (примерно 25% ширины, с отступом слева) -->
+    <div id="popupDiscount" class="bg-red-600 text-white text-sm px-3 py-1 rounded font-bold ml-3 flex-shrink-0 whitespace-nowrap text-right max-w-[25%]">
+      <!-- динамически ставится скидка -->
+    </div>
+
+    <!-- Close Button Container -->
+    <button id="closePopup" class="flex-shrink-0 w-10 h-10 ml-auto bg-gray-800 border-l border-gray-700 rounded-l-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl">
+      ✖
+    </button>
+  </div>
 
   <!-- Image Area -->
   <div class="flex-grow flex items-center justify-center pt-[56px] pb-[56px] px-4">
@@ -47,7 +54,6 @@
   </div>
 
 </div>
-
 
 
 
