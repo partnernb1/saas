@@ -148,18 +148,50 @@ const popupTitle = document.getElementById('popupTitle');
 const popupDiscount = document.getElementById('popupDiscount');
 const popupLink = document.getElementById('popupLink');
 
+let popupOpened = false;
+
 function openPopup(index) {
   const product = products[index];
   currentIndex = index;
-  popupImage.src = `https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=1000`;
+
+  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.image}&w=1000`;
   popupTitle.textContent = product.title;
-  popupDiscount.textContent = `-${product.discount}% OFF`;
+  popupDiscount.textContent = `-${product.discount}%`;
   popupLink.href = product.link;
+
   popup.classList.remove('hidden');
+  document.body.classList.add('noscroll');
+
+  if (!popupOpened) {
+    history.pushState({ popup: true }, '');
+    popupOpened = true;
+  }
 }
 
+function closePopup() {
+  popup.classList.add('hidden');
+  document.body.classList.remove('noscroll');
 
-document.getElementById('closePopup').addEventListener('click', () => popup.classList.add('hidden'));
+  if (popupOpened) {
+    history.back(); // вернёт на предыдущую запись
+    popupOpened = false;
+  }
+}
+
+// Перехват кнопки "Назад"
+window.addEventListener('popstate', (event) => {
+  if (popupOpened) {
+    popup.classList.add('hidden');
+    document.body.classList.remove('noscroll');
+    popupOpened = false;
+  }
+});
+
+document.getElementById('closePopup').addEventListener('click', closePopup);
+
+
+
+//document.getElementById('closePopup').addEventListener('click', () => popup.classList.add('hidden'));
 document.getElementById('prevDeal').addEventListener('click', () => openPopup((currentIndex - 1 + products.length) % products.length));
 document.getElementById('nextDeal').addEventListener('click', () => openPopup((currentIndex + 1) % products.length));
 </script>
