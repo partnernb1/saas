@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amazon Top Deals</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+.noscroll {
+  overflow: hidden;
+  height: 100vh;
+}
+</style>
 </head>
 <body class="bg-gray-50 min-h-screen">
 
@@ -194,6 +200,36 @@ document.getElementById('closePopup').addEventListener('click', closePopup);
 //document.getElementById('closePopup').addEventListener('click', () => popup.classList.add('hidden'));
 document.getElementById('prevDeal').addEventListener('click', () => openPopup((currentIndex - 1 + products.length) % products.length));
 document.getElementById('nextDeal').addEventListener('click', () => openPopup((currentIndex + 1) % products.length));
+
+
+// Свайп для попапа
+let touchStartX = 0;
+let touchEndX = 0;
+
+popup.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+popup.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const deltaX = touchEndX - touchStartX;
+
+  if (Math.abs(deltaX) > 50) { // Порог в 50px для предотвращения ложных срабатываний
+    if (deltaX < 0) {
+      // Свайп влево — следующий товар
+      openPopup((currentIndex + 1) % products.length);
+    } else {
+      // Свайп вправо — предыдущий товар
+      openPopup((currentIndex - 1 + products.length) % products.length);
+    }
+  }
+}
+
+  
 </script>
 
 </body>
