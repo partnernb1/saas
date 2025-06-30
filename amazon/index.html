@@ -14,28 +14,36 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
 
-<header class="relative bg-red-600 text-white py-6 overflow-hidden flex items-center justify-center px-4">
-  
-  <!-- Заголовок -->
-  <h2 class="text-xl md:text-xl font-bold text-center relative z-10 flex-1">Today's Deals 🏷️</h2>
+<header class="relative bg-red-600 text-white py-4 shadow-md">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4">
 
-  <!-- Справа кнопки -->
-  <div class="flex items-center space-x-4 relative z-10">
-    
-    <!-- Кнопка поиска -->
-    <button id="searchBtn" class="p-2 rounded hover:bg-red-500 transition">
-      🔍
-    </button>
+    <!-- Лого или заголовок -->
+    <h2 class="text-2xl md:text-2xl font-bold flex items-center space-x-2">
+      <span>Today's Deals</span>
+      <span class="text-yellow-300 text-xl">🏷️</span>
+    </h2>
 
-    <!-- Бургер-меню -->
-    <a href="#" id="menuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1 group">
-      <span class="w-5 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-      <span class="w-5 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-      <span class="w-5 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-    </a>
+    <!-- Кнопки справа -->
+    <div class="flex items-center space-x-4">
 
+      <!-- Поиск -->
+      <button id="searchBtn" class="p-2 rounded hover:bg-red-500 transition" aria-label="Search">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+        </svg>
+      </button>
+
+      <!-- Бургер-меню -->
+      <a href="#" id="menuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1 group" aria-label="Menu">
+        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
+        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
+        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
+      </a>
+      
+    </div>
   </div>
 </header>
+
 
   
   
