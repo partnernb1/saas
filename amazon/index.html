@@ -74,6 +74,8 @@
   <!-- Image Area -->
   <div class="flex-grow flex items-center justify-center pt-[56px] pb-[56px] px-4">
     <img id="popupImage" src="" alt="Product" class="max-w-full max-h-[calc(100vh-112px)] object-contain">
+    <div id="popupTitleOverlay" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white px-4 py-2 text-sm leading-snug line-clamp-3 overflow-hidden"></div>
+
   </div>
 
   <!-- Bottom Bar -->
@@ -192,6 +194,10 @@ function openPopup(index, currentArray = products) {
   popupTitle.textContent = product.title;
   popupDiscount.textContent = `-${product.discount}%`;
   popupLink.href = `https://www.amazon.com/dp/${product.id}`;
+  
+  
+  const titleOverlay = document.getElementById('popupTitleOverlay');
+  titleOverlay.textContent = product.fullTitle || product.title;
 
   popup.classList.remove('hidden');
   document.body.classList.add('noscroll');
