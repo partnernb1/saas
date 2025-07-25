@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countertop Ice Machines Today's Deals 🏷️</title>
+  <title>BB Creams Today's Deals 🏷️</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
 .noscroll {
@@ -55,7 +55,7 @@
 
   <!-- Category Title -->
   <h1 class="text-3xl md:text-3xl font-bold text-center mb-6">
-    <span class="border-b-4 border-yellow-400 inline-block pb-1">Countertop Ice Machines</span>
+    <span class="border-b-4 border-yellow-400 inline-block pb-1">BB Creams</span>
   </h1>  
   
 <div class="flex justify-end mb-4">
@@ -211,7 +211,7 @@ function renderProducts(productsToRender) {
     imageWrapper.appendChild(skeleton);
 
     const img = new Image();
-    img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.id}.jpg&w=400`;
+    img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/balm/images/${product.id}.jpg&w=400`;
     img.alt = "Product";
     img.className = "absolute inset-0 w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105";
     img.loading = "lazy";
@@ -268,7 +268,7 @@ function openPopup(index, currentArray = products) {
   currentIndex = index;
   products = currentArray; // сохраняем текущий порядок для свайпа
 
-  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/images/${product.id}.jpg&w=1000`;
+  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/balm/images/${product.id}.jpg&w=1000`;
   popupTitle.textContent = product.title;
   popupDiscount.textContent = `-${product.discount}%`;
   popupLink.href = `https://www.amazon.com/dp/${product.id}`;
