@@ -1,161 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BB Creams Today's Deals 🏷️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Today's Amazon Deals 🏷️</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-.noscroll {
-  overflow: hidden;
-  height: 100vh;
-}
-</style>
+    .noscroll {
+      overflow: hidden;
+      height: 100vh;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
 
-<header class="relative bg-red-600 text-white py-4 shadow-md">
+<header class="bg-red-600 text-white py-4 shadow-md">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4">
-
-    <!-- Лого или заголовок -->
-    <h2 class="text-2xl md:text-2xl font-bold flex items-center space-x-2">
+    <h2 class="text-2xl font-bold flex items-center space-x-2">
       <span>Today's Deals</span>
       <span class="text-yellow-300 text-xl">🏷️</span>
     </h2>
-
-    <!-- Кнопки справа -->
     <div class="flex items-center space-x-4">
-
-      <!-- Поиск -->
       <button id="searchBtn" class="p-2 rounded hover:bg-red-500 transition" aria-label="Search">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
         </svg>
       </button>
-
-      <!-- Бургер-меню -->
-      <a href="#" id="menuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1 group" aria-label="Menu">
-        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-        <span class="w-6 h-0.5 bg-white group-hover:bg-gray-300 transition"></span>
-      </a>
-      
     </div>
   </div>
 </header>
 
-
-  
-  
 <main class="max-w-7xl mx-auto p-4">
-
-<!--  
-<h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">Most Popular Ice Maker Deals Today</h1>
--->
-
-  <!-- Category Title -->
-  <h1 class="text-3xl md:text-3xl font-bold text-center mb-6">
-    <span class="border-b-4 border-yellow-400 inline-block pb-1">BB Creams on SALE</span>
+  <h1 class="text-3xl font-bold text-center mb-6">
+    <span class="border-b-4 border-yellow-400 inline-block pb-1">Top Amazon Deals</span>
   </h1>  
-  
-<div class="flex justify-end mb-4">
-  <select id="sortSelect" class="border rounded p-2 text-sm">
-    <option value="popularity">Sort by Popularity</option>
-    <option value="price">Sort by Price</option>
-    <option value="discount">Sort by Discount</option>
-  </select>
-</div>
-  <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<!-- Скелетоны при первой загрузке -->
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-  <div class="bg-white rounded-2xl shadow overflow-hidden p-4 animate-pulse h-[220px]"></div>
-    
+
+  <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- Продукты загружаются тут -->
   </div>
-
-
-
-
-  <!-- Suggested Searches -->
-  <div class="mt-12">
-    <h3 class="text-xl font-bold mb-4">🔥 Today's Top Searches</h3>
-    <div class="flex flex-wrap gap-2">
-      <button class="flex items-center gap-2 bg-white border rounded-full px-4 py-2 shadow hover:bg-yellow-100 transition">
-        🔍 Air Fryers
-      </button>
-      <button class="flex items-center gap-2 bg-white border rounded-full px-4 py-2 shadow hover:bg-yellow-100 transition">
-        🔍 Coffee Machines
-      </button>
-      <button class="flex items-center gap-2 bg-white border rounded-full px-4 py-2 shadow hover:bg-yellow-100 transition">
-        🔍 Portable Blenders
-      </button>
-      <button class="flex items-center gap-2 bg-white border rounded-full px-4 py-2 shadow hover:bg-yellow-100 transition">
-        🔍 Ice Makers
-      </button>
-    </div>
-  </div>  
 </main>
 
 <footer class="mt-12 p-4 text-center text-gray-500 text-sm">
   © 2025 Amazon Top Deals. Not affiliated with Amazon.
 </footer>
 
-<!-- Fullscreen Popup -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-90 flex flex-col z-50 hidden">
-
-<!-- Top Bar -->
-<div class="fixed top-0 left-0 right-0 flex items-center px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-
-  <!-- Название фиксированной ширины -->
-  <div id="popupTitle" class="text-base font-semibold truncate" style="flex: 0 0 65%;">
-    <!-- динамически ставится название -->
-  </div>
-
-  <!-- Контейнер скидки и крестика -->
-  <div class="flex items-center ml-auto" style="flex: 0 0 auto;">
-
-    <!-- Скидка с красным фоном и белым текстом -->
-    <div id="popupDiscount" class="text-sm font-bold text-white bg-red-600 px-4 py-2 rounded-l-lg flex items-center justify-center select-none"
-      style="height: 40px; min-width: 80px; line-height: 1;">
-      <!-- динамически ставится скидка -->
-    </div>
-
-    <!-- Кнопка закрытия -->
-    <button id="closePopup" 
-      class="w-10 h-10 bg-gray-800 border border-gray-700 rounded-r-lg flex items-center justify-center hover:bg-gray-700 transition text-white text-3xl"
-      style="border-left: none;">
-      ✖
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- Image Area -->
-<div class="flex-grow flex items-center justify-center pt-[56px] pb-[56px] px-4">
-  
-  <div class="relative w-full flex items-center justify-center">
-    <img id="popupImage" src="" alt="Product" class="max-w-full max-h-[calc(100vh-112px)] object-contain">
-    <div id="popupTitleOverlay" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white px-4 py-2 text-sm leading-snug line-clamp-3 overflow-hidden"></div>
-  </div>
-
-</div>
-
-
-  <!-- Bottom Bar -->
-  <div class="fixed bottom-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-gray-900 text-white z-30" style="height: 56px;">
-    <button id="prevDeal" class="font-semibold">Prev</button>
-    <a id="popupLink" href="#" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">View on Amazon</a>
-    <button id="nextDeal" class="font-semibold">Next</button>
-  </div>
-
-</div>
-
-<!-- Попап поиска -->
+<!-- Поиск -->
 <div id="searchPopup" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
   <div class="bg-white p-6 rounded-xl shadow max-w-sm w-full">
     <h3 class="text-lg font-bold mb-4 text-gray-800">Search Deals</h3>
@@ -167,60 +56,35 @@
   </div>
 </div>
 
-
-<script  type="text/javascript">
+<script>
 let products = [];
-let currentIndex = 0;
 
 window.addEventListener("load", () => {
   fetch('./products.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       products = data;
-      sortAndRender('popularity');
+      renderProducts(products);
     });
 });
-
-function sortAndRender(criteria) {
-  const sorted = [...products];
-
-  if (criteria === 'popularity') {
-    sorted.sort((a, b) => b.reviews - a.reviews);
-  } else if (criteria === 'price') {
-    sorted.sort((a, b) => a.price - b.price);
-  } else if (criteria === 'discount') {
-    sorted.sort((a, b) => b.discount - a.discount);
-  }
-
-  renderProducts(sorted);
-}
 
 function renderProducts(productsToRender) {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = '';
 
-  productsToRender.forEach((product, index) => {
-    const card = document.createElement('div');
-    card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col";
+  productsToRender.forEach(product => {
+    const card = document.createElement('a');
+    card.href = product.url;
+    card.target = "_blank";
+    card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col transition transform hover:scale-[1.01]";
 
     const imageWrapper = document.createElement('div');
     imageWrapper.className = "relative w-full aspect-square bg-white flex items-center justify-center border-b border-gray-200";
 
-    const skeleton = document.createElement('div');
-    skeleton.className = "w-16 h-16 bg-gray-300 animate-pulse rounded";
-    imageWrapper.appendChild(skeleton);
-
     const img = new Image();
-    img.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/balm/images/${product.id}.jpg&w=400`;
+    img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
     img.alt = "Product";
-    img.className = "absolute inset-0 w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105";
-    img.loading = "lazy";
-
-    img.addEventListener('load', () => {
-      skeleton.remove();
-    });
-
-    img.addEventListener('click', () => openPopup(index, productsToRender));
+    img.className = "w-full h-full object-contain";
 
     imageWrapper.appendChild(img);
 
@@ -229,111 +93,19 @@ function renderProducts(productsToRender) {
 
     content.innerHTML = `
       <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2">${product.title}</h2>
-      <div class="flex items-center space-x-2 mb-1">
-        <span class="text-lg font-bold text-green-600">$${product.price}</span>
-        <span class="text-sm line-through text-gray-400">$${product.oldPrice}</span>
-        <span class="text-base bg-red-500 text-white px-2 py-0.5 rounded ml-auto">-${product.discount}%</span>
+      <div class="flex items-center justify-between">
+        <div class="text-yellow-500 text-sm">⭐ ${product.rating}</div>
+        <div class="text-base bg-red-500 text-white px-2 py-0.5 rounded font-semibold">-${product.discount}%</div>
       </div>
-      <div class="text-yellow-500 text-sm mb-3">⭐ ${product.rating} (${product.reviews.toLocaleString()} reviews)</div>
     `;
 
-    const link = document.createElement('a');
-    link.href = `https://www.amazon.com/dp/${product.id}`;
-    link.target = "_blank";
-    link.className = "mt-auto w-full text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl text-sm font-semibold";
-    link.textContent = "View on Amazon";
-
-    content.appendChild(link);
     card.appendChild(imageWrapper);
     card.appendChild(content);
     grid.appendChild(card);
   });
 }
 
-// Выпадающий список сортировки
-document.getElementById('sortSelect').addEventListener('change', (e) => {
-  sortAndRender(e.target.value);
-});
-
-const popup = document.getElementById('popup');
-const popupImage = document.getElementById('popupImage');
-const popupTitle = document.getElementById('popupTitle');
-const popupDiscount = document.getElementById('popupDiscount');
-const popupLink = document.getElementById('popupLink');
-
-let popupOpened = false;
-
-function openPopup(index, currentArray = products) {
-  const product = currentArray[index];
-  currentIndex = index;
-  products = currentArray; // сохраняем текущий порядок для свайпа
-
-  popupImage.src = `https://images.weserv.nl/?url=cdn.jsdelivr.net/gh/partnernb1/saas/amazon/balm/images/${product.id}.jpg&w=1000`;
-  popupTitle.textContent = product.title;
-  popupDiscount.textContent = `-${product.discount}%`;
-  popupLink.href = `https://www.amazon.com/dp/${product.id}`;
-  
-  
-  const titleOverlay = document.getElementById('popupTitleOverlay');
-  titleOverlay.textContent = product.fullTitle || product.title;
-
-  popup.classList.remove('hidden');
-  document.body.classList.add('noscroll');
-
-  if (!popupOpened) {
-    history.pushState({ popup: true }, '');
-    popupOpened = true;
-  }
-}
-
-function closePopup() {
-  popup.classList.add('hidden');
-  document.body.classList.remove('noscroll');
-
-  if (popupOpened) {
-    history.back();
-    popupOpened = false;
-  }
-}
-
-window.addEventListener('popstate', () => {
-  if (popupOpened) {
-    popup.classList.add('hidden');
-    document.body.classList.remove('noscroll');
-    popupOpened = false;
-  }
-});
-
-document.getElementById('closePopup').addEventListener('click', closePopup);
-
-document.getElementById('prevDeal').addEventListener('click', () => openPopup((currentIndex - 1 + products.length) % products.length, products));
-document.getElementById('nextDeal').addEventListener('click', () => openPopup((currentIndex + 1) % products.length, products));
-
-// Свайп для попапа
-let touchStartY = 0;
-let touchEndY = 0;
-
-popup.addEventListener('touchstart', (e) => {
-  touchStartY = e.changedTouches[0].screenY;
-});
-
-popup.addEventListener('touchend', (e) => {
-  touchEndY = e.changedTouches[0].screenY;
-  handleSwipe();
-});
-
-function handleSwipe() {
-  const deltaY = touchStartY - touchEndY;
-
-  if (Math.abs(deltaY) > 50) {
-    if (deltaY > 0) {
-      openPopup((currentIndex + 1) % products.length, products); 
-    } else {
-      openPopup((currentIndex - 1 + products.length) % products.length, products); 
-    }
-  }
-}
-
+// Поиск (отправка в Telegram)
 document.getElementById('searchBtn').addEventListener('click', () => {
   document.getElementById('searchPopup').classList.remove('hidden');
 });
@@ -364,17 +136,7 @@ function sendToTelegram(message) {
     })
   });
 }
-
-  
 </script>
 
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "s7pkhcthoi");
-</script>
-  
 </body>
 </html>
