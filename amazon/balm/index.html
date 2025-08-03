@@ -79,12 +79,12 @@ function renderProducts(productsToRender) {
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col transition transform hover:scale-[1.01]";
 
     const imageWrapper = document.createElement('div');
-    imageWrapper.className = "relative w-full aspect-square bg-white border-b border-gray-200 overflow-hidden";
+    imageWrapper.className = "relative w-full aspect-square bg-white border-b border-gray-200 flex items-center justify-center";
 
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
     img.alt = "Product";
-    img.className = "absolute inset-0 w-full h-full object-cover";
+    img.className = "max-w-full max-h-full object-contain";
 
     imageWrapper.appendChild(img);
 
@@ -104,6 +104,7 @@ function renderProducts(productsToRender) {
     grid.appendChild(card);
   });
 }
+
 
 
 // Поиск (отправка в Telegram)
