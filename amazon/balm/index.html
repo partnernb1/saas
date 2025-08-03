@@ -79,12 +79,12 @@ function renderProducts(productsToRender) {
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col transition transform hover:scale-[1.01]";
 
     const imageWrapper = document.createElement('div');
-    imageWrapper.className = "relative w-full aspect-square bg-white flex items-center justify-center border-b border-gray-200";
+    imageWrapper.className = "relative w-full aspect-square bg-white border-b border-gray-200 overflow-hidden";
 
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
     img.alt = "Product";
-    img.className = "w-full h-full object-contain";
+    img.className = "absolute inset-0 w-full h-full object-cover";
 
     imageWrapper.appendChild(img);
 
@@ -92,8 +92,8 @@ function renderProducts(productsToRender) {
     content.className = "p-4 flex flex-col flex-grow bg-gray-50";
 
     content.innerHTML = `
-      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2">${product.title}</h2>
-      <div class="flex items-center justify-between">
+      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2 min-h-[2.5em]">${product.title}</h2>
+      <div class="flex items-center justify-between mt-auto">
         <div class="text-yellow-500 text-sm">⭐ ${product.rating}</div>
         <div class="text-base bg-red-500 text-white px-2 py-0.5 rounded font-semibold">-${product.discount}%</div>
       </div>
@@ -104,6 +104,7 @@ function renderProducts(productsToRender) {
     grid.appendChild(card);
   });
 }
+
 
 // Поиск (отправка в Telegram)
 document.getElementById('searchBtn').addEventListener('click', () => {
