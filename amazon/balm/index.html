@@ -78,14 +78,27 @@ function renderProducts(productsToRender) {
     card.target = "_blank";
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col transition transform hover:scale-[1.01]";
 
-const imageWrapper = document.createElement('div');
-imageWrapper.className = "relative w-full aspect-square bg-white flex items-center justify-center border-b border-gray-200";
+    const imageWrapper = document.createElement('div');
+    // Настраиваем квадрат с padding-bottom
+    imageWrapper.style.position = "relative";
+    imageWrapper.style.width = "100%";
+    imageWrapper.style.paddingBottom = "100%"; // квадрат
+    imageWrapper.style.backgroundColor = "#fff"; // белый фон
+    imageWrapper.style.borderBottom = "1px solid #e5e7eb"; // tailwind border-gray-200
+    imageWrapper.style.display = "flex";
+    imageWrapper.style.alignItems = "center";
+    imageWrapper.style.justifyContent = "center";
 
-const img = new Image();
-img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
-img.alt = "Product";
-img.className = "object-contain max-w-full max-h-full"; // ключевые классы
-
+    const img = new Image();
+    img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
+    img.alt = "Product";
+    // Абсолютное позиционирование картинки внутри квадрата
+    img.style.position = "absolute";
+    img.style.top = "0";
+    img.style.left = "0";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
 
     imageWrapper.appendChild(img);
 
@@ -93,8 +106,8 @@ img.className = "object-contain max-w-full max-h-full"; // ключевые кл
     content.className = "p-4 flex flex-col flex-grow bg-gray-50";
 
     content.innerHTML = `
-      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2 min-h-[2.5em]">${product.title}</h2>
-      <div class="flex items-center justify-between mt-auto">
+      <h2 class="text-sm font-semibold line-clamp-2 text-gray-800 mb-2">${product.title}</h2>
+      <div class="flex items-center justify-between">
         <div class="text-yellow-500 text-sm">⭐ ${product.rating}</div>
         <div class="text-base bg-red-500 text-white px-2 py-0.5 rounded font-semibold">-${product.discount}%</div>
       </div>
