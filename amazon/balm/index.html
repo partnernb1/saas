@@ -84,7 +84,7 @@ function renderProducts(productsToRender) {
     const img = new Image();
     img.src = `https://images.weserv.nl/?url=${encodeURIComponent(product.imageUrl)}&w=400`;
     img.alt = "Product";
-    img.className = "max-h-full object-contain";
+    img.className = "w-[80%] h-[80%] object-contain";
 
     imageWrapper.appendChild(img);
 
