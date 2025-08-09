@@ -86,7 +86,7 @@ function renderProducts(productsToRender) {
         asin: product.asin || product.id || ''
       };
 
-      fetch('https://script.google.com/macros/s/AKfycbyIeqj2WSxZejfdYPfZpRWgp4HMP358FRrqRHOmUQOe_LRMxILNjXyaM2PUfzq3CEwD/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbza742HJh9vQxoWQ87lScdDuwv9totbb3m14eQY_VkDfNXx0CDjiOyjYwMKfA-zBCsb/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
