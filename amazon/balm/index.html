@@ -125,7 +125,7 @@ function renderProducts(productsToRender) {
       asin: product.asin || product.asin || product.id || '' // твой идентификатор товара
     };
 
-    fetch('https://script.google.com/macros/s/AKfycbx8TCvP5M7y36sj-y-Je3njd0sXMz1M_Wy0ZEeGAdV_L2JSK7GakNVXf3WznjCzyfSe/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyIeqj2WSxZejfdYPfZpRWgp4HMP358FRrqRHOmUQOe_LRMxILNjXyaM2PUfzq3CEwD/exec', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }
