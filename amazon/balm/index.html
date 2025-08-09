@@ -78,6 +78,25 @@ function renderProducts(productsToRender) {
     card.target = "_blank";
     card.className = "bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden relative group flex flex-col transition transform hover:scale-[1.01]";
 
+
+    // Добавляем трекинг кликов
+    card.addEventListener('click', () => {
+      const data = {
+        url: window.location.href,
+        asin: product.asin || product.id || ''
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbyIeqj2WSxZejfdYPfZpRWgp4HMP358FRrqRHOmUQOe_LRMxILNjXyaM2PUfzq3CEwD/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }).catch(err => {
+        console.error('Ошибка отправки данных в Google Sheets', err);
+      });
+    });
+
+
+    
     const imageWrapper = document.createElement('div');
     // Настраиваем квадрат с padding-bottom
     imageWrapper.style.position = "relative";
@@ -114,26 +133,7 @@ function renderProducts(productsToRender) {
     `;
 
     card.appendChild(imageWrapper);
-    card.appendChild(content);
-
-
-
-  // Добавляем обработчик клика для трекинга
-  card.addEventListener('click', () => {
-    const data = {
-      url: window.location.href, // текущий URL страницы
-      asin: product.asin || product.asin || product.id || '' // твой идентификатор товара
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbyIeqj2WSxZejfdYPfZpRWgp4HMP358FRrqRHOmUQOe_LRMxILNjXyaM2PUfzq3CEwD/exec', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }
-    }).catch(err => {
-      console.error('Ошибка отправки данных в Google Sheets', err);
-    });
-  });
-    
+    card.appendChild(content);   
     grid.appendChild(card);
   });
 }
