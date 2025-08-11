@@ -1,94 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Back to School Checklist</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Back to School Checklist — Mom's Cozy Blog</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/symphony.png');
-      background-repeat: repeat;
-      background-size: auto;
-    }
+    :root{--pink-700:#be185d;--pink-500:#f472b6}
+    html{scroll-behavior:smooth}
+    body{font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto; background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/symphony.png'); background-repeat: repeat;}
+    .logo-font{font-family:'Dancing Script',cursive}
+    /* emphasize affiliate links */
+    .aff-link{font-weight:700; text-decoration:underline; color:var(--pink-700)}
   </style>
 </head>
-<body class="text-gray-800 font-sans">
-
+<body class="text-gray-800">
   <!-- Header -->
-  <header class="bg-pink-100/90 border-b border-pink-200 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-      <div class="flex items-center space-x-3">
-        <img src="https://cdn-icons-png.flaticon.com/512/3944/3944330.png" alt="Logo" class="w-10 h-10">
-        <h1 class="text-3xl font-bold text-pink-700">Mom's Cozy Blog</h1>
+  <header class="bg-pink-100/90 backdrop-blur sticky top-0 z-40 border-b border-pink-200">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- gentle floral SVG logo -->
+        <a href="#" class="flex items-center gap-2" aria-label="Mom's Cozy Blog">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-full bg-white p-1 shadow-sm">
+            <path d="M12 2c1.657 0 3 1.343 3 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3z" fill="#FDE68A"/>
+            <path d="M5 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FDBA74"/>
+            <path d="M17 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FCA5A5"/>
+          </svg>
+          <span class="logo-font text-2xl text-pink-700">Mom's Cozy Blog</span>
+        </a>
       </div>
-      <nav class="mt-4 sm:mt-0 space-x-4 text-sm text-pink-700 font-medium">
-        <a href="#" class="hover:text-pink-900">Home</a>
+
+      <!-- mobile hamburger -->
+      <button id="menuBtn" class="sm:hidden p-2 rounded-md bg-white/80 shadow" aria-expanded="false" aria-controls="nav"><span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <!-- desktop nav (hidden on mobile) -->
+      <nav id="nav" class="hidden sm:flex items-center gap-6 text-sm text-pink-700">
+        <a href="#" class="hover:text-pink-900">Blog</a>
         <a href="#" class="hover:text-pink-900">About</a>
         <a href="#" class="hover:text-pink-900">Contact</a>
       </nav>
     </div>
+
+    <!-- mobile menu panel -->
+    <div id="mobilePanel" class="sm:hidden hidden border-t border-pink-200 bg-white/90">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+        <a href="#" class="py-2 text-pink-700 font-medium">Blog</a>
+        <a href="#" class="py-2 text-pink-700">About</a>
+        <a href="#" class="py-2 text-pink-700">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Main Content -->
   <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-    
-    <!-- Article -->
+    <!-- article column (spans 2 on lg) -->
     <article class="lg:col-span-2 bg-white/90 backdrop-blur rounded-xl p-6 shadow-md">
-      <img src="https://images.unsplash.com/photo-1596496055481-2a0b6b8b3f2a?auto=format&fit=crop&w=1200&q=80" alt="Back to School" class="w-full h-64 object-cover rounded-xl shadow-md mb-6" />
-      <h2 class="text-2xl sm:text-3xl font-bold text-pink-700 mb-4">Back to School Checklist for Moms</h2>
-      <p class="mb-4">Summer is winding down, and it's time to get our little ones ready for a new school year! Here’s my tried-and-true checklist to make the transition smooth and stress-free.</p>
-      
-      <ul class="list-none space-y-3 mb-6">
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="w-6 h-6" alt="">
-          <span>School supplies: pencils, notebooks, crayons</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" class="w-6 h-6" alt="">
-          <span>New backpack and lunchbox</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" class="w-6 h-6" alt="">
-          <span>Healthy snack options</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/3652/3652266.png" class="w-6 h-6" alt="">
-          <span>Updated schedule and calendar</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/892/892781.png" class="w-6 h-6" alt="">
-          <span>First-day outfit ready</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/2343/2343698.png" class="w-6 h-6" alt="">
-          <span>Label all personal items</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="https://cdn-icons-png.flaticon.com/512/1829/1829604.png" class="w-6 h-6" alt="">
-          <span>Review homework station setup</span>
-        </li>
-      </ul>
 
-      <p>With a little planning and organization, you can make the back-to-school season exciting for both you and your child. Here’s to a happy and successful year ahead!</p>
+      <!-- breadcrumbs -->
+      <nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+        <ol class="list-reset inline-flex items-center space-x-2">
+          <li><a href="#" class="text-pink-700 font-medium">Blog</a></li>
+          <li><span>/</span></li>
+          <li><a href="#" class="text-gray-700">Back to School Checklist</a></li>
+        </ol>
+      </nav>
+
+      <header class="mb-4">
+        <h1 class="text-2xl sm:text-3xl font-semibold text-pink-700 mb-2">Back to School Checklist — A Gentle Guide for Moms</h1>
+        <p class="text-sm text-gray-600">Practical, calm and pretty — everything you need to get the kids ready without the stress.</p>
+      </header>
+
+      <!-- hero image -->
+      <img src="https://images.unsplash.com/photo-1596496055481-2a0b6b8b3f2a?auto=format&fit=crop&w=1200&q=80" alt="Back to School" class="w-full h-56 object-cover rounded-lg shadow-md mb-6">
+
+      <!-- Table of contents (the checklist becomes TOC) -->
+      <section class="mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-3">Contents</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#supplies" class="text-pink-700 aff-link">1. School supplies</a></li>
+          <li><a href="#backpack" class="text-pink-700 aff-link">2. Backpack & Lunchbox</a></li>
+          <li><a href="#snacks" class="text-pink-700 aff-link">3. Healthy snacks</a></li>
+          <li><a href="#schedule" class="text-pink-700 aff-link">4. Schedule & Calendar</a></li>
+          <li><a href="#outfit" class="text-pink-700 aff-link">5. First-day outfit</a></li>
+          <li><a href="#labeling" class="text-pink-700 aff-link">6. Labeling personal items</a></li>
+          <li><a href="#homework" class="text-pink-700 aff-link">7. Homework station</a></li>
+        </ul>
+      </section>
+
+      <!-- Sections with anchors + affiliate links -->
+      <section id="supplies" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">1. School supplies</h3>
+        <p class="mb-2">Start with a basic kit: pencils, erasers, glue sticks, a pencil case, lined notebooks and crayons. I like to keep a small backup kit at home for mid-week emergencies.</p>
+        <p class="mb-2">Popular pick (huge discount): <a class="aff-link" href="https://amzn.to/placeholder1" rel="nofollow noopener noreferrer">**Classic School Supplies Bundle — 60% OFF**</a></p>
+        <p class="mb-2">Alternative: <a class="aff-link" href="https://amzn.to/placeholder2" rel="nofollow noopener noreferrer">**Eco-Friendly Pencil Set**</a></p>
+      </section>
+
+      <section id="backpack" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">2. Backpack & Lunchbox</h3>
+        <p class="mb-2">Choose a backpack with padded straps and a dedicated laptop/tablet sleeve if needed. For lunchboxes — insulated and easy to wipe clean is a must.</p>
+        <p class="mb-2">Top deal: <a class="aff-link" href="https://amzn.to/placeholder3" rel="nofollow noopener noreferrer">**Best-Selling Kids Backpack + Lunchbox Combo — Massive Discount**</a></p>
+        <p class="mb-2">Budget pick: <a class="aff-link" href="https://amzn.to/placeholder4" rel="nofollow noopener noreferrer">**Simple Insulated Lunchbox**</a></p>
+      </section>
+
+      <section id="snacks" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">3. Healthy snacks</h3>
+        <p class="mb-2">Pack easy, non-messy snacks: dried fruit, nut-free granola bars, and single-serve hummus with crackers. Involve kids in choosing favorites so they'll actually eat them.</p>
+        <p class="mb-2">Deal: <a class="aff-link" href="https://amzn.to/placeholder5" rel="nofollow noopener noreferrer">**Snack Pack Variety — Discounted Bundle**</a></p>
+      </section>
+
+      <section id="schedule" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">4. Schedule & Calendar</h3>
+        <p class="mb-2">Create a visible calendar — magnetic or wall-hung — with important dates and morning routines. Use colors for different kids or activities.</p>
+        <p class="mb-2">Recommended: <a class="aff-link" href="https://amzn.to/placeholder6" rel="nofollow noopener noreferrer">**Magnetic Family Planner — Save 50%**</a></p>
+      </section>
+
+      <section id="outfit" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">5. First-day outfit</h3>
+        <p class="mb-2">Pick the outfit the night before — laid out and ready. Comfort beats fashion for long school days, but pick something they love so they feel confident.</p>
+        <p class="mb-2">Great find: <a class="aff-link" href="https://amzn.to/placeholder7" rel="nofollow noopener noreferrer">**Soft Cotton Outfit Set — Big Discount**</a></p>
+      </section>
+
+      <section id="labeling" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">6. Labeling personal items</h3>
+        <p class="mb-2">Label everything — backpacks, water bottles, jackets. I use a combination of iron-on name tags and a permanent marker for small items.</p>
+        <p class="mb-2">Label kit: <a class="aff-link" href="https://amzn.to/placeholder8" rel="nofollow noopener noreferrer">**Custom Name Labels Pack — Discounted**</a></p>
+      </section>
+
+      <section id="homework" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">7. Homework station</h3>
+        <p class="mb-2">Create a calm, dedicated corner with good light, a small desk or table, and easy storage for supplies. A checklist near the desk helps kids start independently.</p>
+        <p class="mb-2">Top pick: <a class="aff-link" href="https://amzn.to/placeholder9" rel="nofollow noopener noreferrer">**Compact Homework Desk — Discount Offer**</a></p>
+      </section>
+
+      <hr class="my-6 border-pink-200">
+
+      <section class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">Final tips</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700">
+          <li>Do a quick "first week" run-through of mornings to time everything.</li>
+          <li>Keep a small repair kit (safety pins, tape, stain remover) in the backpack drawer.</li>
+          <li>Celebrate small wins — a sticker chart or special snack after the first week goes a long way.</li>
+        </ul>
+      </section>
+
+      <!-- CTA / popular deal -->
+      <section class="bg-pink-50 border border-pink-100 rounded-lg p-4">
+        <h3 class="text-lg font-semibold text-pink-700 mb-2">Hot deal — our top recommended bundle</h3>
+        <p class="mb-3">If you want one simple checkout: <a class="aff-link" href="https://amzn.to/placeholder-super" rel="nofollow noopener noreferrer">**Shop the Ultimate Back-to-School Bundle — Extra 70% OFF (Limited)**</a></p>
+        <p class="text-sm text-gray-600">*Links are sample affiliate placeholders — replace with your own affiliate URLs before publishing.*</p>
+      </section>
+
     </article>
 
     <!-- Sidebar -->
     <aside class="space-y-6">
       <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold text-pink-700 mb-3">Popular Posts</h3>
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Lunchbox" class="rounded-lg mb-3">
-        <ul class="space-y-2 text-sm text-pink-700">
-          <li><a href="#" class="hover:underline">10 Easy Lunchbox Ideas</a></li>
-          <li><a href="#" class="hover:underline">Morning Routines for School Days</a></li>
-          <li><a href="#" class="hover:underline">Organizing Kids' Study Space</a></li>
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">About this post</h4>
+        <p class="text-sm text-gray-700">A calm, practical checklist for busy moms preparing kids for school. All product picks are selected for durability and value.</p>
+      </div>
+
+      <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">Popular posts</h4>
+        <ul class="text-sm space-y-2">
+          <li><a href="#" class="text-pink-700 aff-link">**10 Easy Lunchbox Ideas**</a></li>
+          <li><a href="#" class="text-pink-700 aff-link">**Morning Routines for School Days**</a></li>
         </ul>
       </div>
+
       <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold text-pink-700 mb-3">Newsletter</h3>
-        <p class="text-sm mb-3">Get weekly tips and updates straight to your inbox.</p>
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">Subscribe</h4>
         <form>
-          <input type="email" placeholder="Your email" class="w-full p-2 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300" />
+          <label class="sr-only">Email</label>
+          <input type="email" placeholder="your email" class="w-full p-2 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300" />
           <button class="w-full bg-pink-500 text-white py-2 rounded hover:bg-pink-600">Subscribe</button>
         </form>
       </div>
@@ -96,10 +182,38 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-pink-100/90 text-center py-4 text-sm text-pink-700">
-    © 2025 Mom's Cozy Blog. All rights reserved.
+  <footer class="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-pink-700">
+    © 2025 Mom's Cozy Blog — all rights reserved.
   </footer>
 
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobilePanel = document.getElementById('mobilePanel');
+    menuBtn?.addEventListener('click', ()=>{
+      const open = !(mobilePanel.classList.contains('hidden'));
+      if(open){
+        mobilePanel.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        mobilePanel.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Ensure anchor links offset for sticky header
+    function offsetHash() {
+      if(location.hash) {
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          const y = el.getBoundingClientRect().top + window.scrollY - 80; // header height
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      }
+    }
+    window.addEventListener('load', offsetHash);
+    window.addEventListener('hashchange', offsetHash);
+  </script>
 </body>
 </html>
