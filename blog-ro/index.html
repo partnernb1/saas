@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogul Mamei – Lista pentru Înapoi la Școală</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--pink-700:#be185d;--pink-500:#f472b6}
+    html{scroll-behavior:smooth}
+    body{font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background-image:url('https://www.toptal.com/designers/subtlepatterns/uploads/symphony.png');}
+    .logo-font{font-family:'Dancing Script',cursive}
+    .aff-link{font-weight:700; text-decoration:underline; color:var(--pink-700)}
+  </style>
+</head>
+<body class="text-gray-800">
+  <!-- Header -->
+  <header class="bg-pink-100/90 backdrop-blur sticky top-0 z-40 border-b border-pink-200">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- gentle floral SVG logo -->
+        <a href="#" class="flex items-center gap-2" aria-label="Blogul Mamei">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-full bg-white p-1 shadow-sm">
+            <path d="M12 2c1.657 0 3 1.343 3 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3z" fill="#FDE68A"/>
+            <path d="M5 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FDBA74"/>
+            <path d="M17 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FCA5A5"/>
+          </svg>
+          <span class="logo-font text-2xl text-pink-700">Blogul Mamei</span>
+        </a>
+      </div>
+
+      <!-- hamburger -->
+      <button id="menuBtn" class="sm:hidden p-2 rounded-md bg-white/80 shadow" aria-expanded="false" aria-controls="nav">
+        <span class="sr-only">Deschide meniul</span>
+        <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <nav id="nav" class="hidden sm:flex items-center gap-6 text-sm text-pink-700">
+        <a href="#" class="hover:text-pink-900">Blog</a>
+        <a href="#" class="hover:text-pink-900">Despre</a>
+        <a href="#" class="hover:text-pink-900">Contact</a>
+      </nav>
+    </div>
+
+    <!-- mobile panel -->
+    <div id="mobilePanel" class="sm:hidden hidden border-t border-pink-200 bg-white/90">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col">
+        <a href="#" class="py-2 text-pink-700 font-medium">Blog</a>
+        <a href="#" class="py-2 text-pink-700">Despre</a>
+        <a href="#" class="py-2 text-pink-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- article -->
+    <article class="lg:col-span-2 bg-white/90 backdrop-blur rounded-xl p-6 shadow-md">
+
+      <!-- breadcrumbs -->
+      <nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+        <ol class="list-reset inline-flex items-center space-x-2">
+          <li><a href="#" class="text-pink-700 font-medium">Blog</a></li>
+          <li><span>/</span></li>
+          <li><a href="#" class="text-gray-700">Lista pentru Înapoi la Școală</a></li>
+        </ol>
+      </nav>
+
+      <header class="mb-4">
+        <h1 class="text-2xl sm:text-3xl font-semibold text-pink-700 mb-2">Lista completă „Înapoi la școală” — Ghid calm pentru mămici</h1>
+        <p class="text-sm text-gray-600">Planificare ușoară, reduceri verificate și 7 pași simpli pentru a începe anul școlar fără stres.</p>
+      </header>
+
+      <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=80" alt="Back to school" class="w-full h-56 object-cover rounded-lg shadow-md mb-6">
+
+      <!-- contents -->
+      <section class="mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-3">Cuprins</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#ghiozdane" class="aff-link">1. Ghiozdane</a></li>
+          <li><a href="#rechizite" class="aff-link">2. Rechizite</a></li>
+          <li><a href="#haine" class="aff-link">3. Haine & Încălțăminte</a></li>
+          <li><a href="#gustari" class="aff-link">4. Gustări sănătoase</a></li>
+          <li><a href="#program" class="aff-link">5. Program & Calendar</a></li>
+          <li><a href="#etichete" class="aff-link">6. Etichete pentru obiecte</a></li>
+          <li><a href="#tema" class="aff-link">7. Colțul pentru teme</a></li>
+        </ul>
+      </section>
+
+      <!-- sections -->
+      <section id="ghiozdane" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">1. Ghiozdane</h3>
+        <p class="mb-2">Alege un ghiozdan cu bretele căptușite, compartimente practice și material rezistent la ploaie. Pentru școlile primare caută modele ușoare, ergonomice.</p>
+        <p class="mb-2">Ofertă recomandată pe eMAG: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Ghiozdan ergonomic — ofertă specială eMAG**</a></p>
+        <p class="text-sm text-gray-600">Sfat: cumpără din timp când apar promoțiile din august — multe modele se epuizează rapid.</p>
+      </section>
+
+      <section id="rechizite" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">2. Rechizite</h3>
+        <p class="mb-2">Seturi complete (creioane, carioci, gumă, foarfece cu siguranță) te scutesc de alergături prin magazine. Verifică dacă școala cere anumite mărci.</p>
+        <p class="mb-2">Bundle la eMAG: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Pachet rechizite școlare — reducere instant**</a></p>
+      </section>
+
+      <section id="haine" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">3. Haine & Încălțăminte</h3>
+        <p class="mb-2">Cele mai bune alegeri sunt haine confortabile, ușor de spălat și încălțăminte cu talpă anti-alunecare. Dacă școala are uniformă, verifică exact modelul.</p>
+        <p class="mb-2">Unde găsești reduceri: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Haine copii — oferte eMAG / Carrefour**</a></p>
+      </section>
+
+      <section id="gustari" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">4. Gustări sănătoase</h3>
+        <p class="mb-2">Optează pentru gustări fără alune (dacă școala cere), pachete ușor de deschis și variante cât mai naturale. Implică copilul în alegere — va mânca cu mai mult drag.</p>
+        <p class="mb-2">Oferta: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Pachet gustări sănătoase — promoție**</a></p>
+      </section>
+
+      <section id="program" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">5. Program & Calendar</h3>
+        <p class="mb-2">Un calendar vizibil (magnetic sau de perete) schimbă complet organizarea familiei. Marchează orele de plecare, activitățile extra și termenele importante.</p>
+        <p class="mb-2">Planner recomandat: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Planner family magnetic — reducere**</a></p>
+      </section>
+
+      <section id="etichete" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">6. Etichete pentru obiecte</h3>
+        <p class="mb-2">Etichetele personalizate (fermoar/bucăți textile sau autoadezive) te scutesc de pierderi. Alege un set care include și etichete pentru haine.</p>
+        <p class="mb-2">Set etichete: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Etichete personalizate — ofertă**</a></p>
+      </section>
+
+      <section id="tema" class="mb-6 pt-4">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">7. Colțul pentru teme</h3>
+        <p class="mb-2">Un birou mic, iluminare bună și un organizator pentru rechizite fac temele mai simple. Pune o mică listă cu pași pentru rutina de teme (ex: 1. Citește, 2. Notează, 3. Predă).</p>
+        <p class="mb-2">Birou compact: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Birou copii compact — ofertă limitată**</a></p>
+      </section>
+
+      <hr class="my-6 border-pink-200">
+
+      <section class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">Sfaturi finale</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700">
+          <li>Testează rutina dimineața cu o săptămână înainte de începerea școlii.</li>
+          <li>Păstrează o trusă mică de reparații (ace, bandă adezivă, șervețele).</li>
+          <li>Folosește un sticker mic drept mică recompensă după prima săptămână.</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-pink-50 border border-pink-100 rounded-lg p-4">
+        <h3 class="text-lg font-semibold text-pink-700 mb-2">Super ofertă — pachet recomandat</h3>
+        <p class="mb-3">Dacă vrei totul dintr-un singur checkout: <a class="aff-link" href="https://www.emag.ro" target="_blank" rel="noopener noreferrer">**Cumpără pachetul complet Înapoi la Școală — Reducere mare (stoc limitat)**</a></p>
+        <p class="text-sm text-gray-600">*Link-urile sunt exemple; înlocuiește-le cu link-urile tale afiliate înainte de publicare.*</p>
+      </section>
+
+    </article>
+
+    <!-- sidebar -->
+    <aside class="space-y-6">
+      <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">Despre această postare</h4>
+        <p class="text-sm text-gray-700">Un ghid calm și practic creat pentru mămicile ocupate din România — sfaturi testate și oferte selecționate.</p>
+      </div>
+
+      <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">Postări populare</h4>
+        <ul class="text-sm space-y-2">
+          <li><a href="#" class="aff-link">**10 idei rapide pentru prânzul copiilor**</a></li>
+          <li><a href="#" class="aff-link">**Rutine matinale pentru zilele de școală**</a></li>
+        </ul>
+      </div>
+
+      <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
+        <h4 class="text-lg font-semibold text-pink-700 mb-3">Abonează-te</h4>
+        <form>
+          <label class="sr-only">Email</label>
+          <input type="email" placeholder="adresa ta de email" class="w-full p-2 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300" />
+          <button class="w-full bg-pink-500 text-white py-2 rounded hover:bg-pink-600">Abonează-te</button>
+        </form>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-pink-700">
+    © 2025 Blogul Mamei — toate drepturile rezervate.
+  </footer>
+
+  <script>
+    // menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobilePanel = document.getElementById('mobilePanel');
+    menuBtn?.addEventListener('click', ()=>{
+      const open = !(mobilePanel.classList.contains('hidden'));
+      if(open){
+        mobilePanel.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        mobilePanel.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // alternate mobile panel id compatibility
+    const menuToggle = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobilePanel');
+    menuToggle?.addEventListener('click', ()=> mobile?.classList.toggle('hidden'));
+
+    // anchor offset for sticky header
+    function offsetHash() {
+      if(location.hash) {
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          const y = el.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      }
+    }
+    window.addEventListener('load', offsetHash);
+    window.addEventListener('hashchange', offsetHash);
+  </script>
+</body>
+</html>
