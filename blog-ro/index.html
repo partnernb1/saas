@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lista rechizite pentru clasele primare | Cozy Mom's Blog</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --pink-700: #be185d;
-      --pink-500: #f472b6;
+    :root{--pink-700:#be185d;--pink-500:#f472b6}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background-image:url('https://www.toptal.com/designers/subtlepatterns/uploads/symphony.png');
+      background-repeat:repeat;
     }
-    html { scroll-behavior: smooth; }
-    body { 
-      font-family: 'Quicksand', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; 
-      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/symphony.png'); 
-      background-repeat: repeat;
-    }
-    .logo-font { font-family: 'Dancing Script', cursive; }
-    .aff-link { font-weight: 700; text-decoration: underline; color: var(--pink-700); }
+    .logo-font{font-family:'Dancing Script',cursive}
+    .aff-link{font-weight:700; text-decoration:underline; color:var(--pink-700)}
   </style>
 </head>
 <body class="text-gray-800">
-
   <!-- Header -->
   <header class="bg-pink-100/90 backdrop-blur sticky top-0 z-40 border-b border-pink-200">
     <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="#" class="flex items-center gap-2" aria-label="Blogul Mamei">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-full bg-white p-1 shadow-sm">
-            <path d="M12 2c1.657 0 3 1.343 3 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3z" fill="#FDE68A"/>
-            <path d="M5 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FDBA74"/>
-            <path d="M17 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FCA5A5"/>
-          </svg>
-          <span class="logo-font text-2xl text-pink-700">Cozy Mom's Blog</span>
-        </a>
-      </div>
+      <a href="#" class="flex items-center gap-2" aria-label="Blogul Mamei">
+        <!-- gentle floral logo -->
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" class="rounded-full bg-white p-1 shadow-sm">
+          <path d="M12 2c1.657 0 3 1.343 3 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3z" fill="#FDE68A"/>
+          <path d="M5 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FDBA74"/>
+          <path d="M17 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#FCA5A5"/>
+        </svg>
+        <span class="logo-font text-2xl text-pink-700">Cozy Mom's Blog</span>
+      </a>
 
       <!-- hamburger -->
       <button id="menuBtn" class="sm:hidden p-2 rounded-md bg-white/80 shadow" aria-expanded="false" aria-controls="nav">
         <span class="sr-only">Deschide meniul</span>
-        <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
@@ -62,49 +57,102 @@
     </div>
   </header>
 
-  <!-- Main content -->
+  <!-- Main -->
   <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Content -->
+    <article class="lg:col-span-2 space-y-6">
+      <!-- Breadcrumbs -->
+      <nav class="bg-white/90 backdrop-blur rounded-xl p-3 shadow text-sm text-gray-600" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center gap-2">
+          <li><a class="text-pink-700 font-medium" href="#">Blog</a></li>
+          <li>/</li>
+          <li>Lista rechizite pentru clasele primare (1–4)</li>
+        </ol>
+      </nav>
 
-    <!-- Shopping list -->
-    <section id="shopping-list" class="lg:col-span-2 space-y-6">
-      <div class="bg-white/90 backdrop-blur rounded-xl p-6 shadow">
-        <h2 class="text-2xl font-bold text-pink-700 mb-2">
-          Lista de cumpărături pentru școală — buget ~250 Lei
-        </h2>
-        <p class="text-gray-700 mb-6">
-          Am strâns aici <span class="font-semibold">produse decente, cu recenzii bune</span>, ca să bifezi toată lista fără să depășești bugetul. Nu este „ce e mai ieftin”, ci „ce merită prețul”.
-        </p>
+      <!-- Hero -->
+      <section class="bg-white/90 backdrop-blur rounded-xl p-6 shadow">
+        <h1 class="text-2xl sm:text-3xl font-semibold text-pink-700 mb-2">Back to School 2025 — Lista de cumpărături smart</h1>
+        <p class="text-gray-700">Am selectat produse cu raport bun calitate–preț, recenzii ok și disponibile în România. Mai jos ai o mini-tabelă cu prețurile rapide și linkuri către secțiuni.</p>
+      </section>
+
+      <!-- TOP mini-table (manual) -->
+      <section class="bg-white/90 backdrop-blur rounded-xl p-6 shadow">
+        <h2 class="text-lg font-semibold text-gray-800 mb-3">Rezumat rapid (click pentru detalii)</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-pink-100 rounded-lg overflow-hidden">
+            <thead class="bg-pink-50">
+              <tr class="text-left text-sm">
+                <th class="px-4 py-2">Articol</th>
+                <th class="px-4 py-2">Preț</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-t border-pink-100">
+                <td class="px-4 py-2">
+                  <a href="#acuarele" class="font-semibold underline decoration-2 underline-offset-4 text-pink-700 hover:text-pink-800">acuarele</a>
+                </td>
+                <td class="px-4 py-2">11,50 Lei</td>
+              </tr>
+              <tr class="border-t border-pink-100">
+                <td class="px-4 py-2">
+                  <a href="#pahar" class="font-semibold underline decoration-2 underline-offset-4 text-pink-700 hover:text-pink-800">pahar</a>
+                </td>
+                <td class="px-4 py-2">5,98 Lei</td>
+              </tr>
+              <tr class="border-t border-pink-100">
+                <td class="px-4 py-2">
+                  <a href="#set" class="font-semibold underline decoration-2 underline-offset-4 text-pink-700 hover:text-pink-800">set</a>
+                </td>
+                <td class="px-4 py-2">10,99 Lei</td>
+              </tr>
+              <tr class="bg-pink-50 border-t border-pink-100 font-semibold">
+                <td class="px-4 py-2">Total</td>
+                <td class="px-4 py-2">28,47 Lei</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-gray-500">*Prețurile pot varia. Înlocuiește linkurile cu cele afiliate înainte de publicare.</p>
+      </section>
+
+      <!-- Shopping list -->
+      <section id="shopping-list" class="bg-white/90 backdrop-blur rounded-xl p-6 shadow">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Selecția noastră</h2>
 
         <ul class="divide-y divide-pink-100">
-          <!-- 1) Ghiozdan -->
-          <li class="py-6">
+          <!-- 1) Acuarele -->
+          <li id="acuarele" class="py-6 scroll-mt-24">
             <div class="sm:flex sm:gap-4">
-              <a href="https://www.emag.ro/ghiozdan-scoala-nevermore-lovely-bear-45-x-29-x-14-cm-albastru-nvmlovelybearalbastru/pd/D9YPX6MBM/"
+              <a href="https://www.emag.ro/acuarele-s-cool-12-culori-28-mm-pensula-carcasa-plastic-sc311/pd/D9RXGHMBM/"
                  target="_blank" rel="noopener noreferrer"
                  class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://s13emagst.akamaized.net/products/53964/53963109/images/res_d1a5fd7a16f2e38defa5d80bebb887b5.jpg"
-                     alt="Ghiozdan Școală NEVERMORE - Lovely Bear, albastru"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
+                <img
+                  src="https://webserv.nl/?w=400&url=https%3A%2F%2Fs13emagst.akamaized.net%2Fproducts%2F39666%2F39665103%2Fimages%2Fres_c7d0b0c5eec0f539ef2d5d459223c41a.jpg"
+                  alt="Acuarele S-cool, 12 culori"
+                  class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition"
+                  loading="lazy">
               </a>
               <div class="flex-1">
-                <a href="https://www.emag.ro/ghiozdan-scoala-nevermore-lovely-bear-45-x-29-x-14-cm-albastru-nvmlovelybearalbastru/pd/D9YPX6MBM/"
+                <a href="https://www.emag.ro/acuarele-s-cool-12-culori-28-mm-pensula-carcasa-plastic-sc311/pd/D9RXGHMBM/"
                    target="_blank" rel="noopener noreferrer"
                    class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Ghiozdan Școală, NEVERMORE, Lovely Bear, 45×29×14 cm, Albastru
+                  Acuarele S-cool, 12 culori, 28&nbsp;mm + pensulă, carcasă plastic
                 </a>
                 <div class="mt-1 text-yellow-500 font-semibold">★ 5.0</div>
                 <p class="mt-2 text-gray-600">
-                  Spațios, cu spate întărit și bretele late. Material rezistent la uzură zilnică și fermoare solide — exact ce trebuie pentru clasele primare.
+                  Set simplu, culori vii și uniformă aplicare. Carcasa e compactă, bună pentru penar/ghiozdan.
                 </p>
                 <div class="mt-3">
-                  <a href="https://www.emag.ro/ghiozdan-scoala-nevermore-lovely-bear-45-x-29-x-14-cm-albastru-nvmlovelybearalbastru/pd/D9YPX6MBM/"
+                  <a href="https://www.emag.ro/acuarele-s-cool-12-culori-28-mm-pensula-carcasa-plastic-sc311/pd/D9RXGHMBM/"
                      target="_blank" rel="noopener noreferrer"
                      class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    99,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
+                    11,50 Lei la eMAG
+                    <!-- external link icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10v7a4 4 0 01-4 4h-7"/>
+                      <rect x="3" y="7" width="10" height="10" rx="2" ry="2" stroke-width="2"/>
                     </svg>
                   </a>
                 </div>
@@ -112,30 +160,37 @@
             </div>
           </li>
 
-          <!-- 2) Penar -->
-          <li class="py-6">
+          <!-- 2) Pahar -->
+          <li id="pahar" class="py-6 scroll-mt-24">
             <div class="sm:flex sm:gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://via.placeholder.com/240x240?text=Penar" alt="Penar cu fermoar, 3 compartimente"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
+              <a href="https://www.emag.ro/pahar-pentru-pictura-nebo-cu-2-compartimente-lungime-9-5-cm-capac-albastru-robentoysr-16027/pd/DR0HCVBBM/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
+                <img
+                  src="https://webserv.nl/?w=400&url=https%3A%2F%2Fs13emagst.akamaized.net%2Fproducts%2F17231%2F17230104%2Fimages%2Fres_b1ccc37691c725f367facd0fa7159c81.jpg"
+                  alt="Pahar pentru pictură NEBO, 2 compartimente"
+                  class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition"
+                  loading="lazy">
               </a>
               <div class="flex-1">
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.emag.ro/pahar-pentru-pictura-nebo-cu-2-compartimente-lungime-9-5-cm-capac-albastru-robentoysr-16027/pd/DR0HCVBBM/"
+                   target="_blank" rel="noopener noreferrer"
                    class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Penar, 3 compartimente, echipat
+                  Pahar pentru pictură NEBO, 2 compartimente, capac, 9,5&nbsp;cm
                 </a>
-                <div class="mt-1 text-yellow-500 font-semibold">★ 4.7</div>
+                <div class="mt-1 text-yellow-500 font-semibold">★ 4.94</div>
                 <p class="mt-2 text-gray-600">
-                  Compartimentare clară pentru pixuri, creioane și riglă. Zipper fluid, ușor de folosit de către cei mici.
+                  Practic la orele de arte: capac anti-vărsare și două compartimente pentru clătit pensula.
                 </p>
                 <div class="mt-3">
-                  <a href="#" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.emag.ro/pahar-pentru-pictura-nebo-cu-2-compartimente-lungime-9-5-cm-capac-albastru-robentoysr-16027/pd/DR0HCVBBM/"
+                     target="_blank" rel="noopener noreferrer"
                      class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    39,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
+                    5,98 Lei la eMAG
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10v7a4 4 0 01-4 4h-7"/>
+                      <rect x="3" y="7" width="10" height="10" rx="2" ry="2" stroke-width="2"/>
                     </svg>
                   </a>
                 </div>
@@ -143,123 +198,37 @@
             </div>
           </li>
 
-          <!-- 3) Ascuțitoare -->
-          <li class="py-6">
+          <!-- 3) Set Școală (fără rating) -->
+          <li id="set" class="py-6 scroll-mt-24">
             <div class="sm:flex sm:gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://via.placeholder.com/240x240?text=Ascutitoare" alt="Ascuțitoare cu rezervor"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
+              <a href="https://www.emag.ro/set-scoala-cu-creioane-cu-radiera-rigla-ascutitoare-radiera-11-piese-5943822420173/pd/DPJRCJ3BM/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
+                <img
+                  src="https://webserv.nl/?w=400&url=https%3A%2F%2Fs13emagst.akamaized.net%2Fproducts%2F101285%2F101284142%2Fimages%2Fres_3e33c9e82e6e18ba8c8446179cbf8722.jpg"
+                  alt="Set școală 11 piese – creioane, riglă, ascuțitoare, radiere"
+                  class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition"
+                  loading="lazy">
               </a>
               <div class="flex-1">
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.emag.ro/set-scoala-cu-creioane-cu-radiera-rigla-ascutitoare-radiera-11-piese-5943822420173/pd/DPJRCJ3BM/"
+                   target="_blank" rel="noopener noreferrer"
                    class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Ascuțitoare cu rezervor
+                  Set Școală – creioane, riglă, ascuțitoare, radiere (11 piese)
                 </a>
-                <div class="mt-1 text-yellow-500 font-semibold">★ 4.8</div>
+                <!-- fără rating, cum просил -->
                 <p class="mt-2 text-gray-600">
-                  Lama bună, nu rupe mina. Rezervor suficient de mare ca să nu fie nevoie să alergi la coș la fiecare 2 minute.
+                  Pachet de bază pentru început de an: tot ce trebuie într-un singur set, bun pentru lista standard a învățătoarei.
                 </p>
                 <div class="mt-3">
-                  <a href="#" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.emag.ro/set-scoala-cu-creioane-cu-radiera-rigla-ascutitoare-radiera-11-piese-5943822420173/pd/DPJRCJ3BM/"
+                     target="_blank" rel="noopener noreferrer"
                      class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    9,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- 4) Radieră -->
-          <li class="py-6">
-            <div class="sm:flex sm:gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://via.placeholder.com/240x240?text=Radiera" alt="Radieră moale, fără praf"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
-              </a>
-              <div class="flex-1">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                   class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Radieră moale, fără praf
-                </a>
-                <div class="mt-1 text-yellow-500 font-semibold">★ 4.9</div>
-                <p class="mt-2 text-gray-600">
-                  Nu lasă urme și nu se fărâmă, potrivită pentru toți copiii.
-                </p>
-                <div class="mt-3">
-                  <a href="#" target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    4,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- 5) Lipici -->
-          <li class="py-6">
-            <div class="sm:flex sm:gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://via.placeholder.com/240x240?text=Lipici" alt="Lipici lichid"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
-              </a>
-              <div class="flex-1">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                   class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Lipici lichid, 50ml
-                </a>
-                <div class="mt-1 text-yellow-500 font-semibold">★ 4.6</div>
-                <p class="mt-2 text-gray-600">
-                  Nu curge, se usucă rapid, sigur pentru mâinile copiilor.
-                </p>
-                <div class="mt-3">
-                  <a href="#" target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    6,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- 6) Riglă -->
-          <li class="py-6">
-            <div class="sm:flex sm:gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="block sm:w-40 sm:flex-none mb-3 sm:mb-0 group">
-                <img src="https://via.placeholder.com/240x240?text=Riga" alt="Riglă 30cm"
-                     class="w-full h-auto rounded-lg shadow group-hover:opacity-90 transition" loading="lazy">
-              </a>
-              <div class="flex-1">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                   class="text-lg font-semibold text-gray-900 hover:text-pink-700 transition">
-                  Riglă, 30cm
-                </a>
-                <div class="mt-1 text-yellow-500 font-semibold">★ 4.8</div>
-                <p class="mt-2 text-gray-600">
-                  Transparentă, rezistentă la lovituri, marcaje clare pentru ușurința măsurării.
-                </p>
-                <div class="mt-3">
-                  <a href="#" target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center gap-1 text-pink-700 font-semibold underline decoration-2 underline-offset-4 hover:text-pink-800">
-                    3,99 Lei la eMAG
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h4m0 0v4m0-4L10 14"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h6a2 2 0 012 2v6"/>
-                      <rect x="4" y="10" width="10" height="10" rx="2" ry="2" stroke-width="2" />
+                    10,99 Lei la eMAG
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10v7a4 4 0 01-4 4h-7"/>
+                      <rect x="3" y="7" width="10" height="10" rx="2" ry="2" stroke-width="2"/>
                     </svg>
                   </a>
                 </div>
@@ -271,17 +240,18 @@
         <!-- Budget note -->
         <div class="mt-8 bg-pink-50 border border-pink-100 rounded-lg p-4">
           <p class="text-gray-700 text-center">
-            Total estimat (cu opțiunile de mai sus): ~<span class="font-bold text-pink-700">250 Lei</span>. Poți ajusta după preferințe, dar păstrezi calitatea și bugetul.
+            Total estimat (cu opțiunile de mai sus): ~<span class="font-bold text-pink-700">28,47 Lei</span>.
+            Ajustează culorile/brandurile după preferințe și păstrezi bugetul ok.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </article>
 
     <!-- Sidebar -->
     <aside class="space-y-6">
       <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
         <h4 class="text-lg font-semibold text-pink-700 mb-3">Despre această postare</h4>
-        <p class="text-sm text-gray-700">Un ghid calm și practic creat pentru mămicile ocupate din România — sfaturi testate și oferte selecționate.</p>
+        <p class="text-sm text-gray-700">Ghid prietenos pentru mămici ocupate — selecții echilibrate, fără bătăi de cap.</p>
       </div>
 
       <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
@@ -295,13 +265,13 @@
       <div class="bg-white/90 backdrop-blur rounded-xl shadow p-4">
         <h4 class="text-lg font-semibold text-pink-700 mb-3">Abonează-te</h4>
         <form>
-          <label class="sr-only">Email</label>
-          <input type="email" placeholder="adresa ta de email" class="w-full p-2 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300" />
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" placeholder="adresa ta de email"
+                 class="w-full p-2 border rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300"/>
           <button class="w-full bg-pink-500 text-white py-2 rounded hover:bg-pink-600">Abonează-te</button>
         </form>
       </div>
     </aside>
-
   </main>
 
   <footer class="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-pink-700">
@@ -309,27 +279,13 @@
   </footer>
 
   <script>
+    // menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobilePanel = document.getElementById('mobilePanel');
     menuBtn?.addEventListener('click', ()=>{
       mobilePanel.classList.toggle('hidden');
       menuBtn.setAttribute('aria-expanded', !mobilePanel.classList.contains('hidden'));
     });
-
-    // anchor offset for sticky header
-    function offsetHash() {
-      if(location.hash) {
-        const id = location.hash.slice(1);
-        const el = document.getElementById(id);
-        if(el){
-          const y = el.getBoundingClientRect().top + window.scrollY - 96;
-          window.scrollTo({top: y, behavior: 'smooth'});
-        }
-      }
-    }
-    window.addEventListener('load', offsetHash);
-    window.addEventListener('hashchange', offsetHash);
   </script>
-
 </body>
 </html>
