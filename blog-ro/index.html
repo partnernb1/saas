@@ -1,42 +1,166 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista Back to School 2025 – doar 250 RON</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de cumpărături pentru școală - 250 RON</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background-color: #fff8fa;
+        margin: 0;
+        padding: 0;
+        color: #444;
+    }
+    header {
+        background-color: #ffccd5;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.2em;
+        color: #b30047;
+    }
+    header p {
+        font-size: 1.1em;
+        margin-top: 10px;
+        color: #660029;
+    }
+    .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    main {
+        flex: 3;
+    }
+    aside {
+        flex: 1;
+        background-color: #ffe6eb;
+        padding: 15px;
+        border-radius: 10px;
+        height: fit-content;
+    }
+    .product {
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 15px;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+    }
+    .product:hover {
+        transform: scale(1.01);
+    }
+    .product img {
+        width: 140px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    .product-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .product-info h2 {
+        margin: 0;
+        font-size: 1.1em;
+        color: #b30047;
+    }
+    .rating {
+        font-weight: bold;
+        color: #ff9900;
+        margin: 5px 0;
+    }
+    .price {
+        font-size: 1.1em;
+        color: #008000;
+        font-weight: bold;
+    }
+    .product-info p {
+        margin: 5px 0;
+        font-size: 0.95em;
+        color: #555;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #ff4d79;
+        color: white;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        margin-top: 8px;
+        transition: background 0.2s ease;
+    }
+    .btn:hover {
+        background-color: #e63961;
+    }
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .product {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            max-width: 250px;
+        }
+        aside {
+            order: -1;
+        }
+    }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <section class="max-w-3xl mx-auto p-4">
-    <h1 class="text-3xl font-bold mb-3">Lista Back to School 2025 – doar 250 RON</h1>
-    <p class="text-gray-700 mb-6">
-      Am creat o listă completă cu articole esențiale pentru începutul anului școlar. 
-      Toate produsele sunt de calitate bună, cu recenzii excelente, la un preț total de aproximativ <span class="font-bold">250 RON</span>. 
-      Perfect pentru părinți care doresc să economisească timp și bani.
-    </p>
+<body>
 
-    <!-- Produs 1 -->
-    <article class="flex items-start gap-4 mb-6 border-b pb-4">
-      <img src="https://s13emagst.akamaized.net/products/53964/53963109/images/res_d1a5fd7a16f2e38defa5d80bebb887b5.jpg" 
-           alt="Ghiozdan Scoala NEVERMORE lovely bear" 
-           class="w-28 h-28 object-cover rounded-lg shadow">
-      <div>
-        <h2 class="text-lg font-semibold">Ghiozdan Scoala, NEVERMORE, lovely bear, 45 x 29 x 14 cm, Albastru</h2>
-        <div class="text-yellow-500 font-bold mt-1">★ 5.0</div>
-        <p class="text-gray-600 mt-2">
-          Un ghiozdan spațios și rezistent, cu design atractiv și culori vesele, perfect pentru clasele primare. 
-          Compartimente multiple pentru organizare eficientă și confort la purtare.
-        </p>
-        <a href="https://www.emag.ro/ghiozdan-scoala-nevermore-lovely-bear-45-x-29-x-14-cm-albastru-nvmlovelybearalbastru/pd/D9YPX6MBM/"
-           target="_blank"
-           class="inline-block mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-           Vezi pe eMAG
-        </a>
-      </div>
-    </article>
+<header>
+    <h1>Lista de cumpărături pentru școală - 250 RON</h1>
+    <p>Tot ce ai nevoie pentru începutul anului școlar, la un preț accesibil și cu produse de calitate!</p>
+</header>
 
-    <!-- Aici vor urma restul produselor -->
+<div class="container">
+    <main>
 
-  </section>
+        <!-- PRODUS 1 -->
+        <div class="product">
+            <img src="https://s13emagst.akamaized.net/products/53964/53963109/images/res_d1a5fd7a16f2e38defa5d80bebb887b5.jpg" alt="Ghiozdan Scoala, NEVERMORE, lovely bear, Albastru">
+            <div class="product-info">
+                <h2>Ghiozdan Școală NEVERMORE Lovely Bear</h2>
+                <div class="rating">★ 5.0</div>
+                <p>Ghiozdan spațios și rezistent, cu design atractiv pentru copii, perfect pentru toate materialele școlare.</p>
+                <div class="price">149,99 RON</div>
+                <a class="btn" href="https://www.emag.ro/ghiozdan-scoala-nevermore-lovely-bear-45-x-29-x-14-cm-albastru-nvmlovelybearalbastru/pd/D9YPX6MBM/" target="_blank">Vezi pe eMAG</a>
+            </div>
+        </div>
+
+        <!-- Aici adaugi alte produse la fel -->
+
+    </main>
+
+    <aside>
+        <h3>Tipuri de articole</h3>
+        <ul>
+            <li>Ghiozdane</li>
+            <li>Penare</li>
+            <li>Caiete și agende</li>
+            <li>Creioane și pixuri</li>
+            <li>Seturi de artă</li>
+        </ul>
+        <h3>Promoții speciale</h3>
+        <p>Vezi ofertele noastre speciale pentru părinți și elevi!</p>
+    </aside>
+</div>
+
 </body>
 </html>
