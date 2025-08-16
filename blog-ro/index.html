@@ -794,10 +794,11 @@
 
  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
  
- <!-- Кнопка "Наверх" -->
+<!-- Кнопка "Наверх" -->
 <button id="scrollTopBtn" 
-  class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
-  onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  class="hidden fixed bottom-6 right-6 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition transform hover:scale-110"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+  aria-label="Înapoi sus">
   ↑
 </button>
 
@@ -812,6 +813,7 @@
     }
   });
 </script>
+
 
 
 <!-- Cookie Consent -->
@@ -831,7 +833,7 @@ window.addEventListener("load", function(){
       "message": "Acest site folosește cookie-uri pentru a vă oferi o experiență mai bună.",
       "dismiss": "OK",
       "link": "Află mai multe",
-      "href": "/privacy.html"
+      "href": "/blog-ro/privacy.html"
     }
   });
 });
