@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iHerb - Омега-3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Хедер -->
+  <header class="bg-green-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">iHerb Moldova</h1>
+    <div>
+      <button class="px-3 py-1 bg-white text-green-600 font-semibold rounded mr-2" onclick="setLang('ru')">RU</button>
+      <button class="px-3 py-1 bg-white text-green-600 font-semibold rounded" onclick="setLang('ro')">RO</button>
+    </div>
+  </header>
+
+  <!-- Главный блок товара -->
+  <section class="p-6 md:flex md:gap-8">
+    <img src="https://via.placeholder.com/300" alt="Омега-3" class="w-full md:w-1/3 rounded-lg shadow-lg mb-4 md:mb-0">
+    <div class="md:flex-1">
+      <h2 class="text-3xl font-bold mb-4 lang-ru">Омега-3 - 120 капсул</h2>
+      <h2 class="text-3xl font-bold mb-4 lang-ro hidden">Omega-3 - 120 capsule</h2>
+      <p class="text-xl mb-4 lang-ru">Цена: <span class="font-semibold">250 лей</span></p>
+      <p class="text-xl mb-4 lang-ro hidden">Preț: <span class="font-semibold">250 lei</span></p>
+      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold mb-4 hover:bg-green-700 lang-ru">Купить на iHerb</a>
+      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold mb-4 hover:bg-green-700 lang-ro hidden">Cumpără pe iHerb</a>
+      <button onclick="document.getElementById('how-to-order').scrollIntoView({behavior:'smooth'})" class="block text-lg text-blue-600 underline lang-ru">Как заказать?</button>
+      <button onclick="document.getElementById('how-to-order').scrollIntoView({behavior:'smooth'})" class="block text-lg text-blue-600 underline lang-ro hidden">Cum să comandați?</button>
+    </div>
+  </section>
+
+  <!-- Преимущества -->
+  <section class="bg-white p-6 mt-6 rounded-lg shadow-md">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Почему покупать на iHerb?</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">De ce să cumpărați pe iHerb?</h3>
+    <ul class="list-disc list-inside text-lg space-y-2 lang-ru">
+      <li>Оригинальный товар из США</li>
+      <li>Одобрено Минздравом США</li>
+      <li>Гарантия качества</li>
+      <li>Бесплатная доставка от 1500 лей</li>
+    </ul>
+    <ul class="list-disc list-inside text-lg space-y-2 lang-ro hidden">
+      <li>Produs original din SUA</li>
+      <li>Autorizat de Ministerul Sănătății din SUA</li>
+      <li>Garanție de calitate</li>
+      <li>Livrare gratuită de la 1500 lei</li>
+    </ul>
+  </section>
+
+  <!-- Инструкция по заказу -->
+  <section id="how-to-order" class="bg-gray-100 p-6 mt-6 rounded-lg shadow-md">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Инструкция по заказу для Молдовы</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Instrucțiuni de comandă pentru Moldova</h3>
+    <ol class="list-decimal list-inside text-lg space-y-2 lang-ru">
+      <li>Создайте аккаунт на iHerb.</li>
+      <li>Выберите товар и добавьте в корзину.</li>
+      <li>Введите адрес доставки в Молдове.</li>
+      <li>Оплатите картой или PayPal.</li>
+      <li>Выберите способ доставки (бесплатно от 1500 лей).</li>
+      <li>Отслеживайте посылку через ваш аккаунт.</li>
+    </ol>
+    <ol class="list-decimal list-inside text-lg space-y-2 lang-ro hidden">
+      <li>Creați un cont pe iHerb.</li>
+      <li>Alegeți produsul și adăugați-l în coș.</li>
+      <li>Introduceți adresa de livrare în Moldova.</li>
+      <li>Plătiți cu cardul sau PayPal.</li>
+      <li>Alegeți metoda de livrare (gratuit de la 1500 lei).</li>
+      <li>Urmăriți coletul prin contul dvs.</li>
+    </ol>
+  </section>
+
+  <!-- WhatsApp консультация -->
+  <section class="p-6 mt-6 text-center">
+    <a href="https://wa.me/[номер]?text=Привет, хочу заказать Омега-3" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-700 lang-ru">
+      Консультация в WhatsApp
+    </a>
+    <a href="https://wa.me/[номер]?text=Bună, vreau să comand Omega-3" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-700 lang-ro hidden">
+      Consultație pe WhatsApp
+    </a>
+  </section>
+
+  <!-- Другие товары -->
+  <section class="p-6 mt-6">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Другие товары</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Alte produse</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white p-3 rounded-lg shadow-md text-center">
+        <img src="https://via.placeholder.com/150" alt="Витамин C" class="mx-auto mb-2 rounded">
+        <p class="font-semibold lang-ru">Витамин C</p>
+        <p class="font-semibold lang-ro hidden">Vitamina C</p>
+        <p>Цена: 150 лей</p>
+      </div>
+      <div class="bg-white p-3 rounded-lg shadow-md text-center">
+        <img src="https://via.placeholder.com/150" alt="Магний" class="mx-auto mb-2 rounded">
+        <p class="font-semibold lang-ru">Магний</p>
+        <p class="font-semibold lang-ro hidden">Magneziu</p>
+        <p>Цена: 180 лей</p>
+      </div>
+      <!-- Добавьте остальные товары -->
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-green-600 text-white p-6 mt-6 text-center text-lg">
+    © 2025 iHerb Moldova | <a href="#" class="underline">Политика конфиденциальности</a>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      const ru = document.querySelectorAll('.lang-ru');
+      const ro = document.querySelectorAll('.lang-ro');
+      if(lang === 'ru'){
+        ru.forEach(el=>el.classList.remove('hidden'));
+        ro.forEach(el=>el.classList.add('hidden'));
+      } else {
+        ro.forEach(el=>el.classList.remove('hidden'));
+        ru.forEach(el=>el.classList.add('hidden'));
+      }
+    }
+  </script>
+
+</body>
+</html>
