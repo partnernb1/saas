@@ -3,106 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Original Health™ — Lacto Bif 30</title>
+  <title>Original Health™ - LactoBif 30</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-w2f5Rz6uXx2uZJ1dP3Fo0XZBZk8qfD5XZ0phQ+82a0S3H1BbFdE1g4Mw7Bljhtw81klcX/1aQZsbr5Vq6NHf1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-900">
 
-  <!-- Header with Language Switch -->
-  <header class="bg-white shadow-md p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-green-700">Original Health™</h1>
+  <!-- Хедер -->
+  <header class="bg-green-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Original Health™</h1>
     <div>
-      <button class="px-3 py-1 border rounded text-sm">RU</button>
-      <button class="px-3 py-1 border rounded text-sm ml-2">RO</button>
+      <button class="px-3 py-1 bg-white text-green-600 font-semibold rounded mr-2" onclick="setLang('ru')">RU</button>
+      <button class="px-3 py-1 bg-white text-green-600 font-semibold rounded" onclick="setLang('ro')">RO</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-white p-6 md:p-12 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">California Gold Nutrition — LactoBif 30</h2>
-    <p class="text-lg mb-6">Пробиотик №1 для здоровья кишечника и иммунитета</p>
-    <img src="https://s3.images-iherb.com/cgn/cgn01339/v/51.jpg" alt="Lacto Bif 30" class="mx-auto rounded-lg shadow-md mb-6 max-h-80">
-    <p class="text-2xl font-bold text-green-600 mb-4">Цена: 299 лей</p>
-    <a href="#order" class="inline-flex items-center bg-green-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow hover:bg-green-700">
-      <i class="fas fa-shopping-cart mr-2"></i>Заказать в Молдове
-    </a>
+  <!-- Главный блок товара -->
+  <section class="p-6 md:flex md:gap-8">
+    <img src="https://md.iherb.com/pr/california-gold-nutrition-lactobif-30-probiotics-30-billion-cfu-60-veggie-capsules/64009" alt="LactoBif 30" class="w-full md:w-1/3 rounded-lg shadow-lg mb-4 md:mb-0">
+    <div class="md:flex-1">
+      <h2 class="text-3xl font-bold mb-4 lang-ru">California Gold Nutrition, LactoBif® 30 - 60 капсул</h2>
+      <h2 class="text-3xl font-bold mb-4 lang-ro hidden">California Gold Nutrition, LactoBif® 30 - 60 capsule</h2>
+      <p class="text-xl mb-4 lang-ru">Цена: <span class="font-semibold">299 лей</span></p>
+      <p class="text-xl mb-4 lang-ro hidden">Preț: <span class="font-semibold">299 lei</span></p>
+      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold mb-4 hover:bg-green-700 lang-ru">
+        Купить на Original Health™
+      </a>
+      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold mb-4 hover:bg-green-700 lang-ro hidden">
+        Cumpără pe Original Health™
+      </a>
+      <button onclick="document.getElementById('how-to-order').scrollIntoView({behavior:'smooth'})" class="block text-lg text-blue-600 underline lang-ru">Как заказать?</button>
+      <button onclick="document.getElementById('how-to-order').scrollIntoView({behavior:'smooth'})" class="block text-lg text-blue-600 underline lang-ro hidden">Cum să comandați?</button>
+    </div>
   </section>
 
-  <!-- Advantages Section (Unified icons) -->
-  <section class="bg-gray-100 p-6 md:p-12">
-    <h3 class="text-2xl font-bold mb-6 text-center">Преимущества товара</h3>
-    <ul class="max-w-2xl mx-auto space-y-4">
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        30 млрд КОЕ в каждой капсуле
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Поддерживает здоровье пищеварительной системы и кишечника*
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Способствует здоровью иммунной системы*
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Подходит для вегетарианцев
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Упаковано в индивидуальные блистеры с двойным слоем фольги
-      </li>
+  <!-- Преимущества -->
+  <section class="bg-white p-6 mt-6 rounded-lg shadow-md">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Преимущества товара</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Avantajele produsului</h3>
+    <ul class="text-lg space-y-2">
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>30 млрд КОЕ в каждой капсуле</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Поддерживает здоровье пищеварительной системы и кишечника*</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Способствует здоровью иммунной системы*</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Подходит для вегетарианцев</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Упаковано в индивидуальные блистеры с двойным слоем фольги</li>
     </ul>
   </section>
 
-  <!-- Why iHerb Section -->
-  <section class="bg-white p-6 md:p-12">
-    <h3 class="text-2xl font-bold mb-6 text-center">Почему iHerb?</h3>
-    <ul class="max-w-2xl mx-auto space-y-4">
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Оригинал из США — гарантия подлинности без подделок.
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Одобрено Минздравом США — высокие стандарты качества.
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Лучшие цены и акции — экономия до 50% на топовых товарах.
-      </li>
-      <li class="flex items-start">
-        <i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>
-        Быстрая доставка в Молдову, бесплатно от 1500 лей.
-      </li>
+  <!-- Почему Original Health™ -->
+  <section class="bg-gray-100 p-6 mt-6 rounded-lg shadow-md">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Почему Original Health™?</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">De ce Original Health™?</h3>
+    <ul class="text-lg space-y-2">
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Оригинал из США — гарантия подлинности без подделок.</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Одобрено Минздравом США — высокие стандарты качества.</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Лучшие цены и акции — экономия до 50% на топовых товарах.</li>
+      <li class="flex items-start"><i class="fas fa-check-circle text-green-600 w-6 h-6 mr-3 flex-shrink-0"></i>Быстрая доставка в Молдову, бесплатно от 1500 лей.</li>
     </ul>
   </section>
 
-  <!-- Instructions -->
-  <section class="bg-gray-100 p-6 md:p-12">
-    <h3 class="text-2xl font-bold mb-6 text-center">Как заказать в Молдове?</h3>
-    <ol class="space-y-4 max-w-2xl mx-auto">
-      <li>1. Нажмите кнопку «Заказать».</li>
-      <li>2. Заполните простую форму (имя, телефон).</li>
-      <li>3. Мы свяжемся с вами в WhatsApp для подтверждения.</li>
-      <li>4. Получите заказ в удобной точке выдачи.</li>
+  <!-- Инструкция по заказу -->
+  <section id="how-to-order" class="bg-white p-6 mt-6 rounded-lg shadow-md">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Инструкция по заказу для Молдовы</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Instrucțiuni de comandă pentru Moldova</h3>
+    <ol class="list-decimal list-inside text-lg space-y-2 lang-ru">
+      <li>Создайте аккаунт на Original Health™.</li>
+      <li>Выберите товар и добавьте в корзину.</li>
+      <li>Введите адрес доставки в Молдове.</li>
+      <li>Оплатите картой или PayPal.</li>
+      <li>Выберите способ доставки (бесплатно от 1500 лей).</li>
+      <li>Отслеживайте посылку через ваш аккаунт.</li>
+    </ol>
+    <ol class="list-decimal list-inside text-lg space-y-2 lang-ro hidden">
+      <li>Creați un cont pe Original Health™.</li>
+      <li>Alegeți produsul și adăugați-l în coș.</li>
+      <li>Introduceți adresa de livrare în Moldova.</li>
+      <li>Plătiți cu cardul sau PayPal.</li>
+      <li>Alegeți metoda de livrare (gratuit de la 1500 lei).</li>
+      <li>Urmăriți coletul prin contul dvs.</li>
     </ol>
   </section>
 
-  <!-- WhatsApp CTA -->
-  <section id="order" class="bg-green-600 text-white p-8 text-center">
-    <h3 class="text-2xl font-bold mb-4">Нужна помощь?</h3>
-    <p class="mb-6">Напишите нам в WhatsApp, и мы подскажем как оформить заказ.</p>
-    <a href="https://wa.me/37360000000" class="inline-flex items-center bg-white text-green-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100">
-      <i class="fab fa-whatsapp mr-2"></i>Написать в WhatsApp
+  <!-- WhatsApp консультация -->
+  <section class="p-6 mt-6 text-center">
+    <a href="https://wa.me/[номер]?text=Привет, хочу заказать LactoBif 30" target="_blank" class="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-700 lang-ru">
+      <i class="fab fa-whatsapp mr-2"></i>Консультация в WhatsApp
+    </a>
+    <a href="https://wa.me/[номер]?text=Bună, vreau să comand LactoBif 30" target="_blank" class="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-700 lang-ro hidden">
+      <i class="fab fa-whatsapp mr-2"></i>Consultație pe WhatsApp
     </a>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-200 text-center p-4 text-sm">
-    <p>© 2025 Original Health™. Мы — проводник в мир оригинальных товаров для здоровья из США.</p>
+  <!-- Другие товары -->
+  <section class="p-6 mt-6">
+    <h3 class="text-2xl font-bold mb-4 lang-ru">Другие товары</h3>
+    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Alte produse</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white p-3 rounded-lg shadow-md text-center">
+        <img src="https://via.placeholder.com/150" alt="Витамин C" class="mx-auto mb-2 rounded">
+        <p class="font-semibold lang-ru">Витамин C</p>
+        <p class="font-semibold lang-ro hidden">Vitamina C</p>
+        <p>Цена: 150 лей</p>
+      </div>
+      <div class="bg-white p-3 rounded-lg shadow-md text-center">
+        <img src="https://via.placeholder.com/150" alt="Магний" class="mx-auto mb-2 rounded">
+        <p class="font-semibold lang-ru">Магний</p>
+        <p class="font-semibold lang-ro hidden">Magneziu</p>
+        <p>Цена: 180 лей</p>
+      </div>
+      <!-- Добавьте остальные товары сюда -->
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="bg-green-600 text-white p-6 mt-6 text-center text-lg">
+    © 2025 Original Health™ | <a href="#" class="underline">Политика конфиденциальности</a>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      const ru = document.querySelectorAll('.lang-ru');
+      const ro = document.querySelectorAll('.lang-ro');
+      if(lang === 'ru'){
+        ru.forEach(el=>el.classList.remove('hidden'));
+        ro.forEach(el=>el.classList.add('hidden'));
+      } else {
+        ro.forEach(el=>el.classList.remove('hidden'));
+        ru.forEach(el=>el.classList.add('hidden'));
+      }
+    }
+  </script>
 
 </body>
 </html>
