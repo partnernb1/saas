@@ -1,150 +1,271 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Омега-3 | Натуральные добавки</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Омега-3 — оригинальные добавки из США</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-50 text-gray-900 antialiased">
 
-  <!-- Хедер -->
-  <header class="bg-green-700 text-white p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Healthy Store Moldova</h1>
-    <div>
-      <button class="px-3 py-1 bg-white text-green-700 font-semibold rounded mr-2" onclick="setLang('ru')">RU</button>
-      <button class="px-3 py-1 bg-white text-green-700 font-semibold rounded" onclick="setLang('ro')">RO</button>
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-green-600 flex items-center justify-center text-white font-bold">V</div>
+        <div>
+          <p class="text-lg font-semibold">VitaMarket Moldova</p>
+          <p class="text-xs text-gray-500">Оригинальные добавки из США • Доставка по Молдове</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
+        <a href="#product" class="hover:text-gray-900">Товар</a>
+        <a href="#brand" class="hover:text-gray-900">Бренд</a>
+        <a href="#store" class="hover:text-gray-900">О магазине</a>
+        <a href="#how-to-order" class="hover:text-gray-900">Как заказать</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Герой -->
-  <section class="p-6 md:flex md:gap-8 bg-white shadow-md">
-    <img src="https://images.weserv.nl/?url=m.media-amazon.com/images/I/71x7tiVE9eL.jpg&w=400" alt="Омега-3" class="w-full md:w-1/3 rounded-lg shadow mb-4 md:mb-0">
-    <div class="md:flex-1">
-      <h2 class="text-3xl font-bold mb-2 lang-ru">Омега-3 – 120 капсул</h2>
-      <h2 class="text-3xl font-bold mb-2 lang-ro hidden">Omega-3 – 120 capsule</h2>
-      <p class="text-xl mb-4 text-gray-700 lang-ru">Поддержка сердца, мозга и суставов</p>
-      <p class="text-xl mb-4 text-gray-700 lang-ro hidden">Susținerea inimii, creierului și articulațiilor</p>
-      <p class="text-2xl font-bold text-green-700 mb-4">Цена: 250 лей</p>
-      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-yellow-600 transition lang-ru">Заказать на iHerb</a>
-      <a href="[Партнёрская ссылка]" target="_blank" class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-yellow-600 transition lang-ro hidden">Cumpără pe iHerb</a>â
-      <p class="text-xl mb-4 text-gray-700 lang-ru"><a href="#how">Как заказать?</a></p>p
-    </div>
-  </section>
-
-  <!-- Описание товара -->
-  <section class="p-6 mt-6 bg-gray-100 rounded-lg shadow">
-    <h3 class="text-2xl font-bold mb-4 lang-ru">Описание товара</h3>
-    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Descriere produs</h3>
-    <p class="text-lg mb-4 lang-ru">Омега-3 – это незаменимые жирные кислоты, которые помогают поддерживать здоровье сердца, мозга и суставов. Наш продукт производится из высококачественного рыжего масла и проходит строгий контроль качества в США.</p>
-    <p class="text-lg mb-4 lang-ro hidden">Omega-3 sunt acizi grași esențiali care susțin sănătatea inimii, a creierului și a articulațiilor. Produsul nostru este fabricat din ulei de pește de înaltă calitate și este testat riguros în SUA.</p>
-
-    <h4 class="text-xl font-semibold mb-2 lang-ru">Полезные свойства:</h4>
-    <h4 class="text-xl font-semibold mb-2 lang-ro hidden">Beneficii:</h4>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-lg">
-      <li class="flex items-center"><span class="w-6 h-6 mr-2 bg-green-600 rounded-full"></span> Поддержка здоровья сердца</li>
-      <li class="flex items-center"><span class="w-6 h-6 mr-2 bg-green-600 rounded-full"></span> Улучшает работу мозга</li>
-      <li class="flex items-center"><span class="w-6 h-6 mr-2 bg-green-600 rounded-full"></span> Снижает воспаление</li>
-      <li class="flex items-center"><span class="w-6 h-6 mr-2 bg-green-600 rounded-full"></span> Укрепляет суставы</li>
-    </ul>
-  </section>
-
-  <!-- О бренде -->
-  <section class="p-6 mt-6 bg-white rounded-lg shadow">
-    <h3 class="text-2xl font-bold mb-4 lang-ru">О бренде</h3>
-    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Despre brand</h3>
-    <p class="text-lg">Бренд с более чем 20-летней историей в США. Используются только сертифицированные ингредиенты и современное производство, соответствующее стандартам GMP.</p>
-  </section>
-
-  <!-- О магазине -->
-  <section class="p-6 mt-6 bg-gray-100 rounded-lg shadow">
-    <h3 class="text-2xl font-bold mb-6 lang-ru">Почему именно у нас?</h3>
-    <h3 class="text-2xl font-bold mb-6 lang-ro hidden">De ce la noi?</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
-      <div class="flex items-start">
-        <span class="text-3xl mr-3">🇺🇸</span>
-        <p><strong>Made in USA</strong><br>Только оригинальные товары из США</p>
+  <!-- Hero / Product summary -->
+  <section id="product" class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-12 grid md:grid-cols-2 gap-8">
+      <div class="relative">
+        <img src="https://images.weserv.nl/?url=cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cgn/cgn00965/l/170.jpg&w=560" alt="Омега-3 — упаковка" class="w-full rounded-2xl shadow-md ring-1 ring-gray-200 bg-white"/>
+        <div class="absolute -bottom-3 left-4 bg-green-600 text-white text-xs uppercase tracking-wide rounded-full px-3 py-1 shadow">
+          Хит продаж
+        </div>
       </div>
-      <div class="flex items-start">
-        <span class="text-3xl mr-3">🚚</span>
-        <p><strong>Быстрая доставка</strong><br>Бесплатно от 1500 лей</p>
-      </div>
-      <div class="flex items-start">
-        <span class="text-3xl mr-3">🛡️</span>
-        <p><strong>Гарантия качества</strong><br>Каждый продукт проходит сертификацию</p>
-      </div>
-      <div class="flex items-start">
-        <span class="text-3xl mr-3">📞</span>
-        <p><strong>Поддержка</strong><br>Бесплатная консультация по телефону и WhatsApp</p>
+
+      <div class="flex flex-col">
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Омега-3 — 120 капсул</h1>
+        <p class="mt-3 text-gray-600 text-lg">Поддержка сердца, мозга, зрения и суставов. Очищенное рыбий жир, произведено в США по стандартам GMP.</p>
+
+        <div class="mt-5 flex items-end gap-4">
+          <div>
+            <p class="text-sm text-gray-500">Цена</p>
+            <p class="text-3xl font-extrabold text-green-700">250 лей</p>
+          </div>
+        </div>
+
+        <!-- Primary CTA -->
+        <div class="mt-6">
+          <a href="[Партнёрская ссылка]" target="_blank"
+             class="group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-green-600 px-6 py-4 text-white text-lg font-bold shadow-lg shadow-green-600/20 ring-1 ring-green-700/30 hover:bg-green-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 transition">
+            Заказать на iHerb
+            <!-- Arrow icon -->
+            <svg class="w-5 h-5 -mr-1 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14"></path>
+              <path d="M13 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <!-- Under-button helper link -->
+          <button onclick="document.getElementById('how-to-order').scrollIntoView({behavior:'smooth'})"
+                  class="mt-3 inline-flex items-center gap-2 text-green-700 hover:text-green-800 underline underline-offset-4">
+            Как заказать?
+          </button>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
+            <span class="text-xl">🇺🇸</span><span class="text-sm font-medium">Made in USA</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
+            <span class="text-xl">🚚</span><span class="text-sm font-medium">Быстрая доставка</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
+            <span class="text-xl">🛡️</span><span class="text-sm font-medium">Гарантия качества</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
+            <span class="text-xl">📞</span><span class="text-sm font-medium">Бесплатная консультация</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Инструкция -->
-  <section id="how-to-order" class="p-6 mt-6 bg-white rounded-lg shadow">
-    <h3 id="how" class="text-2xl font-bold mb-4 lang-ru">Как заказать?</h3>
-    <h3 class="text-2xl font-bold mb-4 lang-ro hidden">Cum să comandați?</h3>
-    <ol class="list-decimal list-inside text-lg space-y-2 mb-4">
-      <li>Создайте аккаунт на iHerb.</li>
-      <li>Выберите товар и добавьте в корзину.</li>
-      <li>Укажите адрес доставки в Молдове.</li>
-      <li>Оплатите картой или PayPal.</li>
-      <li>Дождитесь доставки прямо к вам домой.</li>
-    </ol>
-    <a href="instructions.pdf" download class="bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-yellow-600">📄 Скачать пошаговую инструкцию (PDF)</a>
-  </section>
+  <!-- Divider -->
+  <div class="max-w-6xl mx-auto px-4"><hr class="border-t-4 border-green-600/20 rounded-full"></div>
 
-  <!-- Поддержка -->
-  <section class="p-6 mt-6 bg-gray-100 rounded-lg shadow text-center">
-    <h3 class="text-2xl font-bold mb-4">Нужна помощь?</h3>
-    <p class="text-lg mb-4">Наши консультанты помогут бесплатно по телефону или WhatsApp.</p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-      <a href="tel:+37360000000" class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-800">📞 Позвонить</a>
-      <a href="https://wa.me/[номер]?text=Здравствуйте, хочу заказать Омега-3" target="_blank" class="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-800">💬 WhatsApp</a>
+  <!-- Product details -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-md ring-1 ring-gray-200 p-6">
+        <h2 class="text-2xl font-bold">Описание товара</h2>
+        <p class="mt-3 text-gray-700">
+          Омега-3 — группа незаменимых полиненасыщенных жирных кислот (EPA/DHA), необходимых для нормальной работы сердечно-сосудистой
+          системы, мозга и зрительного аппарата. Наш продукт произведён в США, сырьё проходит очистку и проверку на тяжёлые металлы, что
+          обеспечивают высокую чистоту и биодоступность.
+        </p>
+        <h3 class="mt-5 text-xl font-semibold">Полезные свойства</h3>
+        <ul class="mt-3 space-y-3 text-lg">
+          <li class="flex gap-3"><span aria-hidden="true">🍃</span><span>Поддержка здоровья сердца и нормализация липидного профиля</span></li>
+          <li class="flex gap-3"><span aria-hidden="true">🍃</span><span>Содействует когнитивной функции и концентрации</span></li>
+          <li class="flex gap-3"><span aria-hidden="true">🍃</span><span>Снижение воспалительных реакций</span></li>
+          <li class="flex gap-3"><span aria-hidden="true">🍃</span><span>Поддержка подвижности суставов</span></li>
+          <li class="flex gap-3"><span aria-hidden="true">🍃</span><span>Поддержание здоровья зрения</span></li>
+        </ul>
+
+        <div class="mt-6 grid sm:grid-cols-3 gap-3 text-sm">
+          <div class="rounded-lg bg-gray-50 border border-gray-200 p-3">
+            <p class="text-gray-500">Форма</p><p class="font-semibold">Капсулы (120 шт.)</p>
+          </div>
+          <div class="rounded-lg bg-gray-50 border border-gray-200 p-3">
+            <p class="text-gray-500">Происхождение</p><p class="font-semibold">США 🇺🇸</p>
+          </div>
+          <div class="rounded-lg bg-gray-50 border border-gray-200 p-3">
+            <p class="text-gray-500">Стандарты</p><p class="font-semibold">GMP / тесты на чистоту</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side card: quick help -->
+      <aside class="bg-gradient-to-b from-gray-50 to-white rounded-2xl shadow-md ring-1 ring-gray-200 p-6">
+        <h3 class="text-xl font-bold">Нужна помощь?</h3>
+        <p class="mt-2 text-gray-700">Консультация по телефону и WhatsApp — <span class="font-semibold">бесплатно</span>.</p>
+        <div class="mt-4 flex flex-col gap-3">
+          <a href="tel:+37360000000" class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 font-semibold hover:bg-gray-50">
+            📞 Позвонить
+          </a>
+          <a href="https://wa.me/[номер]?text=Здравствуйте, хочу заказать Омега-3" target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 font-semibold hover:bg-gray-50">
+            💬 WhatsApp
+          </a>
+        </div>
+        <!-- Better PDF button -->
+        <div class="mt-6">
+          <a href="instructions.pdf" download
+             class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-3 text-white font-bold shadow ring-1 ring-green-700/30 hover:bg-green-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 whitespace-nowrap text-base">
+            📄 Скачать инструкцию (PDF)
+          </a>
+          <p class="mt-2 text-xs text-gray-500">Пошаговое руководство по заказу и оплате — удобно распечатать.</p>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- Другие товары -->
-  <section class="p-6 mt-6 bg-white rounded-lg shadow">
-    <h3 class="text-2xl font-bold mb-4">Другие товары</h3>
+  <!-- Strong section divider -->
+  <div class="bg-gradient-to-r from-green-600/10 via-yellow-500/10 to-orange-500/10 py-[2px]"></div>
+
+  <!-- Brand section -->
+  <section id="brand" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="bg-white rounded-2xl shadow-md ring-1 ring-gray-200 p-6">
+      <h2 class="text-2xl font-bold">О бренде</h2>
+      <p class="mt-3 text-gray-700">
+        Наш партнёрский бренд производит добавки в США более 20 лет. Используются сертифицированные ингредиенты,
+        многоступенчатая очистка, независимые лабораторные тесты на чистоту и соответствие дозировок.
+      </p>
+    </div>
+  </section>
+
+  <!-- Store benefits -->
+  <section id="store" class="max-w-6xl mx-auto px-4 pb-10">
+    <div class="bg-gray-50 rounded-2xl shadow-inner ring-1 ring-gray-200 p-6">
+      <h2 class="text-2xl font-bold">Почему заказывать у нас</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-xl bg-white border border-gray-200 p-4">
+          <div class="text-3xl">🇺🇸</div>
+          <p class="mt-2 font-semibold">Оригинал из США</p>
+          <p class="text-sm text-gray-600">Только официальные поставки.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-gray-200 p-4">
+          <div class="text-3xl">🚚</div>
+          <p class="mt-2 font-semibold">Быстрая доставка</p>
+          <p class="text-sm text-gray-600">Бесплатно от 1500 лей.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-gray-200 p-4">
+          <div class="text-3xl">🛡️</div>
+          <p class="mt-2 font-semibold">Гарантия качества</p>
+          <p class="text-sm text-gray-600">Стандарты GMP и тесты.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-gray-200 p-4">
+          <div class="text-3xl">📞</div>
+          <p class="mt-2 font-semibold">Поддержка бесплатно</p>
+          <p class="text-sm text-gray-600">Телефон и WhatsApp.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-gray-500">
+        Примечание: мы — независимый сайт и аффилиаты iHerb. Получаем комиссию с покупок по нашим ссылкам. Товары продаются и доставляются iHerb.com.
+      </p>
+    </div>
+  </section>
+
+  <!-- How to order -->
+  <section id="how-to-order" class="max-w-6xl mx-auto px-4 pb-12">
+    <div class="bg-white rounded-2xl shadow-md ring-1 ring-gray-200 p-6">
+      <h2 class="text-2xl font-bold">Как заказать</h2>
+      <ol class="mt-4 space-y-3 text-lg">
+        <li class="flex gap-3"><span class="mt-1 text-base">1.</span><span>Создайте аккаунт на iHerb.</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-base">2.</span><span>Откройте страницу товара и нажмите «Добавить в корзину».</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-base">3.</span><span>Введите адрес доставки в Молдове.</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-base">4.</span><span>Оплатите картой или PayPal.</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-base">5.</span><span>Получите подтверждение и отслеживайте посылку в кабинете.</span></li>
+      </ol>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a href="[Партнёрская ссылка]" target="_blank"
+           class="group inline-flex items-center justify-center gap-3 rounded-xl bg-green-600 px-5 py-3 text-white font-bold shadow ring-1 ring-green-700/30 hover:bg-green-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300">
+          Перейти к заказу
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="instructions.pdf" download
+           class="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 font-semibold shadow-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-gray-200 whitespace-nowrap">
+          📄 Скачать инструкцию (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other products -->
+  <section class="max-w-6xl mx-auto px-4 pb-12">
+    <h2 class="text-2xl font-bold mb-4">Другие товары</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-gray-100 p-3 rounded-lg shadow text-center">
-        <img src="https://via.placeholder.com/150" alt="Витамин C" class="mx-auto mb-2 rounded">
+      <div class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-3 text-center">
+        <img src="https://via.placeholder.com/200x200" alt="Витамин C" class="mx-auto rounded-lg mb-2">
         <p class="font-semibold">Витамин C</p>
-        <p>150 лей</p>
+        <p class="text-sm text-gray-600">150 лей</p>
       </div>
-      <div class="bg-gray-100 p-3 rounded-lg shadow text-center">
-        <img src="https://via.placeholder.com/150" alt="Магний" class="mx-auto mb-2 rounded">
+      <div class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-3 text-center">
+        <img src="https://via.placeholder.com/200x200" alt="Магний" class="mx-auto rounded-lg mb-2">
         <p class="font-semibold">Магний</p>
-        <p>180 лей</p>
+        <p class="text-sm text-gray-600">180 лей</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-3 text-center">
+        <img src="https://via.placeholder.com/200x200" alt="Витамин D3" class="mx-auto rounded-lg mb-2">
+        <p class="font-semibold">Витамин D3</p>
+        <p class="text-sm text-gray-600">160 лей</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 p-3 text-center">
+        <img src="https://via.placeholder.com/200x200" alt="Цинк" class="mx-auto rounded-lg mb-2">
+        <p class="font-semibold">Цинк</p>
+        <p class="text-sm text-gray-600">140 лей</p>
       </div>
     </div>
   </section>
 
-  <!-- Дисклеймер -->
-  <section class="p-4 mt-6 bg-yellow-100 rounded-lg text-sm text-gray-700">
-    <p>⚠️ Информация на сайте не является медицинской рекомендацией. Перед применением любых добавок проконсультируйтесь с врачом.</p>
-    <p class="mt-2">Мы являемся аффилиатами iHerb и получаем комиссию за покупки по нашим ссылкам. Все товары продаются на iHerb.com.</p>
+  <!-- Disclaimer -->
+  <section class="max-w-6xl mx-auto px-4 pb-10">
+    <div class="rounded-2xl border-2 border-yellow-300 bg-yellow-50 p-4">
+      <p class="text-sm text-gray-800">
+        ⚠️ Информация на сайте не является медицинской рекомендацией. Перед применением любых добавок проконсультируйтесь с врачом,
+        особенно при беременности, кормлении, наличии хронических заболеваний или приёме лекарств.
+      </p>
+      <p class="mt-2 text-xs text-gray-600">
+        Мы — независимый информационный ресурс и аффилиаты iHerb. При покупке по нашим ссылкам мы можем получить комиссию. Все покупки,
+        оплата и доставка осуществляются на сайте iHerb.com.
+      </p>
+    </div>
   </section>
 
-  <!-- Футер -->
-  <footer class="bg-green-700 text-white p-6 mt-6 text-center text-lg">
-    © 2025 Healthy Store Moldova | <a href="#" class="underline">Политика конфиденциальности</a>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2025 VitaMarket Moldova</p>
+      <a href="#" class="underline hover:text-gray-900">Политика конфиденциальности</a>
+    </div>
   </footer>
-
-  <script>
-    function setLang(lang) {
-      const ru = document.querySelectorAll('.lang-ru');
-      const ro = document.querySelectorAll('.lang-ro');
-      if(lang === 'ru'){
-        ru.forEach(el=>el.classList.remove('hidden'));
-        ro.forEach(el=>el.classList.add('hidden'));
-      } else {
-        ro.forEach(el=>el.classList.remove('hidden'));
-        ru.forEach(el=>el.classList.add('hidden'));
-      }
-    }
-  </script>
 
 </body>
 </html>
