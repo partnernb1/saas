@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOW Foods Berberine – поддержка сахара и метаболизма</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1208131924424823');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208131924424823&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body class="bg-white text-gray-800">
 
@@ -18,7 +35,8 @@
     </p>
     <img src="https://images.weserv.nl/?url=raw.githubusercontent.com/partnernb1/saas/main/vita-md/img/berberine5_1.jpg&w=560" alt="Berberine NOW Foods" class="mx-auto mt-6 rounded-2xl shadow-lg">
     <!-- Совет по картинке: можно использовать крупный план баночки на светлом фоне -->
-    <a href="#offer" class="mt-8 inline-block bg-green-600 text-white text-lg font-semibold py-3 px-8 rounded-full shadow hover:bg-green-700 transition">
+    <a href="https://iherb.prf.hn/click/camref:1011l4PkQ/pubref:XXX/destination:https%3A%2F%2Fmd.iherb.com%2Fpr%2Fnow-foods-berberine-glucose-support-90-softgels%2F88818"
+      class="btn-click-md mt-8 inline-block bg-green-600 text-white text-lg font-semibold py-3 px-8 rounded-full shadow hover:bg-green-700 transition">
       Перейти в магазин
     </a>
   </section>
@@ -36,7 +54,7 @@
   <!-- РЕШЕНИЕ -->
   <section class="py-12 px-6">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-      <img src="https://images.weserv.nl/?url=raw.githubusercontent.com/partnernb1/saas/main/vita-md/img/berberine1.jpg&w=560" alt="Баночка Berberine" class="rounded-xl shadow-md">
+      <img src="https://images.weserv.nl/?url=raw.githubusercontent.com/partnernb1/saas/main/vita-md/img/berberine2.webp&w=560" alt="Баночка Berberine" class="rounded-xl shadow-md">
       <!-- Совет по картинке: можно показать баночку + капсулу рядом или инфографику -->
       <div>
         <h2 class="text-3xl font-bold text-green-700">Что делает NOW Foods Berberine</h2>
@@ -107,16 +125,59 @@
   <section id="offer" class="py-12 px-6 bg-green-600 text-white text-center">
     <h2 class="text-4xl font-extrabold">🔥 Закажите сейчас</h2>
     <p class="mt-4 text-xl">Берберин NOW Foods с доставкой прямо на дом через iHerb!</p>
-    <a href="https://md.iherb.com/pr/now-foods-berberine-glucose-support-90-softgels/88818" class="mt-6 inline-block bg-white text-green-700 font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-100 transition">
-      Купить на iHerb
+    <a href="https://iherb.prf.hn/click/camref:1011l4PkQ/pubref:XXX/destination:https%3A%2F%2Fmd.iherb.com%2Fpr%2Fnow-foods-berberine-glucose-support-90-softgels%2F88818"
+      class="btn-click-md mt-6 inline-block bg-white text-green-700 font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-100 transition">
+     🛒 Купить на iHerb
     </a>
   </section>
 
   <!-- FOOTER -->
   <footer class="py-8 px-6 text-center text-base text-gray-500 bg-gray-100">
     <p>© 2025 Ваш бренд. Все права защищены.</p>
-    <p class="mt-2"><a href="#" class="underline">Политика конфиденциальности</a> | <a href="#" class="underline">Контакты</a></p>
+    <p class="mt-2"><a href="privacy.html" class="underline">Политика конфиденциальности</a> | <a href="terms.html" class="underline">Условия использования</a> | <a href="disclaimer.html" class="underline">Отказ от ответственности</a></p>
   </footer>
+<script>
+  // функция для вытаскивания параметра из урла
+  function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var url = window.location.href;
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
+  var fbclid = getParameterByName("fbclid");
+
+  if (fbclid) {
+    document.querySelectorAll("a[href*='iherb.prf.hn/click']").forEach(function(link) {
+      // заменяем pubref:XXX на pubref:fbclid
+      link.href = link.href.replace(/pubref:[^/]+/, "pubref:" + fbclid);
+    });
+  }
+</script>
+
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll('.btn-click-md');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      fbq('trackCustom', 'CTA_Click_MD', {
+        button_text: btn.innerText.trim()
+      });
+    });
+  });
+});
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sw9qm3fb2w");
+</script>
 </body>
 </html>
