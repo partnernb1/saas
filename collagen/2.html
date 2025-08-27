@@ -166,42 +166,97 @@
                 </p>
 
 
+<!-- ====== Product of the Month (paste into your page) ====== -->
 <section class="py-16 bg-gray-50">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">
-      🌟 Лучший коллаген этого месяца
-    </h2>
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">🌟 Лучший коллаген этого месяца</h2>
+      <p class="text-sm text-gray-500">Выбрано редакцией: популярный выбор с высоким рейтингом и тысячами отзывов</p>
+    </div>
 
-    <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8">
-      
-      <!-- Фото -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+      <!-- Image -->
       <div class="flex-shrink-0">
-        <img src="https://m.media-amazon.com/images/I/61h+qfS3S3L._AC_SL1000_.jpg" 
-             alt="CollagenUP от California Gold Nutrition" 
-             class="w-40 h-40 object-contain rounded-xl shadow-md">
+        <img src="https://m.media-amazon.com/images/I/61h+qfS3S3L._AC_SL1000_.jpg"
+             alt="California Gold Nutrition CollagenUP"
+             class="w-36 h-36 md:w-44 md:h-44 object-contain rounded-xl shadow-sm" />
       </div>
 
-      <!-- Описание -->
-      <div class="text-left">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">
-          California Gold Nutrition – CollagenUP®
-        </h3>
-        <p class="text-gray-600 mb-4">
-          Более <span class="font-semibold text-gray-900">20,000 положительных отзывов</span>, 
-          рейтинг 4.8/5 ⭐ и тысячи заказов ежемесячно.  
-          Поддержка кожи, волос, суставов и иммунитета — проверено временем!
-        </p>
+      <!-- Content -->
+      <div class="flex-1">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="text-xs inline-flex items-center bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 font-semibold px-3 py-1 rounded-full mb-2">
+              Продукт месяца
+            </div>
 
-        <!-- Кнопка -->
-        <a href="https://www.iherb.com/pr/california-gold-nutrition-collagenup-206-1-2-oz-7-26-g/64106" 
-           target="_blank"
-           class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold px-8 py-3 rounded-full shadow-lg transition-all">
-          В магазин →
-        </a>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+              California Gold Nutrition — <span class="text-purple-600">CollagenUP®</span>
+            </h3>
+
+            <p class="text-gray-600 mt-3 md:mt-4 max-w-xl">
+              20,000+ положительных отзывов • рейтинг <strong>4.8/5</strong> ⭐ • тысячи заказов каждый месяц.
+              Поддержка кожи, волос и суставов — проверено пользователями.
+            </p>
+
+            <!-- Badges / quick facts -->
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Порошок, гидролизат</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">20 г/порция</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Вкус: нейтральный</span>
+            </div>
+          </div>
+
+          <!-- Price + CTA (right side on desktop) -->
+          <div class="mt-4 md:mt-0 md:ml-6 text-center md:text-right">
+            <div class="text-sm text-gray-500">Средняя цена</div>
+            <div class="text-2xl font-bold text-gray-900 mt-1 mb-4">$34.99</div>
+
+            <!-- CTA: same gradient style as footer subscribe -->
+            <a href="https://www.iherb.com/pr/california-gold-nutrition-collagenup-206-1-2-oz-7-26-g/64106?utm_source=blog&utm_medium=site&utm_campaign=product_month"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="trackOutboundClick('collagenup_california_gold')"
+               class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg transition-colors">
+              В магазин →
+            </a>
+
+            <!-- Small note -->
+            <div class="text-xs text-gray-500 mt-3">Бесплатная доставка от $50 (в зависимости от магазина)</div>
+          </div>
+        </div>
+
+        <!-- Reviews strip (desktop) -->
+        <div class="mt-6 flex items-center gap-4 text-sm text-gray-600">
+          <div class="flex items-center gap-1">
+            <span class="text-yellow-400">★ ★ ★ ★ ★</span>
+            <span class="ml-2 font-medium text-gray-800">4.8</span>
+          </div>
+          <div>•</div>
+          <div>20,000+ отзывов</div>
+          <div>•</div>
+          <div>Топ-продажа на iHerb</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ====== Tracking script (place once on the page, e.g. before </body>) ====== -->
+<script>
+  // Универсальная функция — вызывает FB Pixel (если установлен) и открывает ссылку
+  function trackOutboundClick(productId) {
+    try {
+      if (window.fbq) {
+        fbq('trackCustom', 'OutboundClick', { product: productId });
+      }
+    } catch (e) {
+      console.warn('FB Pixel error', e);
+    }
+    // Примечание: ссылку мы всё равно открываем через обычный <a> — здесь только событие пикселя
+  }
+</script>
+
 
 
                 
