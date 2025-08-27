@@ -68,8 +68,8 @@
       const res = await fetch(file);
       el.innerHTML = await res.text();
     }
-    loadPart("header", "/partials/header.html");
-    loadPart("footer", "/partials/footer.html");
+    loadPart("header", "partials/header.html");
+    loadPart("footer", "partials/footer.html");
 
     document.addEventListener('click', e => {
       if(e.target.id === 'menu-btn') {
