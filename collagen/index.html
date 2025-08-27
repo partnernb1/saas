@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог о Коллагене</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <div id="header"></div>
+
+  <main class="flex-grow container mx-auto px-6 py-10">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Всё о Коллагене</h1>
+      <p class="text-lg text-gray-600">Разбираем пользу, формы и бренды. Узнайте, какой коллаген подходит именно вам!</p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8">
+      <a href="post-benefits.html" class="bg-white shadow rounded-xl p-6 hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Польза коллагена</h2>
+        <p class="text-gray-600">Как он влияет на кожу, суставы и волосы.</p>
+      </a>
+      <a href="brands.html" class="bg-white shadow rounded-xl p-6 hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Сравнение брендов</h2>
+        <p class="text-gray-600">Какая форма и марка подойдут именно вам.</p>
+      </a>
+      <a href="#" class="bg-white shadow rounded-xl p-6 hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Мифы о коллагене</h2>
+        <p class="text-gray-600">Что правда, а что маркетинг?</p>
+      </a>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPart(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+    loadPart("header", "/partials/header.html");
+    loadPart("footer", "/partials/footer.html");
+
+    document.addEventListener('click', e => {
+      if(e.target.id === 'menu-btn') {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
