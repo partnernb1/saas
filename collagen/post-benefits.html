@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Польза коллагена</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <div id="header"></div>
+
+  <main class="flex-grow container mx-auto px-6 py-10 max-w-3xl">
+    <article class="prose lg:prose-lg">
+      <h1>Польза коллагена для кожи, суставов и волос</h1>
+      <p>Коллаген — это ключевой белок, который отвечает за упругость кожи, здоровье суставов и блеск волос. Его уровень снижается после 25 лет, поэтому добавки помогают восполнить нехватку.</p>
+
+      <h2>Для кожи</h2>
+      <p>Регулярный приём улучшает упругость, уменьшает морщины и способствует сиянию.</p>
+
+      <h2>Для суставов и костей</h2>
+      <p>Коллаген поддерживает здоровье хрящей, снижает риск боли и помогает восстановлению после нагрузок.</p>
+
+      <h2>Для волос и ногтей</h2>
+      <p>Укрепляет структуру волос, ускоряет рост ногтей, предотвращает ломкость.</p>
+
+      <div class="mt-8 p-6 bg-pink-50 border border-pink-200 rounded-xl text-center">
+        <h3 class="text-xl font-semibold mb-2">Хотите подобрать лучший вариант?</h3>
+        <p class="mb-4">Посмотрите наш гид по брендам и формам коллагена.</p>
+        <a href="brands.html" class="inline-block bg-pink-600 text-white py-3 px-6 rounded-xl shadow hover:bg-pink-700 transition">Сравнить бренды</a>
+      </div>
+    </article>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPart(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+    loadPart("header", "/partials/header.html");
+    loadPart("footer", "/partials/footer.html");
+
+    document.addEventListener('click', e => {
+      if(e.target.id === 'menu-btn') {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
