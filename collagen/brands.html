@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сравнение брендов коллагена</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <div id="header"></div>
+
+  <main class="flex-grow container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-8 text-center">Сравнение популярных брендов коллагена</h1>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-200 bg-white shadow rounded-lg">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="p-4 text-left">Бренд</th>
+            <th class="p-4 text-left">Форма</th>
+            <th class="p-4 text-left">Плюсы</th>
+            <th class="p-4 text-left">Минусы</th>
+            <th class="p-4 text-left">Цена</th>
+            <th class="p-4 text-left">Ссылка</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t">
+            <td class="p-4 font-semibold">Vital Proteins</td>
+            <td class="p-4">Порошок</td>
+            <td class="p-4">Легко растворяется, много вкусов</td>
+            <td class="p-4">Цена выше средней</td>
+            <td class="p-4">$35</td>
+            <td class="p-4"><a href="#" class="text-pink-600 hover:underline">Купить</a></td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-4 font-semibold">NeoCell</td>
+            <td class="p-4">Капсулы</td>
+            <td class="p-4">Удобно принимать</td>
+            <td class="p-4">Меньшая дозировка</td>
+            <td class="p-4">$20</td>
+            <td class="p-4"><a href="#" class="text-pink-600 hover:underline">Купить</a></td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-4 font-semibold">Doctor’s Best</td>
+            <td class="p-4">Таблетки</td>
+            <td class="p-4">Хорошее соотношение цена/качество</td>
+            <td class="p-4">Крупные таблетки</td>
+            <td class="p-4">$25</td>
+            <td class="p-4"><a href="#" class="text-pink-600 hover:underline">Купить</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="mb-4 text-gray-700">Все бренды можно купить на iHerb, Amazon или Vitacost. Выбирайте удобную форму и магазин!</p>
+      <a href="#" class="inline-block bg-pink-600 text-white py-3 px-6 rounded-xl shadow hover:bg-pink-700 transition">Перейти к покупкам</a>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadPart(id, file) {
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
+    }
+    loadPart("header", "/partials/header.html");
+    loadPart("footer", "/partials/footer.html");
+
+    document.addEventListener('click', e => {
+      if(e.target.id === 'menu-btn') {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
+
