@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collagen Supplements Guide - Forms, Brands & Products Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Collagen Supplements Guide</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">Compare forms, brands, and products to find the perfect collagen supplement for your needs</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-8 py-4">
+                <button onclick="showSection('forms')" class="nav-btn px-6 py-2 rounded-full font-medium transition-all duration-300 bg-purple-100 text-purple-700">Forms</button>
+                <button onclick="showSection('brands')" class="nav-btn px-6 py-2 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-gray-100">Brands</button>
+                <button onclick="showSection('comparison')" class="nav-btn px-6 py-2 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-gray-100">Comparison</button>
+                <button onclick="showSection('guide')" class="nav-btn px-6 py-2 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-gray-100">Buying Guide</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Forms Section -->
+    <section id="forms" class="section py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Collagen Supplement Forms</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pills/Capsules -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6 text-center">💊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Pills & Capsules</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Convenient and portable</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Pre-measured dosage</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>No taste or mixing required</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>Lower absorption rate</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>May contain fillers</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-blue-800"><strong>Best for:</strong> Busy lifestyles, travel, those who dislike mixing drinks</p>
+                    </div>
+                </div>
+
+                <!-- Powder -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6 text-center">🥤</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Powder</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Higher absorption rate</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Versatile mixing options</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Often more cost-effective</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>Requires mixing preparation</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>Less portable</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800"><strong>Best for:</strong> Home use, smoothies, coffee, maximum absorption</p>
+                    </div>
+                </div>
+
+                <!-- Liquid -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6 text-center">🧪</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Liquid</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Fastest absorption</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Ready to consume</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span>Often includes vitamins</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>Most expensive option</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 text-xl">✗</span>
+                            <span>Shorter shelf life</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-purple-50 rounded-lg">
+                        <p class="text-sm text-purple-800"><strong>Best for:</strong> Quick results, premium experience, on-the-go consumption</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="section py-16 bg-white hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Popular Collagen Brands</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Brand cards -->
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">V</div>
+                        <h3 class="text-xl font-bold ml-3">Vital Proteins</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Grass-fed, pasture-raised</p>
+                        <p><strong>Forms:</strong> Powder, capsules, gummies</p>
+                        <p><strong>Price Range:</strong> $$-$$$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ 4.5/5</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">G</div>
+                        <h3 class="text-xl font-bold ml-3">Great Lakes</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Unflavored, pure collagen</p>
+                        <p><strong>Forms:</strong> Powder, capsules</p>
+                        <p><strong>Price Range:</strong> $-$$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐ 4.3/5</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">N</div>
+                        <h3 class="text-xl font-bold ml-3">NeoCell</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Beauty-focused formulas</p>
+                        <p><strong>Forms:</strong> Capsules, tablets, powder</p>
+                        <p><strong>Price Range:</strong> $-$$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐ 4.2/5</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">Y</div>
+                        <h3 class="text-xl font-bold ml-3">Youtheory</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Anti-aging focus</p>
+                        <p><strong>Forms:</strong> Tablets, powder</p>
+                        <p><strong>Price Range:</strong> $-$$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐ 4.1/5</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <h3 class="text-xl font-bold ml-3">Sports Research</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Athletic performance</p>
+                        <p><strong>Forms:</strong> Powder, capsules</p>
+                        <p><strong>Price Range:</strong> $$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐ 4.4/5</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">A</div>
+                        <h3 class="text-xl font-bold ml-3">Ancient Nutrition</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Specialty:</strong> Multi-collagen blend</p>
+                        <p><strong>Forms:</strong> Powder, capsules</p>
+                        <p><strong>Price Range:</strong> $$-$$$</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐ 4.3/5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section py-16 hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Product Comparison</h2>
+            
+            <!-- Filter Controls -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                <h3 class="text-xl font-bold mb-4">Filter Products</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <select id="formFilter" class="p-3 border rounded-lg">
+                        <option value="">All Forms</option>
+                        <option value="powder">Powder</option>
+                        <option value="capsule">Capsules</option>
+                        <option value="liquid">Liquid</option>
+                    </select>
+                    <select id="priceFilter" class="p-3 border rounded-lg">
+                        <option value="">All Prices</option>
+                        <option value="budget">Budget ($)</option>
+                        <option value="mid">Mid-range ($$)</option>
+                        <option value="premium">Premium ($$$)</option>
+                    </select>
+                    <select id="typeFilter" class="p-3 border rounded-lg">
+                        <option value="">All Types</option>
+                        <option value="type1">Type I</option>
+                        <option value="type2">Type II</option>
+                        <option value="multi">Multi-Type</option>
+                    </select>
+                    <button onclick="filterProducts()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">Apply Filters</button>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-bold">Product</th>
+                                <th class="px-6 py-4 text-left font-bold">Form</th>
+                                <th class="px-6 py-4 text-left font-bold">Type</th>
+                                <th class="px-6 py-4 text-left font-bold">Serving</th>
+                                <th class="px-6 py-4 text-left font-bold">Price</th>
+                                <th class="px-6 py-4 text-left font-bold">Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTable">
+                            <tr class="border-b product-row" data-form="powder" data-price="premium" data-type="multi">
+                                <td class="px-6 py-4">
+                                    <div class="font-bold">Vital Proteins Collagen Peptides</div>
+                                    <div class="text-sm text-gray-600">Grass-fed, pasture-raised</div>
+                                </td>
+                                <td class="px-6 py-4">Powder</td>
+                                <td class="px-6 py-4">Type I & III</td>
+                                <td class="px-6 py-4">20g</td>
+                                <td class="px-6 py-4">$$$</td>
+                                <td class="px-6 py-4">⭐⭐⭐⭐⭐ 4.5</td>
+                            </tr>
+                            <tr class="border-b product-row" data-form="capsule" data-price="budget" data-type="type1">
+                                <td class="px-6 py-4">
+                                    <div class="font-bold">NeoCell Super Collagen</div>
+                                    <div class="text-sm text-gray-600">Type 1 & 3 with Vitamin C</div>
+                                </td>
+                                <td class="px-6 py-4">Capsules</td>
+                                <td class="px-6 py-4">Type I & III</td>
+                                <td class="px-6 py-4">6 capsules</td>
+                                <td class="px-6 py-4">$</td>
+                                <td class="px-6 py-4">⭐⭐⭐⭐ 4.2</td>
+                            </tr>
+                            <tr class="border-b product-row" data-form="powder" data-price="mid" data-type="type1">
+                                <td class="px-6 py-4">
+                                    <div class="font-bold">Great Lakes Collagen Hydrolysate</div>
+                                    <div class="text-sm text-gray-600">Unflavored, dissolves instantly</div>
+                                </td>
+                                <td class="px-6 py-4">Powder</td>
+                                <td class="px-6 py-4">Type I & III</td>
+                                <td class="px-6 py-4">11g</td>
+                                <td class="px-6 py-4">$$</td>
+                                <td class="px-6 py-4">⭐⭐⭐⭐ 4.3</td>
+                            </tr>
+                            <tr class="border-b product-row" data-form="liquid" data-price="premium" data-type="multi">
+                                <td class="px-6 py-4">
+                                    <div class="font-bold">Liquid Collagen Beauty Shot</div>
+                                    <div class="text-sm text-gray-600">With hyaluronic acid & biotin</div>
+                                </td>
+                                <td class="px-6 py-4">Liquid</td>
+                                <td class="px-6 py-4">Multi-Type</td>
+                                <td class="px-6 py-4">15ml shot</td>
+                                <td class="px-6 py-4">$$$</td>
+                                <td class="px-6 py-4">⭐⭐⭐⭐ 4.1</td>
+                            </tr>
+                            <tr class="border-b product-row" data-form="capsule" data-price="mid" data-type="type2">
+                                <td class="px-6 py-4">
+                                    <div class="font-bold">Sports Research Collagen</div>
+                                    <div class="text-sm text-gray-600">Hydrolyzed Type I & III</div>
+                                </td>
+                                <td class="px-6 py-4">Capsules</td>
+                                <td class="px-6 py-4">Type I & III</td>
+                                <td class="px-6 py-4">6 capsules</td>
+                                <td class="px-6 py-4">$$</td>
+                                <td class="px-6 py-4">⭐⭐⭐⭐ 4.4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Guide Section -->
+    <section id="guide" class="section py-16 bg-white hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Buying Guide</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- What to Look For -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">What to Look For</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-blue-500 text-xl mt-1">🔍</span>
+                            <div>
+                                <h4 class="font-bold">Source Quality</h4>
+                                <p class="text-sm text-gray-600">Look for grass-fed, pasture-raised, or wild-caught sources</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-blue-500 text-xl mt-1">⚗️</span>
+                            <div>
+                                <h4 class="font-bold">Hydrolyzed Collagen</h4>
+                                <p class="text-sm text-gray-600">Broken down for better absorption and bioavailability</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-blue-500 text-xl mt-1">🧪</span>
+                            <div>
+                                <h4 class="font-bold">Third-Party Testing</h4>
+                                <p class="text-sm text-gray-600">Ensures purity and potency verification</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-blue-500 text-xl mt-1">🌿</span>
+                            <div>
+                                <h4 class="font-bold">Minimal Additives</h4>
+                                <p class="text-sm text-gray-600">Avoid unnecessary fillers, artificial colors, or flavors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dosage Guidelines -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Dosage Guidelines</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-green-700">General Health</h4>
+                            <p class="text-sm">10-15g daily for overall wellness and joint support</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-blue-700">Skin & Beauty</h4>
+                            <p class="text-sm">15-20g daily for skin elasticity and hydration</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-purple-700">Athletic Performance</h4>
+                            <p class="text-sm">20-25g daily for muscle recovery and joint health</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-bold text-orange-700">Bone Health</h4>
+                            <p class="text-sm">5-10g daily, preferably with calcium and vitamin D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="mt-12 bg-gray-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <div class="faq-item bg-white rounded-lg p-4 cursor-pointer" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold">When is the best time to take collagen?</h4>
+                            <span class="text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer hidden mt-3 text-gray-600">
+                            <p>Collagen can be taken any time of day. Many people prefer morning with coffee or post-workout for recovery. Consistency is more important than timing.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg p-4 cursor-pointer" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold">How long before I see results?</h4>
+                            <span class="text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer hidden mt-3 text-gray-600">
+                            <p>Most people notice improvements in skin hydration within 4-6 weeks, joint comfort in 8-12 weeks, and hair/nail strength in 12-16 weeks of consistent use.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg p-4 cursor-pointer" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold">Are there any side effects?</h4>
+                            <span class="text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer hidden mt-3 text-gray-600">
+                            <p>Collagen is generally well-tolerated. Some people may experience mild digestive upset initially. Start with a smaller dose and gradually increase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.remove('hidden');
+            
+            // Update navigation buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-purple-100', 'text-purple-700');
+                btn.classList.add('text-gray-600');
+            });
+            
+            event.target.classList.add('bg-purple-100', 'text-purple-700');
+            event.target.classList.remove('text-gray-600');
+        }
+
+        function filterProducts() {
+            const formFilter = document.getElementById('formFilter').value;
+            const priceFilter = document.getElementById('priceFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            
+            const rows = document.querySelectorAll('.product-row');
+            
+            rows.forEach(row => {
+                let show = true;
+                
+                if (formFilter && !row.dataset.form.includes(formFilter)) {
+                    show = false;
+                }
+                if (priceFilter && !row.dataset.price.includes(priceFilter)) {
+                    show = false;
+                }
+                if (typeFilter && !row.dataset.type.includes(typeFilter)) {
+                    show = false;
+                }
+                
+                row.style.display = show ? 'table-row' : 'none';
+            });
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const icon = element.querySelector('span');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        // Initialize with forms section visible
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('forms');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'975ceec565071866',t:'MTc1NjMxMjAwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
