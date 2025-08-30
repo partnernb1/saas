@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Collagen for Joint Health - Available in Moldova</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .pain-points {
+            padding: 60px 30px;
+            background: #f8f9fa;
+        }
+        
+        .pain-points h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #e74c3c;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pain-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .pain-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .pain-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .solution-section {
+            padding: 60px 30px;
+            background: white;
+        }
+        
+        .solution-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .solution-header h2 {
+            font-size: 2.2rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
+        .product-showcase {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .product-bottle {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 20px 20px 40px 40px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .product-bottle::before {
+            content: "PREMIUM COLLAGEN";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .product-bottle::after {
+            content: "💊";
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+        
+        .product-details {
+            flex: 2;
+            min-width: 400px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .benefits-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .benefits-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .trust-section {
+            padding: 60px 30px;
+            background: #f8f9fa;
+        }
+        
+        .trust-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .trust-header h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .trust-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .trust-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .trust-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .cta-section {
+            padding: 80px 30px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .guarantee {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .guarantee strong {
+            color: #856404;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .product-showcase {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🦴 Premium Collagen for Joint Health</h1>
+            <p>Restore mobility and reduce joint pain naturally - Available in Moldova</p>
+        </div>
+
+        <!-- Pain Points Section -->
+        <div class="pain-points">
+            <h2>Are You Struggling With These Joint Problems?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <span class="pain-icon">😣</span>
+                    <h3>Morning Stiffness</h3>
+                    <p>Waking up with stiff, painful joints that take hours to loosen up</p>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">🚶‍♂️</span>
+                    <h3>Limited Mobility</h3>
+                    <p>Difficulty climbing stairs, walking long distances, or doing daily activities</p>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">⚡</span>
+                    <h3>Sharp Joint Pain</h3>
+                    <p>Sudden, shooting pains in knees, hips, shoulders, and other joints</p>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">😴</span>
+                    <h3>Sleep Disruption</h3>
+                    <p>Joint pain keeping you awake at night, affecting your quality of life</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solution Section -->
+        <div class="solution-section">
+            <div class="solution-header">
+                <h2>The Natural Solution: Premium Collagen</h2>
+                <p style="font-size: 1.1rem; color: #666;">Clinically proven to rebuild cartilage and reduce joint inflammation</p>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-image">
+                    <div class="product-bottle"></div>
+                    <p style="margin-top: 20px; font-weight: bold; color: #27ae60;">30-Day Supply</p>
+                </div>
+                
+                <div class="product-details">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 25px; color: #2c3e50;">Why Our Collagen Works:</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Type II Collagen</strong> - Specifically targets joint cartilage repair</li>
+                        <li><strong>High Bioavailability</strong> - Advanced formula for maximum absorption</li>
+                        <li><strong>Anti-Inflammatory</strong> - Reduces joint swelling and pain</li>
+                        <li><strong>Cartilage Regeneration</strong> - Helps rebuild damaged joint tissue</li>
+                        <li><strong>Improved Flexibility</strong> - Restores natural range of motion</li>
+                        <li><strong>Fast Results</strong> - Many users feel improvement within 2-3 weeks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Section -->
+        <div class="trust-section">
+            <div class="trust-header">
+                <h2>Why Thousands Trust Our Collagen</h2>
+                <p style="color: #666;">Backed by science, trusted by customers across Moldova</p>
+            </div>
+            
+            <div class="trust-elements">
+                <div class="trust-item">
+                    <span class="trust-icon">🔬</span>
+                    <h3>Clinically Tested</h3>
+                    <p>Proven effective in multiple clinical studies with real results</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🏆</span>
+                    <h3>Premium Quality</h3>
+                    <p>Manufactured in certified facilities with highest quality standards</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⭐</span>
+                    <h3>5-Star Reviews</h3>
+                    <p>Over 10,000 satisfied customers with excellent feedback</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🚚</span>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and secure shipping throughout Moldova</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Start Your Joint Recovery Today!</h2>
+            <p>Don't let joint pain control your life. Take the first step towards pain-free movement.</p>
+            
+            <div class="guarantee">
+                <strong>🛡️ 60-Day Money-Back Guarantee</strong><br>
+                Try risk-free - if you're not completely satisfied, get your full refund!
+            </div>
+            
+            <a href="#" class="cta-button" onclick="handleCTAClick()">
+                Order Now - Special Price for Moldova
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 1rem; opacity: 0.8;">
+                ⏰ Limited time offer - Don't miss out!
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>This is a promotional demonstration page. Individual results may vary. Consult your healthcare provider before starting any supplement regimen.</p>
+        </div>
+    </div>
+
+    <script>
+        function handleCTAClick() {
+            // Simulate partner redirect
+            alert('🎉 Redirecting to our trusted partner for secure checkout!\n\n✅ Special Moldova pricing available\n✅ Secure payment processing\n✅ Fast local delivery\n\nClick OK to continue to the official order page.');
+            
+            // In a real scenario, this would redirect to the actual affiliate partner
+            // window.location.href = 'https://partner-site.com/collagen-order?ref=moldova';
+        }
+
+        // Add smooth scrolling animation on load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add hover effects to pain points
+        document.querySelectorAll('.pain-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add hover effects to trust elements
+        document.querySelectorAll('.trust-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9762fc07b1b91868',t:'MTc1NjM3NTQ2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
