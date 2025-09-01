@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hondro Sol - Comandă acum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<!-- Testimonials Section -->
+<section class="py-12 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Ce spun clienții noștri</h2>
+    <div class="flex justify-center mb-6 space-x-2">
+      <img class="w-5 h-5" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/stella.svg" alt="stea">
+      <img class="w-5 h-5" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/stella.svg" alt="stea">
+      <img class="w-5 h-5" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/stella.svg" alt="stea">
+      <img class="w-5 h-5" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/stella.svg" alt="stea">
+      <img class="w-5 h-5" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/stella.svg" alt="stea">
+    </div>
+    <a href="#formular-comanda" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">Comandă acum</a>
+  </div>
+</section>
+
+<!-- How to Order Section -->
+<section class="py-12">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">Cum să comandați în siguranță</h2>
+    <p class="mb-8">Completarea formularului nu vă obligă să cumpărați. Veți decide când un reprezentant vă va contacta.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div>
+        <img class="mx-auto mb-4" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/step1.png" alt="Pasul 1" width="100" height="100">
+        <p class="font-semibold mb-2">Pasul 1</p>
+        <p>Introduceți datele dvs. în formularul de la sfârșitul paginii.</p>
+      </div>
+      <div>
+        <img class="mx-auto mb-4" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/step2.png" alt="Pasul 2" width="100" height="100">
+        <p class="font-semibold mb-2">Pasul 2</p>
+        <p>Un reprezentant vă va contacta pentru a confirma comanda și a răspunde la întrebări.</p>
+      </div>
+      <div>
+        <img class="mx-auto mb-4" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/step3.png" alt="Pasul 3" width="100" height="100">
+        <p class="font-semibold mb-2">Pasul 3</p>
+        <p>Comanda va fi livrată prin curier expres în 24–48h.</p>
+      </div>
+      <div>
+        <img class="mx-auto mb-4" src="https://hondrosolmagyarorszag.com/wp-content/themes/mytheme/assets/img/step4.png" alt="Pasul 4" width="100" height="100">
+        <p class="font-semibold mb-2">Pasul 4</p>
+        <p>Plătiți direct curierului la livrare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-12 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4 text-center">Întrebări frecvente</h2>
+    <p class="text-center mb-8">Apăsați întrebările pentru a vedea răspunsurile.</p>
+    <div class="space-y-4">
+      <div x-data="{ open: false }" class="border rounded-lg">
+        <button @click="open = !open" class="w-full px-4 py-3 text-left flex justify-between items-center">
+          <span>1. Cum se efectuează livrarea?</span>
+          <span x-show="!open">+</span><span x-show="open">−</span>
+        </button>
+        <div x-show="open" class="px-4 py-2 border-t">
+          Livrarea se face în 24–48h prin curier. Plătiți la livrare, fără griji.
+        </div>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-lg">
+        <button @click="open = !open" class="w-full px-4 py-3 text-left flex justify-between items-center">
+          <span>2. Cât de repede primesc produsul?</span>
+          <span x-show="!open">+</span><span x-show="open">−</span>
+        </button>
+        <div x-show="open" class="px-4 py-2 border-t">
+          Curierul livrează produsul în 24–48h de la plasarea comenzii, exceptând zilele nelucrătoare.
+        </div>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-lg">
+        <button @click="open = !open" class="w-full px-4 py-3 text-left flex justify-between items-center">
+          <span>3. Pot plăti la livrare?</span>
+          <span x-show="!open">+</span><span x-show="open">−</span>
+        </button>
+        <div x-show="open" class="px-4 py-2 border-t">
+          Da, aceasta este metoda preferată de majoritatea clienților noștri.
+        </div>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-lg">
+        <button @click="open = !open" class="w-full px-4 py-3 text-left flex justify-between items-center">
+          <span>4. Cum pot comanda Hondro Sol?</span>
+          <span x-show="!open">+</span><span x-show="open">−</span>
+        </button>
+        <div x-show="open" class="px-4 py-2 border-t">
+          Completați formularul cu datele dvs., iar un reprezentant vă va contacta pentru confirmare.
+        </div>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-lg">
+        <button @click="open = !open" class="w-full px-4 py-3 text-left flex justify-between items-center">
+          <span>5. Cum contactez serviciul clienți?</span>
+          <span x-show="!open">+</span><span x-show="open">−</span>
+        </button>
+        <div x-show="open" class="px-4 py-2 border-t">
+          Completați formularul <a href="/contact" class="text-green-600 underline">aici</a> și veți fi contactat.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Price Section -->
+<section class="py-12">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">Află prețul Hondro Sol și garanția noastră de satisfacție</h2>
+    <p class="mb-8">Preț foarte accesibil pentru rezultatele oferite.</p>
+    <div class="bg-green-50 p-6 rounded-lg mb-8">
+      <p class="font-semibold mb-2">Oferta promoțională valabilă câteva zile</p>
+      <p class="text-2xl font-bold text-green-700 mb-2">11 400 Ft</p>
+      <p class="line-through text-gray-500">(22.800 Ft)</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+      <div class="p-4 border rounded-lg">
+        <img class="w-16 h-16 mb-2 mx-auto" src="https://hondrosolmagyarorszag.com/wp-content/uploads/sites/288/2024/07/esprice1.jpg" alt="Livrare gratuită">
+        <p class="font-semibold mb-1 text-center">Livrare gratuită</p>
+        <p>Comandați astăzi și primiți produsul în 48h fără cost suplimentar.</p>
+      </div>
+      <div class="p-4 border rounded-lg">
+        <img class="w-16 h-16 mb-2 mx-auto" src="https://hondrosolmagyarorszag.com/wp-content/uploads/sites/288/2024/07/esprice2.jpg" alt="Plată la livrare">
+        <p class="font-semibold mb-1 text-center">Plată la livrare</p>
+        <p>Nu riscați nimic. Plătiți doar la primirea produsului.</p>
+      </div>
+      <div class="p-4 border rounded-lg">
+        <img class="w-16 h-16 mb-2 mx-auto" src="https://hondrosolmagyarorszag.com/wp-content/uploads/sites/288/2024/07/esprice3.jpg" alt="Garanție returnare">
+        <p class="font-semibold mb-1 text-center">Garanție returnare</p>
+        <p>Puteți returna produsul dacă vă răzgândiți.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Form Section -->
+<section id="formular-comanda" class="py-12 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4 text-center">Comandă Hondro Sol</h2>
+    <p class="text-center mb-8">Completați formularul pentru a fi contactat. Numărul de produse promoționale este limitat.</p>
+    <form class="max-w-lg mx-auto space-y-4 bg-gray-50 p-6 rounded-lg shadow">
+      <div>
+        <label class="block mb-1 font-semibold">Nume și prenume <span class="text-red-500">*</span></label>
+        <input type="text" name="name" required class="w-full p-2 border rounded">
+      </div>
+      <div>
+        <label class="block mb-1 font-semibold">Telefon <span class="text-red-500">*</span></label>
+        <div class="flex">
+          <span class="inline-flex items-center px-3 bg-gray-200 border border-r-0 rounded-l">+36</span>
+          <input type="tel" name="phone" pattern="\d*" required class="w-full p-2 border rounded-r">
+        </div>
+      </div>
+      <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">Trimite formularul</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-6 bg-gray-100 mt-12">
+  <div class="container mx-auto px-4 text-center text-sm text-gray-600">
+    &copy; 2025 Hondro Sol - 
+    <a href="/termene-si-conditii" class="underline text-green-600">Termeni și condiții</a> - 
+    <a href="/politica-de-confidentialitate" class="underline text-green-600">Politica de confidențialitate</a> - 
+    <a href="/contact" class="underline text-green-600">Contact</a>
+  </div>
+</footer>
+
+<!-- Alpine.js pentru FAQ -->
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</body>
+</html>
