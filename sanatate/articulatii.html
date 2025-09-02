@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sănătate și Wellness - Blog Medical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5zM10 18a3 3 0 100-6 3 3 0 000 6z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">MedBlog</span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Acasă</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Articole</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Nutriție</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Fitness</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile navigation -->
+            <nav id="mobileMenu" class="md:hidden mt-4 pb-4 border-t pt-4 hidden">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Acasă</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Articole</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Nutriție</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Fitness</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                Beneficiile Vitaminei D pentru Sănătatea Ta
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 mb-8 leading-relaxed">
+                Descoperă cum vitamina D poate îmbunătăți sistemul imunitar, sănătatea oaselor și starea generală de bine. Ghid complet bazat pe cercetări științifice recente.
+            </p>
+            <div class="flex items-center justify-center space-x-4 text-sm opacity-80">
+                <span>📅 15 Decembrie 2024</span>
+                <span>•</span>
+                <span>👤 Dr. Maria Popescu</span>
+                <span>•</span>
+                <span>⏱️ 8 min citire</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Introduction -->
+        <section class="mb-12">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+                <p class="text-blue-800 font-medium">
+                    <strong>Notă importantă:</strong> Acest articol este doar în scop informativ și nu înlocuiește consultul medical profesionist. Consultați întotdeauna medicul înainte de a începe orice suplimentare.
+                </p>
+            </div>
+            
+            <p class="text-lg leading-relaxed mb-6">
+                Vitamina D, cunoscută și sub numele de "vitamina soarelui", joacă un rol crucial în menținerea sănătății generale. Deși corpul nostru poate produce vitamina D atunci când pielea este expusă la lumina solară, mulți oameni suferă de deficiență, mai ales în lunile de iarnă.
+            </p>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Ce Este Vitamina D?</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Vitamina D este o vitamină liposolubilă care funcționează mai degrabă ca un hormon în corpul uman. Există două forme principale: <a href="#" class="text-blue-600 hover:text-blue-800 underline font-medium">vitamina D2 (ergocalciferol)</a> și <a href="#" class="text-blue-600 hover:text-blue-800 underline font-medium">vitamina D3 (colecalciferol)</a>.
+            </p>
+            
+            <div class="bg-gray-100 rounded-lg p-6 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-900">Surse Naturale de Vitamina D:</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">•</span>
+                        <span>Expunerea la lumina solară (10-30 minute zilnic)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">•</span>
+                        <span>Pești grași (somon, macrou, sardine)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">•</span>
+                        <span>Gălbenușuri de ou</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">•</span>
+                        <span>Alimente fortificate (lapte, cereale)</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Beneficiile pentru Sănătate</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">🦴 Sănătatea Oaselor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Vitamina D facilitează absorbția calciului în intestin, fiind esențială pentru dezvoltarea și menținerea oaselor puternice. <a href="#" class="text-blue-600 hover:text-blue-800 underline">Studiile arată</a> că deficiența poate duce la osteoporoză.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">🛡️ Sistemul Imunitar</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Cercetările recente sugerează că vitamina D modulează răspunsul imunitar, putând reduce riscul infecțiilor respiratorii și bolilor autoimune.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banner -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-green-500 to-blue-600 rounded-xl p-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-4">🌟 Suplimente Premium Vitamina D3</h3>
+                <p class="text-lg mb-6 opacity-90">
+                    Descoperă gama noastră de suplimente de vitamina D3 de înaltă calitate, testate în laborator și certificate pentru puritate.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Vezi Oferta Specială
+                    </button>
+                    <span class="text-sm opacity-80">✅ Livrare gratuită peste 150 RON</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Simptomele Deficienței</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Deficiența de vitamina D poate fi subtilă la început, dar poate avea consecințe grave pe termen lung. <a href="#" class="text-blue-600 hover:text-blue-800 underline font-medium">Organizația Mondială a Sănătății</a> estimează că peste 1 miliard de oameni au nivele insuficiente.
+            </p>
+            
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-red-800">⚠️ Semnele de Alarmă:</h3>
+                <div class="grid sm:grid-cols-2 gap-3 text-red-700">
+                    <div>• Oboseală cronică</div>
+                    <div>• Dureri musculare</div>
+                    <div>• Depresie sau anxietate</div>
+                    <div>• Infecții frecvente</div>
+                    <div>• Vindecarea lentă a rănilor</div>
+                    <div>• Dureri osoase</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Read More Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Articole Recomandate</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <span class="text-4xl">🥗</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Dieta Mediteraneană: Ghid Complet</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Beneficiile dovedite științific ale dietei mediteraneene pentru sănătatea cardiovasculară și longevitate.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Dr. Ana Ionescu</span>
+                            <span>6 min</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <span class="text-4xl">💪</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Exercițiile Fizice și Imunitatea</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Cum activitatea fizică regulată poate întări sistemul imunitar și preveni bolile cronice.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Prof. Mihai Radu</span>
+                            <span>5 min</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <span class="text-4xl">😴</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Somnul și Sănătatea Mentală</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Importanța somnului de calitate pentru echilibrul hormonal și sănătatea psihică.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Dr. Elena Vasile</span>
+                            <span>7 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5zM10 18a3 3 0 100-6 3 3 0 000 6z"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold text-white">MedBlog</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Informații medicale de încredere pentru o viață mai sănătoasă. Bazat pe cercetări științifice actuale.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigare</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Acasă</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Articole</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Despre Noi</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Categorii</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Nutriție</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Fitness</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Sănătate Mentală</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Prevenție</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <span>📧</span>
+                            <a href="mailto:contact@medblog.ro" class="hover:text-blue-400 transition-colors">contact@medblog.ro</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span>📱</span>
+                            <span>+40 721 123 456</span>
+                        </div>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Facebook</a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Instagram</a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-sm text-gray-400">
+                        © 2024 MedBlog. Toate drepturile rezervate.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Politica de Confidențialitate</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Termeni și Condiții</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Disclaimer Medical</a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        <strong>Disclaimer:</strong> Informațiile prezentate pe acest site sunt doar în scop educativ și nu constituie sfaturi medicale. Consultați întotdeauna un medic calificat pentru diagnosticare și tratament. Nu ne asumăm responsabilitatea pentru deciziile luate pe baza informațiilor de pe acest site.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            let progressBar = document.getElementById('progressBar');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.id = 'progressBar';
+                progressBar.className = 'fixed top-0 left-0 h-1 bg-blue-600 z-50 transition-all duration-300';
+                document.body.appendChild(progressBar);
+            }
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9789dc2965031872',t:'MTc1Njc4MzEwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
