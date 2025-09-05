@@ -12,6 +12,23 @@
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     </style>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1208131924424823');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208131924424823&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->    
 </head>
 <body class="bg-gray-50 text-gray-800 leading-relaxed">
     <!-- Header -->
@@ -187,7 +204,7 @@
             
     </main>
 
-    <!-- Read More Section -->
+<!-- Read More Section -->
     <section class="bg-white py-16 px-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Articole Recomandate</h2>
@@ -195,19 +212,19 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
                     <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                        <span class="text-4xl">🥗</span>
+                        <span class="text-8xl">☀️</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-gray-900">Dieta Mediteraneană: Ghid Complet</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Beneficiile dovedite științific ale dietei mediteraneene pentru sănătatea cardiovasculară și longevitate.</p>
+                        <a class='text-xl font-semibold mb-3 text-gray-900' href='/sanatate/vitamina-d'>Vitamina D: Beneficii</a>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Descoperă cum vitamina D poate îmbunătăți sistemul imunitar, sănătatea oaselor și starea generală de bine.</p>
                         <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Dr. Ana Ionescu</span>
+                            <span>Suplemente</span>
                             <span>6 min</span>
                         </div>
                     </div>
                 </article>
                 
-                <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
+           <!--     <article class="card-hover bg-white rounded-lg shadow-sm border overflow-hidden">
                     <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
                         <span class="text-4xl">💪</span>
                     </div>
@@ -233,7 +250,7 @@
                             <span>7 min</span>
                         </div>
                     </div>
-                </article>
+                </article> -->
             </div>
         </div>
     </section>
@@ -259,13 +276,12 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4">Navigare</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-blue-400 transition-colors">Acasă</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition-colors">Articole</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition-colors">Despre Noi</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="/" class="hover:text-blue-400 transition-colors">Acasă</a></li>
+                        <li><a class='hover:text-blue-400 transition-colors' href='/sanatate/articulatii'>Articole</a></li>
+                        <li><a class='hover:text-blue-400 transition-colors' href='/sanatate/vitamina-d'>Despre Noi</a></li>
                     </ul>
                 </div>
-                
+                <!--
                 <div>
                     <h4 class="text-white font-semibold mb-4">Categorii</h4>
                     <ul class="space-y-2 text-sm">
@@ -275,7 +291,7 @@
                         <li><a href="#" class="hover:text-blue-400 transition-colors">Prevenție</a></li>
                     </ul>
                 </div>
-                
+                -->
                 <div>
                     <h4 class="text-white font-semibold mb-4">Contact</h4>
                     <div class="space-y-3 text-sm">
@@ -288,9 +304,9 @@
                             <span>+40 721 123 456</span>
                         </div>
                         <div class="flex space-x-4 mt-4">
-                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Facebook</a>
-                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Instagram</a>
-                            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">LinkedIn</a>
+                            <span class="text-gray-400 hover:text-blue-400 transition-colors">Facebook</span>
+                            <span class="text-gray-400 hover:text-blue-400 transition-colors">Instagram</span>
+                            <span class="text-gray-400 hover:text-blue-400 transition-colors">LinkedIn</span>
                         </div>
                     </div>
                 </div>
@@ -299,12 +315,12 @@
             <div class="border-t border-gray-700 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p class="text-sm text-gray-400">
-                        © 2024 MedBlog. Toate drepturile rezervate.
+                        © 2025 MedBlog. Toate drepturile rezervate.
                     </p>
                     <div class="flex space-x-6 text-sm">
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Politica de Confidențialitate</a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Termeni și Condiții</a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Disclaimer Medical</a>
+                        <a class='text-gray-400 hover:text-blue-400 transition-colors' href='/sanatate/privacy'>Politica de Confidențialitate</a>
+                        <a class='text-gray-400 hover:text-blue-400 transition-colors' href='/sanatate/terms'>Termeni și Condiții</a>
+                        <a class='text-gray-400 hover:text-blue-400 transition-colors' href='/sanatate/disclaimer'>Disclaimer</a>
                     </div>
                 </div>
                 
@@ -353,5 +369,72 @@
             progressBar.style.width = scrolled + '%';
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9789dc2965031872',t:'MTc1Njc4MzEwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9789dc2965031872',t:'MTc1Njc4MzEwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+<script>
+  // функция для вытаскивания параметра из урла
+  function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var url = window.location.href;
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  var fbclid = getParameterByName("fbclid");
+
+  if (fbclid) {
+    document.querySelectorAll("a[href*='iherb.prf.hn/click']").forEach(function(link) {
+      // заменяем pubref:XXX на pubref:fbclid
+      link.href = link.href.replace(/pubref:[^/]+/, "pubref:" + fbclid);
+    });
+  }
+</script>
+
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll('.btn-click-ro');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      fbq('trackCustom', 'CTA_Click_RO', {
+        button_text: btn.innerText.trim()
+      });
+    });
+  });
+});
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sw9qm3fb2w");
+</script>
+ <!-- Cookie Consent -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": { "background": "#000" },
+      "button": { "background": "#f1d600", "text": "#000" }
+    },
+    "theme": "classic",
+    "position": "bottom",
+    "content": {
+      "message": "Acest site folosește cookie-uri pentru a vă oferi o experiență mai bună.",
+      "dismiss": "OK",
+      "link": "Află mai multe",
+      "href": "privacy.html"
+    }
+  });
+});
+</script> 
+</body>
 </html>
