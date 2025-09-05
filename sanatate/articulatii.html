@@ -341,7 +341,7 @@ Cercetările arată că membrana cojii de ou sau acea pieliță pe care o vezi c
     </div>
 
     <!-- Кнопка -->
-    <a href="https://h9kls.doctornroman.com/l/?sub1=fbclid" target="_blank" class="btn-click-ro mt-3 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium py-2.5 px-4 rounded-full flex items-center justify-center space-x-2 transition">
+    <a href="https://h9kls.doctornroman.com/l/?sub1=XXX" target="_blank" class="btn-click-ro mt-3 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium py-2.5 px-4 rounded-full flex items-center justify-center space-x-2 transition">
       <span>În magazin</span>
       <!-- SVG корзина (тонкая, белая) -->
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-5 h-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -595,12 +595,11 @@ Cercetările arată că membrana cojii de ou sau acea pieliță pe care o vezi c
 
   var fbclid = getParameterByName("fbclid");
 
-  if (fbclid) {
-    document.querySelectorAll("a[href*='iherb.prf.hn/click']").forEach(function(link) {
-      // заменяем pubref:XXX на pubref:fbclid
-      link.href = link.href.replace(/pubref:[^/]+/, "pubref:" + fbclid);
-    });
-  }
+if (fbclid) {
+  document.querySelectorAll("a[href*='XXX']").forEach(function(link) {
+    link.href = link.href.replace(/XXX/, fbclid);
+  });
+}
 </script>
 
   
