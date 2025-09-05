@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Melaxin Peel Shot Glow - 35% OFF Limited Time</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 20px rgba(252, 182, 159, 0.4);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(252, 182, 159, 0.8);
+            }
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+        
+        .product-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-shine::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">Dr.Melaxin</div>
+            <div class="text-sm text-gray-600">Korean Skincare Excellence</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Sale Banner -->
+        <div class="countdown-timer text-white text-center py-4 rounded-2xl mb-8 pulse-glow">
+            <div class="text-3xl font-bold mb-2">🔥 LIMITED TIME OFFER 🔥</div>
+            <div class="text-xl">35% OFF - Ends in: <span id="countdown" class="font-mono font-bold">23:59:42</span></div>
+        </div>
+
+        <!-- Product Section -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <!-- Product Image -->
+            <div class="text-center">
+                <div class="product-shine bg-white rounded-3xl p-8 shadow-2xl inline-block">
+                    <svg width="300" height="400" viewBox="0 0 300 400" class="mx-auto">
+                        <!-- Bottle -->
+                        <defs>
+                            <linearGradient id="bottleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f8f9fa"/>
+                                <stop offset="50%" style="stop-color:#ffffff"/>
+                                <stop offset="100%" style="stop-color:#e9ecef"/>
+                            </linearGradient>
+                            <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffecd2"/>
+                                <stop offset="100%" style="stop-color:#fcb69f"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Bottle body -->
+                        <rect x="80" y="100" width="140" height="250" rx="20" fill="url(#bottleGradient)" stroke="#dee2e6" stroke-width="2"/>
+                        
+                        <!-- Liquid inside -->
+                        <rect x="90" y="120" width="120" height="200" rx="15" fill="url(#liquidGradient)" opacity="0.8"/>
+                        
+                        <!-- Bottle neck -->
+                        <rect x="120" y="60" width="60" height="50" rx="8" fill="url(#bottleGradient)" stroke="#dee2e6" stroke-width="2"/>
+                        
+                        <!-- Cap -->
+                        <rect x="115" y="40" width="70" height="30" rx="15" fill="#ff6b6b"/>
+                        
+                        <!-- Label -->
+                        <rect x="90" y="180" width="120" height="80" rx="10" fill="white" opacity="0.9"/>
+                        <text x="150" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Dr.Melaxin</text>
+                        <text x="150" y="215" text-anchor="middle" font-size="8" fill="#666">PEEL SHOT</text>
+                        <text x="150" y="230" text-anchor="middle" font-size="8" fill="#666">GLOW</text>
+                        <text x="150" y="250" text-anchor="middle" font-size="10" font-weight="bold" fill="#ff6b6b">80ml</text>
+                        
+                        <!-- Sparkles -->
+                        <circle cx="60" cy="80" r="3" fill="#ffd700" opacity="0.8">
+                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="240" cy="120" r="2" fill="#ffd700" opacity="0.6">
+                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="70" cy="300" r="2.5" fill="#ffd700" opacity="0.7">
+                            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Dr.Melaxin Peel Shot Glow</h1>
+                    <h2 class="text-xl text-gray-600 mb-6">White Rice Peeling Ampoule - Korean Skincare</h2>
+                </div>
+
+                <!-- Price -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-3xl font-bold text-red-500">$32.49</span>
+                        <span class="text-xl text-gray-400 line-through">$49.99</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">35% OFF</span>
+                    </div>
+                    <div class="text-green-600 font-semibold">✅ You save $17.50!</div>
+                </div>
+
+                <!-- Key Benefits -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">✨ Key Benefits</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500">🌾</span>
+                            <span>White Rice Extract for gentle exfoliation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500">✨</span>
+                            <span>Removes dead skin cells effectively</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500">💧</span>
+                            <span>Suitable for face and body</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-green-500">🌸</span>
+                            <span>Perfect for all skin types</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CTA Button -->
+                <button id="notifyBtn" class="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    🚀 Get Notified When Available
+                </button>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-4xl mb-4">🇰🇷</div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Korean Formula</h3>
+                <p class="text-gray-600">Authentic K-beauty skincare technology</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-4xl mb-4">🌿</div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Natural Ingredients</h3>
+                <p class="text-gray-600">White rice extract and gentle botanicals</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-4xl mb-4">✅</div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">All Skin Types</h3>
+                <p class="text-gray-600">Safe and effective for everyone</p>
+            </div>
+        </div>
+
+        <!-- Email Signup -->
+        <div class="bg-white rounded-3xl p-8 shadow-2xl text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Don't Miss Out! 🎯</h2>
+            <p class="text-gray-600 mb-6">Be the first to know when this amazing product launches with the exclusive 35% discount!</p>
+            
+            <form id="emailForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" id="emailInput" placeholder="Enter your email address" 
+                       class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-500 focus:outline-none">
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300">
+                    Notify Me!
+                </button>
+            </form>
+            
+            <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-xl">
+                🎉 Success! You'll be notified when the product launches!
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/90 backdrop-blur-sm mt-16 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2024 Dr.Melaxin. Premium Korean Skincare. All rights reserved.</p>
+            <p class="mt-2 text-sm">This is a demo pre-landing page simulation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let timeLeft = 86382; // 23:59:42 in seconds
+            
+            setInterval(() => {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                timeLeft--;
+                if (timeLeft < 0) timeLeft = 86400; // Reset to 24 hours
+            }, 1000);
+        }
+
+        // Email Form Handler
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            
+            if (email && email.includes('@')) {
+                document.getElementById('successMessage').classList.remove('hidden');
+                document.getElementById('emailInput').value = '';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.add('hidden');
+                }, 5000);
+            } else {
+                alert('Please enter a valid email address');
+            }
+        });
+
+        // Notify Button Handler
+        document.getElementById('notifyBtn').addEventListener('click', function() {
+            document.getElementById('emailInput').focus();
+            document.getElementById('emailInput').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize countdown
+        updateCountdown();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a840c6a2951864',t:'MTc1NzEwMTc5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
