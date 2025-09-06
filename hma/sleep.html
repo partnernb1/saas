@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Sleep Tonight</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .interactive-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-800">SleepWell</div>
+                <div class="text-sm text-gray-600">Trusted by 50,000+ customers</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in">
+                Finally Sleep Through The Night... 
+                <span class="text-yellow-300">Without Pills or Gadgets</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 fade-in">
+                Discover the 60-second bedtime ritual that's helping thousands fall asleep faster and wake up refreshed
+            </p>
+            
+            <!-- Interactive Sleep Quality Quiz -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 fade-in">
+                <h3 class="text-2xl font-semibold mb-6">Quick Sleep Assessment</h3>
+                <div id="quiz-container">
+                    <div class="quiz-question active">
+                        <p class="text-lg mb-4">How long does it typically take you to fall asleep?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="5">Less than 15 minutes</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="3">15-30 minutes</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="1">30-60 minutes</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="0">Over an hour</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question hidden">
+                        <p class="text-lg mb-4">How often do you wake up during the night?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="5">Rarely or never</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="3">1-2 times</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="1">3-4 times</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="0">5+ times</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question hidden">
+                        <p class="text-lg mb-4">How do you feel when you wake up?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="5">Refreshed and energized</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="3">Somewhat rested</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="1">Tired but functional</button>
+                            <button class="quiz-option bg-white/20 hover:bg-white/30 p-4 rounded-lg transition-all" data-value="0">Exhausted</button>
+                        </div>
+                    </div>
+                    
+                    <div id="quiz-result" class="hidden">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">😴</div>
+                            <h4 class="text-2xl font-semibold mb-4">Your Sleep Score: <span id="sleep-score">0</span>/15</h4>
+                            <p id="sleep-message" class="text-lg mb-6"></p>
+                            <div class="bg-yellow-400 text-gray-900 p-4 rounded-lg font-semibold">
+                                Good news! The solution we're about to show you has helped people with similar sleep challenges.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="mt-6">
+                    <div class="bg-white/20 rounded-full h-2">
+                        <div id="progress-bar" class="bg-yellow-400 h-2 rounded-full progress-bar" style="width: 33%"></div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-75">Question <span id="question-number">1</span> of 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Agitation Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                If You're Tired of Being Tired...
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="interactive-card bg-red-50 p-6 rounded-xl border border-red-100">
+                    <div class="text-4xl mb-4">😫</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Tossing & Turning</h3>
+                    <p class="text-gray-600">Lying awake for hours, mind racing, watching the clock tick by</p>
+                </div>
+                
+                <div class="interactive-card bg-orange-50 p-6 rounded-xl border border-orange-100">
+                    <div class="text-4xl mb-4">☕</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Caffeine Dependency</h3>
+                    <p class="text-gray-600">Needing multiple cups of coffee just to function during the day</p>
+                </div>
+                
+                <div class="interactive-card bg-blue-50 p-6 rounded-xl border border-blue-100">
+                    <div class="text-4xl mb-4">😴</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Afternoon Crashes</h3>
+                    <p class="text-gray-600">Feeling exhausted by 3 PM and struggling to stay productive</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl text-gray-700 mb-6">
+                    You've probably tried everything: melatonin, white noise machines, expensive mattresses...
+                </p>
+                <p class="text-2xl font-semibold text-gray-800">
+                    But what if the solution was simpler than you think?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Teaser -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-gray-800">
+                The 60-Second Sleep Switch
+            </h2>
+            
+            <!-- Visual Representation -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-12 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center space-x-8 mb-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-2">
+                            <span class="text-2xl">😰</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Before</p>
+                    </div>
+                    
+                    <div class="flex-1 relative">
+                        <div class="h-1 bg-gradient-to-r from-red-300 to-green-300 rounded"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border-2 border-blue-500 rounded-full w-8 h-8 flex items-center justify-center pulse-animation">
+                            <span class="text-xs">60s</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                            <span class="text-2xl">😴</span>
+                        </div>
+                        <p class="text-sm text-gray-600">After</p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-gray-700">
+                    A simple, science-backed technique that activates your body's natural sleep response
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl mb-3">🧠</div>
+                    <h3 class="font-semibold mb-2">Calms Racing Thoughts</h3>
+                    <p class="text-gray-600 text-sm">Quiets mental chatter in under a minute</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl mb-3">💊</div>
+                    <h3 class="font-semibold mb-2">No Pills Required</h3>
+                    <p class="text-gray-600 text-sm">100% natural, no side effects or dependency</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl mb-3">⚡</div>
+                    <h3 class="font-semibold mb-2">Works Immediately</h3>
+                    <p class="text-gray-600 text-sm">Feel the difference from the very first night</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                Join Thousands Who've Transformed Their Sleep
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                            S
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold">Sarah M.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"I was skeptical, but this actually works! I fall asleep in minutes now instead of hours."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
+                            M
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold">Mike R.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"No more 3 AM wake-ups! I sleep through the night and wake up refreshed."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+                            L
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold">Lisa K.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"My energy levels during the day have completely changed. This is life-changing!"</p>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">94%</div>
+                    <p class="text-gray-600">Fall asleep faster</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-green-600 mb-2">87%</div>
+                    <p class="text-gray-600">Sleep through the night</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-purple-600 mb-2">91%</div>
+                    <p class="text-gray-600">Wake up refreshed</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-orange-600 mb-2">50K+</div>
+                    <p class="text-gray-600">Happy customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft CTA Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">
+                Ready to Discover Your Sleep Solution?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Learn the exact 60-second technique that's helping thousands sleep better tonight
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-4">What You'll Discover:</h3>
+                <ul class="text-left space-y-3">
+                    <li class="flex items-center">
+                        <span class="text-yellow-400 mr-3">✓</span>
+                        The simple 60-second bedtime ritual
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-yellow-400 mr-3">✓</span>
+                        Why traditional sleep advice doesn't work
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-yellow-400 mr-3">✓</span>
+                        The science behind instant sleep activation
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-yellow-400 mr-3">✓</span>
+                        How to wake up naturally refreshed
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full text-xl transition-all transform hover:scale-105 pulse-animation">
+                Discover the Sleep Solution →
+            </button>
+            
+            <p class="text-sm mt-4 opacity-75">
+                No spam, no gimmicks - just the solution you've been looking for
+            </p>
+        </div>
+    </section>
+
+    <!-- FTC Disclosure -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-6">
+                <h3 class="text-lg font-semibold mb-4">FTC Disclosure</h3>
+                <p class="text-sm leading-relaxed">
+                    This website contains affiliate links. We may receive compensation if you purchase products or services through our links. 
+                    The testimonials and results shown are not typical and your results may vary. This information is for educational purposes only 
+                    and is not intended as medical advice. Please consult with a healthcare professional before making any changes to your sleep routine.
+                </p>
+            </div>
+            
+            <div class="text-center text-xs text-gray-400">
+                <p>&copy; 2024 SleepWell. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quiz functionality
+        let currentQuestion = 0;
+        let totalScore = 0;
+        const questions = document.querySelectorAll('.quiz-question');
+        const progressBar = document.getElementById('progress-bar');
+        const questionNumber = document.getElementById('question-number');
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('quiz-option')) {
+                const value = parseInt(e.target.dataset.value);
+                totalScore += value;
+                
+                // Highlight selected option
+                e.target.parentNode.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('bg-yellow-400', 'text-gray-900');
+                    opt.classList.add('bg-white/20');
+                });
+                e.target.classList.remove('bg-white/20');
+                e.target.classList.add('bg-yellow-400', 'text-gray-900');
+                
+                setTimeout(() => {
+                    currentQuestion++;
+                    
+                    if (currentQuestion < questions.length) {
+                        // Show next question
+                        questions[currentQuestion - 1].classList.add('hidden');
+                        questions[currentQuestion].classList.remove('hidden');
+                        
+                        // Update progress
+                        const progress = ((currentQuestion + 1) / questions.length) * 100;
+                        progressBar.style.width = progress + '%';
+                        questionNumber.textContent = currentQuestion + 1;
+                    } else {
+                        // Show results
+                        questions[currentQuestion - 1].classList.add('hidden');
+                        document.getElementById('quiz-result').classList.remove('hidden');
+                        progressBar.style.width = '100%';
+                        
+                        // Display score and message
+                        document.getElementById('sleep-score').textContent = totalScore;
+                        const messageEl = document.getElementById('sleep-message');
+                        
+                        if (totalScore <= 5) {
+                            messageEl.textContent = "Your sleep quality needs immediate attention. The good news? You're in the right place for a solution.";
+                        } else if (totalScore <= 10) {
+                            messageEl.textContent = "Your sleep could be much better. Small changes can make a huge difference.";
+                        } else {
+                            messageEl.textContent = "You have decent sleep, but imagine how much better you could feel with perfect sleep!";
+                        }
+                    }
+                }, 500);
+            }
+        });
+        
+        // Smooth scrolling for CTA
+        document.querySelector('button').addEventListener('click', function() {
+            // In a real implementation, this would redirect to the main sales page
+            alert('Redirecting to the full sleep solution page...');
+        });
+        
+        // Add some interactive animations
+        const cards = document.querySelectorAll('.interactive-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a895f617101864',t:'MTc1NzEwNTI4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
